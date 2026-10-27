@@ -87,6 +87,8 @@
         content="https://institutoama.org.br/assets/img/og-image.jpg"
     >
 
+    <!-- Preload LCP Asset -->
+    <link rel="preload" as="image" href="assets/logo/logoB2B-02.svg" type="image/svg+xml" fetchpriority="high">
     <link
         href="tailwind_theme/tailwind.css"
         rel="stylesheet"
@@ -101,14 +103,14 @@
         defer
         src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
-    <script src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
 </head>
 
 <body>
 
     <header class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50" x-data="{ scrolled: false, mobileMenuOpen: false, isActive(page) { let p = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase().replace('.html', '') || 'index'; let target = page.toLowerCase().replace('.html', ''); return p === target; } }" @scroll.window="scrolled = (window.pageYOffset > 20)" data-pgc="site-header">
             <div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
-                <a href="index.html" class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" width="85" src="assets/logo/logoB2B-02.svg"/> <div class="hidden xl:flex xl:flex-col">
+                <a href="index.html" class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" width="85" height="38" fetchpriority="high" src="assets/logo/logoB2B-02.svg"/> <div class="hidden xl:flex xl:flex-col">
                         <span class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight" data-pgc-field="brand-name">Instituto <span class="text-primary-500">AMA</span></span>
                         <span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
                     </div> </a>

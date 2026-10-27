@@ -28,17 +28,21 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Instituto AMA | Acolhimento, Mentoria e Assistência">
         <meta name="twitter:description" content="Transformando vidas através do acolhimento, mentoria social e cursos comunitários em São Luís/MA.">
-        <meta name="twitter:image" content="https://institutoama.org.br/assets/img/og-image.jpg">
+        <!-- Preload LCP Asset -->
+        <link rel="preload" as="image" href="assets/logo/logoB2B-02.svg" type="image/svg+xml" fetchpriority="high">
+
         <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
         <link href="css/custom.css" rel="stylesheet" type="text/css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <script src="js/main.js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=auto">
+        <script defer src="js/main.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700&display=swap">
     </head>
     <body class="antialiased bg-background-50 font-sans overflow-x-hidden text-neutral-800">
         <header class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50" x-data="{ scrolled: false, mobileMenuOpen: false, isActive(page) { let p = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase().replace('.html', '') || 'index'; let target = page.toLowerCase().replace('.html', ''); return p === target; } }" @scroll.window="scrolled = (window.pageYOffset > 20)" data-pgc="site-header">
             <div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
-                <a href="index.html" class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" width="85" src="assets/logo/logoB2B-02.svg"/> <div class="hidden xl:flex xl:flex-col">
+                <a href="index.html" class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" width="85" height="38" fetchpriority="high" src="assets/logo/logoB2B-02.svg"/> <div class="hidden xl:flex xl:flex-col">
                         <span class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight" data-pgc-field="brand-name">Instituto AMA</span>
                         <span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
                     </div> </a>
@@ -97,18 +101,18 @@
             <div class="relative z-10 grid grid-cols-2 gap-4 lg:gap-6">
     <div class="space-y-4 lg:space-y-6 pt-12">
         <div class="anim delay-3 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 aspect-[4/5]">
-            <img alt="Acolhimento" class="w-full h-full object-cover" src="assets/img/projeto-acolher-02.webp">
+            <img alt="Acolhimento" class="w-full h-full object-cover" width="400" height="500" decoding="async" src="assets/img/projeto-acolher-02.webp">
         </div>
         <div class="anim delay-4 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 aspect-[4/5]">
-            <img src="assets/img/projeto-mulheres-empreenderoras.webp" alt="Empreendedorismo" class="w-full h-full object-cover">
+            <img src="assets/img/projeto-mulheres-empreenderoras.webp" alt="Empreendedorismo" class="w-full h-full object-cover" width="400" height="500" decoding="async">
         </div>
     </div>
     <div class="space-y-4 lg:space-y-6">
         <div class="anim delay-5 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 aspect-[4/5]">
-            <img src="assets/img/projeto-ama.webp" alt="Comunidade" class="w-full h-full object-cover">
+            <img src="assets/img/projeto-ama.webp" alt="Comunidade" class="w-full h-full object-cover" width="400" height="500" decoding="async">
         </div>
         <div class="anim delay-6 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 aspect-[4/5]">
-            <img src="assets/img/projeto-capacitar.webp" alt="Capacitação" class="w-full h-full object-cover">
+            <img src="assets/img/projeto-capacitar.webp" alt="Capacitação" class="w-full h-full object-cover" width="400" height="500" decoding="async">
         </div>
     </div>
 </div>
@@ -181,55 +185,39 @@
                         <!-- Projeto Acolher -->
                         <div class="border border-surface-600 duration-500 group p-8 rounded-3xl space-y-4 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="feature-card">
                     <div class="h-90 relative w-full">
-                        <img src="assets/img/projeto-acolher.webp" alt="Crianças em atividade de acolhimento social" class="duration-700 h-80 object-cover rounded-2xl transition-all w-full group-hover:scale-105" data-pgc-field="img">
+                        <img src="assets/img/projeto-acolher.webp" alt="Crianças em atividade de acolhimento social" class="duration-700 h-80 object-cover rounded-2xl transition-all w-full group-hover:scale-105" width="400" height="320" loading="lazy" decoding="async" data-pgc-field="img">
                     </div>
                     <h3 class="font-bold text-primary-500 text-xl" data-pgc-field="title"><a href="projeto-acolher.html" class="hover:underline">Projeto Acolher</a></h3>
                     <p class="text-primary-500 text-sm" data-pgc-field="description">Apoio psicossocial e escuta qualificada para indivíduos em situação de vulnerabilidade.</p>
                     <a href="projeto-acolher.html" class="inline-block cursor-pointer font-semibold text-primary-500 text-xs tracking-tighter uppercase group-hover:underline" data-pgc-field="cta">Saiba mais &rarr;</a>
-                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<div class="bg-background-100 flex group-hover:scale-110 h-14 items-center justify-center mb-6 rounded-2xl text-primary-500 transition-transform w-14" data-pgc-field="icon">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-    </svg>
-</div>--></div>
+                </div>
                         <!-- Mulheres Empreendedoras -->
                         <div class="border border-surface-600 duration-500 group p-8 rounded-3xl space-y-4 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="feature-card">
                     <div class="h-90 relative w-full">
-                        <img src="assets/img/mulheres-empreendedoras.webp" alt="Crianças em atividade de acolhimento social" class="duration-700 h-80 object-cover rounded-2xl transition-all w-full group-hover:scale-105" data-pgc-field="img">
+                        <img src="assets/img/mulheres-empreendedoras.webp" alt="Mulheres em oficinas de qualificação e empreendedorismo" class="duration-700 h-80 object-cover rounded-2xl transition-all w-full group-hover:scale-105" width="400" height="320" loading="lazy" decoding="async" data-pgc-field="img">
                     </div>
                     <h3 class="font-bold text-primary-500 text-xl" data-pgc-field="title"><a href="mulheres-empreendedoras.html" class="hover:underline">Empreendedoras</a></h3>
                     <p class="text-primary-500 text-sm" data-pgc-field="description">Capacitação e mentoria para mulheres chefes de família buscarem independência.</p>
-                    <a href="projeto-acolher.html" class="inline-block cursor-pointer font-semibold text-primary-500 text-xs tracking-tighter uppercase group-hover:underline" data-pgc-field="cta">Saiba mais &rarr;</a>
-                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<div class="bg-background-100 flex group-hover:scale-110 h-14 items-center justify-center mb-6 rounded-2xl text-primary-500 transition-transform w-14" data-pgc-field="icon">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-    </svg>
-</div>--></div>
+                    <a href="mulheres-empreendedoras.html" class="inline-block cursor-pointer font-semibold text-primary-500 text-xs tracking-tighter uppercase group-hover:underline" data-pgc-field="cta">Saiba mais &rarr;</a>
+                </div>
                         <!-- Capacitar -->
                         <div class="border border-surface-600 duration-500 group p-8 rounded-3xl space-y-4 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="feature-card">
                     <div class="h-90 relative w-full">
-                        <img src="assets/img/projeto-capacitar.webp" alt="Crianças em atividade de acolhimento social" class="duration-700 h-80 object-cover rounded-2xl transition-all w-full group-hover:scale-105" data-pgc-field="img">
+                        <img src="assets/img/projeto-capacitar.webp" alt="Jovens em oficina profissionalizante e tecnologia" class="duration-700 h-80 object-cover rounded-2xl transition-all w-full group-hover:scale-105" width="400" height="320" loading="lazy" decoding="async" data-pgc-field="img">
                     </div>
                     <h3 class="font-bold text-primary-500 text-xl" data-pgc-field="title"><a href="projeto-capacitar.html" class="hover:underline">Capacitar</a></h3>
                     <p class="text-primary-500 text-sm" data-pgc-field="description">Oficinas técnicas e cursos profissionalizantes para jovens e adultos.</p>
-                    <a href="projeto-acolher.html" class="inline-block cursor-pointer font-semibold text-primary-500 text-xs tracking-tighter uppercase group-hover:underline" data-pgc-field="cta">Saiba mais &rarr;</a>
-                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<div class="bg-background-100 flex group-hover:scale-110 h-14 items-center justify-center mb-6 rounded-2xl text-primary-500 transition-transform w-14" data-pgc-field="icon">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-    </svg>
-</div>--></div>
+                    <a href="projeto-capacitar.html" class="inline-block cursor-pointer font-semibold text-primary-500 text-xs tracking-tighter uppercase group-hover:underline" data-pgc-field="cta">Saiba mais &rarr;</a>
+                </div>
                         <!-- Ação AMA -->
                         <div class="border border-surface-600 duration-500 group p-8 rounded-3xl space-y-4 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="feature-card">
                     <div class="h-90 relative w-full">
-                        <img src="assets/img/projeto-ama.webp" alt="Crianças em atividade de acolhimento social" class="duration-700 h-80 object-cover rounded-2xl transition-all w-full group-hover:scale-105" data-pgc-field="img">
+                        <img src="assets/img/projeto-ama.webp" alt="Mobilização comunitária e assistência social" class="duration-700 h-80 object-cover rounded-2xl transition-all w-full group-hover:scale-105" width="400" height="320" loading="lazy" decoding="async" data-pgc-field="img">
                     </div>
                     <h3 class="font-bold text-primary-500 text-xl" data-pgc-field="title"><a href="acao-ama.html" class="hover:underline">Ação AMA</a></h3>
                     <p class="text-primary-500 text-sm" data-pgc-field="description">Mobilizações comunitárias pontuais para assistência emergencial e eventos.</p>
-                    <a href="projeto-acolher.html" class="inline-block cursor-pointer font-semibold text-primary-500 text-xs tracking-tighter uppercase group-hover:underline" data-pgc-field="cta">Saiba mais &rarr;</a>
-                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<div class="bg-background-100 flex group-hover:scale-110 h-14 items-center justify-center mb-6 rounded-2xl text-primary-500 transition-transform w-14" data-pgc-field="icon">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-    </svg>
-</div>--></div>
+                    <a href="acao-ama.html" class="inline-block cursor-pointer font-semibold text-primary-500 text-xs tracking-tighter uppercase group-hover:underline" data-pgc-field="cta">Saiba mais &rarr;</a>
+                </div>
                     </div>
                 </div>
             </section>
@@ -529,9 +517,9 @@
                             <div class="bg-primary-500 min-h-100 p-10 rounded-3xl rounded-4xl shadow-primary-100 shadow-xl space-y-4 md:p-6">
                                 <h3 class="font-bold text-2xl text-primary-50">PIX Solidário</h3>
                                 <p class="text-primary-50 text-sm">A maneira mais rápida e direta de contribuir com nossos projetos.</p>
-                                <div class="bg-white inline-block p-2 shadow-sm">
+                                <div class="bg-white inline-block p-2 shadow-sm rounded-xl">
                                     <div class="w-32 h-32 bg-neutral-200 flex items-center justify-center text-neutral-400">
-                                        <img src="assets/qrcode.jpeg" data-pg-alt-review="image"/>
+                                        <img src="assets/qrcode.jpeg" alt="QR Code PIX Instituto AMA" width="128" height="128" loading="lazy" decoding="async" data-pg-alt-review="image"/>
                                     </div>
                                 </div>
                                 <div class="bg-primary-50 font-mono p-2 rounded-full select-all text-primary-500 text-xs">CNPJ 48.722.909/0001-80</div>
@@ -550,7 +538,7 @@
             <div class="container mx-auto px-4 lg:px-8">
                 <div class="gap-12 grid grid-cols-1 pb-20 md:grid-cols-2 lg:grid-cols-4">
                     <div class="space-y-6">
-                        <a href="index.html" class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90" title="Instituto AMA - Início"> <img src="assets/logo/logoB2B.svg" alt="Logo Instituto AMA" class="brightness-0 invert object-contain w-40 group-hover:opacity-100"/> </a>
+                        <a href="index.html" class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90" title="Instituto AMA - Início"> <img src="assets/logo/logoB2B.svg" alt="Logo Instituto AMA" width="160" height="40" loading="lazy" decoding="async" class="brightness-0 invert object-contain w-40 group-hover:opacity-100"/> </a>
                         <p data-pgc-field="about">Transformando vidas através do acolhimento e da mentoria social em nossa comunidade.</p>
                     </div>
                     <div>
