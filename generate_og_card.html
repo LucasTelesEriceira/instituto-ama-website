@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Instituto AMA - Open Graph Card Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0b0908;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+    }
+    #og-card {
+      width: 1200px;
+      height: 630px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 18% 30%, #2f231e 0%, #1a1411 60%, #120e0c 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 64px 80px 48px 80px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Elementos de iluminação de fundo */
+    .glow-top-right {
+      position: absolute;
+      top: -120px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 124, 103, 0.12) 0%, rgba(255, 174, 65, 0.05) 45%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .glow-bottom-left {
+      position: absolute;
+      bottom: -150px;
+      left: 10%;
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(76, 196, 182, 0.1) 0%, transparent 60%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Top bar: Tagline / Credenciais */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .tag-osc {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      color: #F9F6F1;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .tag-osc .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4CC4B6;
+      box-shadow: 0 0 10px #4CC4B6;
+    }
+
+    .location-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #c9bfb8;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .location-badge svg {
+      width: 16px;
+      height: 16px;
+      color: #FF7C67;
+    }
+
+    /* Centro: Logo + Conteúdo Principal */
+    .main-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      z-index: 2;
+      margin-top: 10px;
+    }
+
+    .left-col {
+      flex: 1;
+      max-width: 720px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .brand-title h1 {
+      font-size: 58px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .brand-title h1 span {
+      background: linear-gradient(135deg, #FF7C67 0%, #FFAE41 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline-sub {
+      font-size: 24px;
+      font-weight: 600;
+      color: #F9F6F1;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+
+    .description {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #b8aba3;
+      margin-bottom: 24px;
+    }
+
+    .projects-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #e4ded9;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .pill-dot.coral { background: #FF7C67; }
+    .pill-dot.orange { background: #FFAE41; }
+    .pill-dot.teal { background: #4CC4B6; }
+    .pill-dot.green { background: #2E6B5E; }
+
+    /* Lado Direito: Logo Emblema em destaque */
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-frame {
+      width: 250px;
+      height: 250px;
+      border-radius: 42px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+    }
+
+    .metrics-badge {
+      margin-top: 18px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 20px;
+      border-radius: 14px;
+    }
+
+    .metrics-badge .num {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    .metrics-badge .lbl {
+      font-size: 11px;
+      font-weight: 500;
+      color: #a89d96;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Rodapé do Card */
+    .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 2;
+    }
+
+    .web-url {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .web-url span.highlight {
+      color: #FF7C67;
+    }
+
+    .legal-info {
+      font-size: 13px;
+      color: #9c8f87;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    /* Barra Decorativa de 4 cores na borda inferior */
+    .stripe-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      display: flex;
+    }
+
+    .stripe-bar .c1 { flex: 1; background: #FF7C67; }
+    .stripe-bar .c2 { flex: 1; background: #FFAE41; }
+    .stripe-bar .c3 { flex: 1; background: #4CC4B6; }
+    .stripe-bar .c4 { flex: 1; background: #2E6B5E; }
+  </style>
+</head>
+<body>
+  <div id="og-card">
+    <div class="glow-top-right"></div>
+    <div class="glow-bottom-left"></div>
+
+    <!-- Cabeçalho Superior -->
+    <div class="top-header">
+      <div class="tag-osc">
+        <span class="dot"></span>
+        Organização da Sociedade Civil &bull; Desde 2021
+      </div>
+      <div class="location-badge">
+        <svg fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+        </svg>
+        São Luís / MA &bull; Vila Mauro Fecury I
+      </div>
+    </div>
+
+    <!-- Centro: Identidade e Mensagem Principal -->
+    <div class="main-content">
+      <div class="left-col">
+        <div class="brand-title">
+          <h1>Instituto <span>AMA</span></h1>
+        </div>
+        <div class="tagline-sub">
+          Acolhimento, Mentoria &amp; Assistência
+        </div>
+        <p class="description">
+          Transformando afeto em futuro através do desenvolvimento humano, formação profissional e apoio comunitário integral.
+        </p>
+
+        <div class="projects-pills">
+          <div class="pill">
+            <span class="pill-dot coral"></span>
+            Projeto Acolher
+          </div>
+          <div class="pill">
+            <span class="pill-dot orange"></span>
+            Mulheres Empreendedoras
+          </div>
+          <div class="pill">
+            <span class="pill-dot teal"></span>
+            Transparência &amp; ESG
+          </div>
+          <div class="pill">
+            <span class="pill-dot green"></span>
+            Projeto Capacitar
+          </div>
+        </div>
+      </div>
+
+      <div class="right-col">
+        <div class="logo-frame">
+          <img src="assets/logo/logo.png" alt="Instituto AMA">
+        </div>
+        <div class="metrics-badge">
+          <div class="num">+4.200</div>
+          <div class="lbl">Atendimentos Sociais</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rodapé -->
+    <div class="bottom-bar">
+      <div class="web-url">
+        institutoama<span class="highlight">.org.br</span>
+      </div>
+      <div class="legal-info">
+        CNPJ: 48.722.909/0001-80 &bull; Impacto Social Auditado
+      </div>
+    </div>
+
+    <!-- Faixa colorida das 4 cores oficiais -->
+    <div class="stripe-bar">
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="c4"></div>
+    </div>
+  </div>
+</body>
+</html>
