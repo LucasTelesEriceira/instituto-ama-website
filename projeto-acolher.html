@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Conheça o Projeto Acolher do Instituto AMA: suporte psicossocial, saúde mental infantil, oficinas terapêuticas e a Tecnologia Sophia em São Luís/MA.">
+    <title>Projeto Acolher | Instituto AMA</title>
+
+    <!-- Favicon / Ícone do Site -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logoB2B-02.svg">
+    <link rel="icon" type="image/webp" href="assets/logo/logoB2B-02.webp">
+    <link rel="apple-touch-icon" href="assets/logo/Apresent.%20Nova%20Marca%20AMA.png">
+
+    <!-- SEO & Indexação -->
+    <link rel="canonical" href="https://institutoama.org.br/projeto-acolher.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://institutoama.org.br/projeto-acolher.html">
+    <meta property="og:title" content="Projeto Acolher | Instituto AMA">
+    <meta property="og:description" content="Suporte psicossocial, saúde mental infantil e assistência comunitária na Vila Mauro Fecury I em São Luís/MA.">
+    <meta property="og:site_name" content="Instituto AMA">
+    <meta property="og:image" content="https://institutoama.org.br/assets/img/projeto-acolher.webp">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projeto Acolher | Instituto AMA">
+    <meta name="twitter:description" content="Suporte psicossocial, saúde mental infantil e assistência comunitária na Vila Mauro Fecury I em São Luís/MA.">
+    <meta name="twitter:image" content="https://institutoama.org.br/assets/img/projeto-acolher.webp">
+
+    <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body class="antialiased bg-background-50 font-sans text-accent-800">
+    <!-- Header Fixo (Pinegrow Component) -->
+    <header class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50" x-data="{ scrolled: false, mobileMenuOpen: false, isActive(page) { let p = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase().replace('.html', '') || 'index'; let target = page.toLowerCase().replace('.html', ''); return p === target; } }" @scroll.window="scrolled = (window.pageYOffset > 20)" data-pgc="site-header">
+            <div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
+                <a href="index.html" class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" width="85" src="assets/logo/logoB2B-02.svg"/> <div class="hidden xl:flex xl:flex-col">
+                        <span class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight" data-pgc-field="brand-name">Instituto <span class="text-primary-500">AMA</span></span>
+                        <span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
+                    </div> </a>
+                <nav class="hidden items-center justify-between mx-auto p-2 lg:flex" aria-label="Navegação Principal">
+                    <div class="hidden items-center text-sm uppercase lg:flex lg:space-x-4">
+                        <a href="index.html" class="nav-item-link" :class="isActive('index.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Início</a>
+                        <a href="instituto.html" class="nav-item-link" :class="isActive('instituto.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">O Instituto</a>
+                        <a href="projetos.html" class="nav-item-link" :class="isActive('projetos.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Projetos</a>
+                        <a href="noticias.html" class="nav-item-link" :class="isActive('noticias.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Notícias</a>
+                        <a href="relacoes-institucionais.html" class="nav-item-link" :class="isActive('relacoes-institucionais.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Relações Institucionais</a>
+                    </div>
+                </nav>
+                <div class="space-x-2 hidden lg:flex">
+                    <a href="colaborador.html" class="border border-primary-200 duration-400 flex gap-2 group items-center px-4 py-2 rounded-full text-primary-500 text-xs transition-all hover:bg-accent-50/50 hover:border-accent-200 hover:text-accent-600" data-pgc-field="portal-btn"><svg class="w-4 h-4 text-neutral-400 group-hover:text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span>Portal AMA</span></a>
+                    <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-field="support-btn">Apoiar Agora</a>
+                </div>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4" @click.away="mobileMenuOpen = false" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-surface-200 shadow-2xl z-50 overflow-hidden" x-cloak>
+                    <div class="flex flex-col p-6 space-y-4 uppercase" data-pgc-field="mobile-nav-items"><a href="index.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors text-neutral-600 font-semibold hover:bg-surface-50" @click="mobileMenuOpen = false"> <span>Início</span> </a>
+                    <a href="instituto.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors text-neutral-600 font-semibold hover:bg-surface-50" @click="mobileMenuOpen = false"> <span>O Instituto</span> </a>
+                    <a href="projetos.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors bg-primary-50 text-primary-600 font-bold" @click="mobileMenuOpen = false"> <span>Projetos</span> <span class="w-2 h-2 rounded-full bg-primary-500"></span> </a>
+                    <a href="relacoes-institucionais.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors text-neutral-600 font-semibold hover:bg-surface-50" @click="mobileMenuOpen = false"> <span>Relações Institucionais</span> </a>
+                    <a href="colaborador.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors text-neutral-600 font-semibold hover:bg-surface-50" @click="mobileMenuOpen = false"> <span>Portal AMA</span> </a>
+                    <div class="pt-4">
+                        <a href="apoio.html" class="w-full flex items-center justify-center p-4 bg-primary-500 text-white rounded-2xl font-bold shadow-lg shadow-primary-100" @click="mobileMenuOpen = false"> Apoiar Agora </a>
+                    </div></div>
+                </div>
+            </div>
+        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase" data-pgc-field="brand-tagline">Acolhimento & Assistência</span>--></header>
+
+    <main>
+        <!-- Hero Section Temática (Coral / Prestativo) -->
+        <section class="bg-background-500 overflow-hidden py-16 relative lg:py-24">
+            <div class="container mx-auto px-4 lg:px-8 relative z-10">
+                <!-- Breadcrumbs -->
+                <nav class="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-8" aria-label="Navegação em migalhas">
+                    <a href="index.html" class="hover:text-coral-500 transition-colors">Início</a>
+                    <span>/</span>
+                    <a href="projetos.html" class="hover:text-coral-500 transition-colors">Projetos</a>
+                    <span>/</span>
+                    <span class="text-coral-600 font-bold">Projeto Acolher</span>
+                </nav>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Conteúdo Principal Hero -->
+                    <div class="lg:col-span-7 space-y-6">
+                        
+
+                        <h1 class="font-extrabold leading-tight text-4xl text-coral-500 sm:text-5xl lg:text-6xl">
+                            Projeto Acolher
+                        </h1>
+
+                        <p class="font-light leading-relaxed text-balance text-lg text-stone-600 sm:text-xl">
+                            O Projeto Acolher é o coragdo pedagogico do Instituto AMA. Ele atende 120 criangas em
+situacéo de vulnerabilidade com reforgo escolar em lingua portuguesa e matematica,
+alfabetizagdo, acompanhamento psicoldgico individualizado e atividades culturais. O
+projeto garante o direito de aprender em um ambiente seguro, afetuoso e estruturado.
+                        </p>
+
+                        <div class="pt-4 flex flex-wrap gap-4 items-center">
+                            <a href="apoio.html" class="bg-coral-500 text-white font-bold rounded-full px-8 py-4 hover:bg-coral-600 transition-all shadow-xl shadow-coral-500/20 hover:-translate-y-1 inline-flex items-center gap-3">
+                                <span>Apoiar este Projeto</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                            <a href="#metodologia" class="border border-coral-200 text-coral-600 font-bold rounded-full px-7 py-4 hover:bg-coral-50 transition-all inline-flex items-center gap-2">
+                                <span>Conhecer Metodologia</span>
+                            </a>
+                        </div>
+
+                        <!-- Equipe Responsável Badge -->
+                        <div class="pt-6 flex items-center gap-4">
+                            <div class="flex -space-x-3">
+                                <img src="assets/img/avatar/elida-brigida.webp" alt="Élida Brígida" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm">
+                                <img src="assets/img/avatar/solange-pereira.webp" alt="Solange Ribeiro" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm">
+                            </div>
+                            <div class="text-xs">
+                                <span class="font-bold text-stone-700 block text-sm">Élida Brígida &amp; Solange Ribeiro</span>
+                                <span class="text-neutral-500">Coordenação Geral do Projeto Acolher</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imagem Principal Hero -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <img src="assets/img/projeto-acolher.webp" alt="Crianças e comunidade participantes do Projeto Acolher" class="relative z-10 w-full h-96 object-cover rounded-3xl shadow-2xl border-4 border-white">
+                            
+                            <!-- Card de Destaque Flutuante -->
+                            <div class="absolute -bottom-6 -left-6 z-20 bg-white p-5 rounded-2xl shadow-xl border border-surface-200 max-w-xs flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-coral-50 flex items-center justify-center text-coral-500 shrink-0 text-2xl">
+                                    ❤️
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-neutral-400 uppercase">Impacto Direto</div>
+                                    <div class="text-sm font-bold text-stone-700">+850 Atendimentos</div>
+                                    <div class="text-xs text-neutral-500">Psicossociais &amp; Acompanhamentos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faixa de Indicadores Auditados -->
+        <section class="bg-background-500 border-b border-coral-100 border-t py-6">
+            <div class="container mx-auto px-4">
+                <div class="gap-8 grid grid-cols-2 lg:grid-cols-4">
+                    <div class="space-y-2 text-center lg:border-coral-200 lg:border-r">
+                        <div class="text-4xl text-coral-600">850+</div>
+                        <div class="text-coral-600 text-sm uppercase">Atendimentos Integrados</div>
+                    </div>
+                    <div class="space-y-2 text-center lg:border-coral-100 lg:border-r">
+                        <div class="text-4xl text-coral-600">120</div>
+                        <div class="text-coral-600 text-sm uppercase">Crianças Acolhidas</div>
+                    </div>
+                    <div class="space-y-2 text-center lg:border-coral-100 lg:border-r">
+                        <div class="text-4xl text-coral-600">100%</div>
+                        <div class="text-coral-600 text-sm uppercase">Gratuidade Auditada</div>
+                    </div>
+                    <div class="text-center space-y-2">
+                        <div class="text-4xl text-coral-600">Vila Mauro</div>
+                        <div class="text-coral-600 text-sm uppercase">Fecury I • São Luís/MA</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Metodologia & Tecnologia Sophia -->
+        <section id="metodologia" class="bg-white py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16 space-y-4">
+                    <h2 class="font-extrabold text-3xl text-coral-500 lg:text-4xl">Engenharia Social e Aprendizado Multissensorial</h2>
+                    <p class="leading-relaxed font-light">
+                        O Projeto Acolher alia acolhimento afetivo comunitário a ferramentas inovadoras de apoio psicossocial e desenvolvimento cognitivo.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Card de Destaque da Tecnologia Sophia -->
+                    <div class="bg-surface-50 border border-surface-600 group overflow-hidden p-8 relative rounded-3xl shadow-sm transition-all hover:-translate-y-2 hover:border-coral-200 hover:shadow-xl lg:col-span-6 lg:p-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <img src="assets/sophia.svg" alt="Tecnologia Sophia" class="h-20 object-contain w-20">
+                            <h3 class="font-extrabold text-coral-500 text-xl">Sophia: Tecnologia de Aprendizado Multissensorial</h3>
+                        </div>
+
+                        <p class="text-sm text-neutral-600 leading-relaxed font-sans mb-6">
+                            Desenvolvida para estimular habilidades cognitivas, socioemocionais e motoras, a tecnologia Sophia atua diretamente no reforço escolar e na superação de traumas e dificuldades de aprendizagem em crianças atendidas na comunidade.
+                        </p>
+
+                        <ul class="space-y-3 text-xs text-stone-700 font-medium">
+                            <li class="flex gap-2 items-center">
+                                <span class="bg-coral-500 flex h-6 items-center justify-center max-h-4 max-w-4 rounded-full text-white text-xs w-5"></span>
+                                Estímulo multissensorial e desenvolvimento pedagógico adaptativo
+                            </li>
+                            <li class="flex gap-2 items-center">
+                                <span class="bg-coral-500 flex h-6 items-center justify-center max-h-4 max-w-4 rounded-full text-white text-xs w-5"></span>
+                                Acompanhamento de progresso individualizado por especialista
+                            </li>
+                            <li class="flex gap-2 items-center">
+                                <span class="bg-coral-500 flex h-6 items-center justify-center max-h-4 max-w-4 rounded-full text-white text-xs w-5"></span>
+                                Integração entre saúde mental, ludicidade e aprendizagem
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pilares do Atendimento Humano -->
+                    <div class="space-y-3 lg:col-span-6">
+                        <div class="border border-surface-600 duration-500 flex gap-5 p-6 rounded-3xl transition-all hover:-translate-y-2 hover:border-coral-200 hover:shadow-xl">
+                            <div class="w-12 h-12 rounded-2xl bg-coral-50 text-coral-500 flex items-center justify-center text-xl shrink-0 font-bold">
+                                💬
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold mb-1 text-base text-coral-700">Escuta Ativa Individual &amp; Psicologia</h4>
+                                <p class="text-xs leading-relaxed">Atendimento confidencial e acolhedor direcionado ao fortalecimento emocional e à superação de vulnerabilidades.</p>
+                            </div>
+                        </div>
+
+                        <div class="border border-surface-600 duration-500 flex gap-5 p-6 rounded-3xl transition-all hover:-translate-y-2 hover:border-coral-200 hover:shadow-xl">
+                            <div class="w-12 h-12 rounded-2xl bg-coral-50 text-coral-500 flex items-center justify-center text-xl shrink-0 font-bold">
+                                👨‍👩‍👧‍👦
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold mb-1 text-base text-coral-700">Grupos de Apoio &amp; Suporte Familiar</h4>
+                                <p class="text-xs leading-relaxed">Rodas de conversa e acompanhamento psicossocial contínuo para os pais e responsáveis das crianças acolhidas.</p>
+                            </div>
+                        </div>
+
+                        <div class="border border-surface-600 duration-500 flex gap-5 p-6 rounded-3xl transition-all hover:-translate-y-2 hover:border-coral-200 hover:shadow-xl">
+                            <div class="w-12 h-12 rounded-2xl bg-coral-50 text-coral-500 flex items-center justify-center text-xl shrink-0 font-bold">
+                                🎨
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold mb-1 text-base text-coral-700">Oficinas Terapêuticas &amp; Recreação</h4>
+                                <p class="text-xs leading-relaxed">Arte, música, colônia de férias e atividades expressivas focadas na autoestima e convivência comunitária saudável.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria de Imagens de Atividades em Campo -->
+        <section class="bg-background-500 py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <h2 class="font-extrabold text-3xl text-coral-500">Atividades e Oficinas em Ação</h2>
+                    </div>
+                    <p class="text-xs text-neutral-500 max-w-md mt-4 md:mt-0">
+                        Registros reais dos momentos de aprendizado, apoio psicossocial e vivência comunitária promovidos pelo Projeto Acolher na sede do Instituto AMA.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                        <img src="assets/img/projeto-acolher.webp" alt="Atividade com crianças no Projeto Acolher" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
+                            <span class="text-xs uppercase font-bold text-coral-300">Oficinas Pedagógicas</span>
+                            <h4 class="font-bold text-base">Acolhimento e Desenvolvimento Infantil</h4>
+                        </div>
+                    </div>
+
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                        <img src="assets/img/projeto-acolher-02.webp" alt="Acompanhamento do Projeto Acolher" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
+                            <span class="text-xs uppercase font-bold text-coral-300">Reforço Escolar</span>
+                            <h4 class="font-bold text-base">Atendimento Individualizado com Sophia</h4>
+                        </div>
+                    </div>
+
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                        <img src="assets/img/projeto-acolher-03.webp" alt="Grupo de mães e apoio familiar" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
+                            <span class="text-xs uppercase font-bold text-coral-300">Apoio Psicossocial</span>
+                            <h4 class="font-bold text-base">Rodas de Conversa e Acompanhamento Familiar</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card de Depoimento / Transformação Real -->
+        <section class="py-20 bg-white border-t border-surface-200">
+            <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center space-y-8">
+                <div class="inline-block p-4 rounded-full bg-coral-50 text-coral-500 text-3xl">
+                    💬
+                </div>
+                <blockquote class="text-xl lg:text-2xl font-light italic text-stone-700 leading-relaxed">
+                    "O Projeto Acolher mudou a história da minha família. Ver o crescimento do meu filho com a tecnologia Sophia e contar com o apoio psicossocial da equipe trouxe paz e perspectiva para a nossa casa."
+                </blockquote>
+                <div>
+                    <div class="font-extrabold text-stone-800 text-base">Mãe de Beneficiário do Projeto</div>
+                    <div class="text-xs text-neutral-500 uppercase tracking-wider">Comunidade Vila Mauro Fecury I</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Como Apoiar o Projeto Acolher -->
+        <section id="como-apoiar" class="bg-background-500 border-surface-200 border-t py-24">
+            <div class="container mx-auto px-4 lg:px-8">
+                <!-- Cabeçalho da Seção -->
+                <div class="max-w-2xl mx-auto text-center mb-16 space-y-4 anim delay-1">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-coral-50 text-coral-600 text-xs font-bold uppercase tracking-wider">
+                        Engajamento Social
+                    </span>
+                    <h2 class="font-extrabold font-sans text-3xl text-coral-500 sm:text-4xl">
+                        Como Apoiar o Projeto Acolher
+                    </h2>
+                    <p class="text-neutral-600 text-sm sm:text-base leading-relaxed font-light">
+                        Escolha a forma que melhor se conecta com a sua causa e ajude a transformar o futuro de 120 crianças na Vila Mauro Fecury I.
+                    </p>
+                </div>
+
+                <!-- Grid de Formas de Apoio -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Card 1: Kit de Aprendizado -->
+                    <div class="anim border border-coral-100 delay-2 duration-300 flex flex-col group justify-between p-8 rounded-3xl shadow-sm transition-all hover:bg-background-50 hover:border-coral-200 hover:shadow-xl">
+                        <div class="space-y-6">
+                            <div class="w-14 h-14 rounded-2xl bg-coral-50 text-coral-500 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                                🎒
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-xl text-stone-800 mb-3 group-hover:text-coral-600 transition-colors">
+                                    Adote um Kit de Aprendizado
+                                </h3>
+                                <p class="text-neutral-500 text-sm leading-relaxed font-sans">
+                                    Financie o material didático, jogos multissensoriais da Sophia e lanche nutritivo para uma criança por 1 ano.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="pt-8">
+                            <a href="apoio.html?plano=kit-aprendizado" class="w-full inline-flex items-center justify-center gap-2 bg-coral-500 text-white font-bold px-6 py-3.5 rounded-full hover:bg-coral-600 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm">
+                                <span>Apadrinhar Criança</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Doe Materiais Escolares -->
+                    <div class="anim border border-coral-100 delay-3 duration-300 flex flex-col group justify-between p-8 rounded-3xl shadow-sm transition-all hover:bg-background-50 hover:border-coral-200 hover:shadow-xl">
+                        <div class="space-y-6">
+                            <div class="w-14 h-14 rounded-2xl bg-coral-50 text-coral-500 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                                📚
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-xl text-stone-800 mb-3 group-hover:text-coral-600 transition-colors">
+                                    Doe Materiais Escolares
+                                </h3>
+                                <p class="text-neutral-500 text-sm leading-relaxed font-sans">
+                                    Apoie a arrecadação de cadernos, lápis de cor plantáveis e livros infantis para as oficinas de leitura.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="pt-8">
+                            <a href="apoio.html?plano=materiais" class="w-full inline-flex items-center justify-center gap-2 border border-coral-200 text-coral-600 font-bold px-6 py-3.5 rounded-full hover:bg-coral-50 transition-all text-sm">
+                                <span>Doar Materiais</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Voluntariado Pedagógico -->
+                    <div class="anim border border-coral-100 delay-4 duration-300 flex flex-col group justify-between p-8 rounded-3xl shadow-sm transition-all hover:bg-background-50 hover:border-coral-200 hover:shadow-xl">
+                        <div class="space-y-6">
+                            <div class="w-14 h-14 rounded-2xl bg-coral-50 text-coral-500 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                                🤝
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-xl text-stone-800 mb-3 group-hover:text-coral-600 transition-colors">
+                                    Voluntariado Pedagógico
+                                </h3>
+                                <p class="text-neutral-500 text-sm leading-relaxed font-sans">
+                                    Seja um voluntário em pedagogia, psicologia ou recreação nas gincanas e oficinas semanais.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="pt-8">
+                            <a href="relacoes-institucionais.html#parcerias" class="w-full inline-flex items-center justify-center gap-2 border border-coral-200 text-coral-600 font-bold px-6 py-3.5 rounded-full hover:bg-coral-50 transition-all text-sm">
+                                <span>Ser Voluntário</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA de Doação / Apoio Direcionado (Pinegrow Component) -->
+        
+
+        <!-- Navegação entre Outros Projetos -->
+        <section class="py-20 bg-background-50 border-t border-surface-200">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-extrabold text-stone-800">Outros Projetos do Instituto AMA</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- Card Mulheres Empreendedoras -->
+                    <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-secondary-200">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="w-2.5 h-2.5 rounded-full bg-secondary-500"></span>
+                            <span class="text-xs font-bold text-secondary-500 uppercase tracking-wider">Mulheres Empreendedoras</span>
+                        </div>
+                        <h4 class="font-extrabold text-stone-700 text-lg mb-2 group-hover:text-secondary-500 transition-colors">Autonomia &amp; Renda</h4>
+                        <p class="text-xs text-neutral-500 leading-relaxed mb-4">Capacitação para negócios femininos e o Selo AMA de Origem.</p>
+                        <a href="mulheres-empreendedoras.html" class="text-xs font-bold text-secondary-500 group-hover:underline">Saiba mais &rarr;</a>
+                    </div>
+
+                    <!-- Card Projeto Capacitar -->
+                    <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-turquesa-200">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="w-2.5 h-2.5 rounded-full bg-turquesa-500"></span>
+                            <span class="text-xs font-bold text-turquesa-500 uppercase tracking-wider">Projeto Capacitar</span>
+                        </div>
+                        <h4 class="font-extrabold text-stone-700 text-lg mb-2 group-hover:text-turquesa-500 transition-colors">Qualificação Profissional</h4>
+                        <p class="text-xs text-neutral-500 leading-relaxed mb-4">Formação técnica e inclusão no mercado de trabalho.</p>
+                        <a href="projeto-capacitar.html" class="text-xs font-bold text-turquesa-500 group-hover:underline">Saiba mais &rarr;</a>
+                    </div>
+
+                    <!-- Card Ação AMA -->
+                    <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-verde-200">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="w-2.5 h-2.5 rounded-full bg-verde-500"></span>
+                            <span class="text-xs font-bold text-verde-500 uppercase tracking-wider">Ação AMA</span>
+                        </div>
+                        <h4 class="font-extrabold text-stone-700 text-lg mb-2 group-hover:text-verde-500 transition-colors">Resposta Emergencial</h4>
+                        <p class="text-xs text-neutral-500 leading-relaxed mb-4">Mobilização comunitária e segurança alimentar.</p>
+                        <a href="acao-ama.html" class="text-xs font-bold text-verde-500 group-hover:underline">Saiba mais &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Institucional (Pinegrow Component) -->
+    <footer class="bg-primary-950 pb-8 pt-20 text-primary-50" data-pgc="site-footer">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="gap-12 grid grid-cols-1 pb-20 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="space-y-6">
+                        <a href="index.html" class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90" title="Instituto AMA - Início"> <img src="assets/logo/logoB2B.svg" alt="Logo Instituto AMA" class="brightness-0 invert object-contain w-40 group-hover:opacity-100"/> </a>
+                        <p data-pgc-field="about">Transformando vidas através do acolhimento e da mentoria social em nossa comunidade.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-1-title">Links Rápidos</h4>
+                        <ul class="space-y-4" data-pgc-field="col-1-links"><li><a href="instituto.html" class="hover:text-primary-500 transition-colors">História</a></li>
+                        <li><a href="instituto.html#diretoria" class="hover:text-primary-500 transition-colors">Nossa Diretoria</a></li>
+                        <li><a href="relacoes-institucionais.html#documentos" class="hover:text-primary-500 transition-colors">Relatórios Anuais</a></li>
+                        <li><a href="colaborador.html" class="hover:text-primary-500 transition-colors">Área do Colaborador</a></li></ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-2-title">Governança</h4>
+                        <ul class="space-y-4" data-pgc-field="col-2-links"><li><a href="relacoes-institucionais.html#transparencia" class="hover:text-primary-500 transition-colors">Portal da Transparência</a></li>
+                        <li><a href="relacoes-institucionais.html#documentos" class="hover:text-primary-500 transition-colors">Estatuto e Atas</a></li>
+                        <li><a href="relacoes-institucionais.html#parcerias" class="hover:text-primary-500 transition-colors">Parcerias Estratégicas</a></li>
+                        <li><a href="relacoes-institucionais.html#privacidade" class="hover:text-primary-500 transition-colors">LGPD &amp; Privacidade</a></li></ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-3-title">Contato</h4>
+                        <div class="mb-4" data-pgc-field="contact-details"><p>Avenida Principal, São Luís/MA<br>Atendimento Comunitário</p></div>
+                        <a href="https://wa.me/5598900000000" class="font-bold flex items-center gap-2" data-pgc-field="whatsapp"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.893 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.502-5.69-1.451l-6.307 1.66zm6.232-4.105c1.477.876 3.184 1.341 4.926 1.342 5.333 0 9.673-4.34 9.675-9.675.001-2.586-1.008-5.015-2.842-6.849-1.834-1.834-4.26-2.844-6.846-2.845-5.332 0-9.672 4.34-9.674 9.675-.001 1.868.538 3.694 1.554 5.269l-.999 3.648 3.73-.978zm11.238-7.398c-.287-.144-1.698-.838-1.961-.933-.263-.095-.454-.144-.645.144-.191.287-.741.933-.908 1.123-.167.191-.335.215-.621.072-.287-.144-1.21-.447-2.305-1.423-.852-.759-1.428-1.697-1.595-1.984-.167-.287-.018-.442.126-.584.13-.127.287-.335.43-.502.144-.167.191-.287.287-.478.095-.191.048-.358-.024-.502-.072-.144-.645-1.553-.884-2.127-.233-.56-.47-.482-.645-.491-.167-.008-.358-.01-.55-.01s-.502.072-.765.358c-.263.287-1.004.98-1.004 2.39s1.028 2.772 1.171 2.964c.144.191 2.023 3.089 4.899 4.327.684.294 1.218.469 1.634.602.687.218 1.312.187 1.806.114.551-.081 1.698-.693 1.937-1.362.24-.669.24-1.243.167-1.362-.072-.119-.263-.191-.55-.335z"/>
+                        </svg> <span data-pgc-field="whatsapp-label">Conversar via WhatsApp</span></a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-6 items-center justify-between text-primary-300 text-sm md:flex-row">
+                    <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
+                    <div class="flex items-center gap-6">
+                        <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
+                        <a href="relacoes-institucionais.html#privacidade" class="hover:text-white" data-pgc-field="privacy-link">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>

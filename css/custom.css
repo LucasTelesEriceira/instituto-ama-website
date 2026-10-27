@@ -1,0 +1,311 @@
+/* ==========================================================================
+   Instituto AMA - Estilos e Regras Adicionais do Tailwind / Pinegrow
+   ========================================================================== */
+
+/* Regras de Pseudo-elemento e Animação de Hover para Links do Menu Principal */
+.nav-item-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.nav-item-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: rgb(91, 66, 59);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item-link:hover::after,
+.nav-item-link.is-active::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Animações de Scroll (Scroll Reveal / FadeUp) e Custom Scrollbar
+   ========================================================================== */
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+.anim { 
+  opacity: 0; 
+  will-change: opacity, transform; 
+}
+
+.anim.visible { 
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+}
+
+/* ==========================================================================
+   Sobrescrita para o Editor de Blocos do WordPress (Gutenberg / FSE / Site Editor)
+   Garante que elementos com animação (.anim) fiquem visíveis imediatamente
+   no editor, sem depender do IntersectionObserver do front-end.
+   ========================================================================== */
+.editor-styles-wrapper .anim,
+.block-editor-block-list__layout .anim,
+.wp-block .anim,
+body.block-editor-page .anim,
+[data-block] .anim,
+[data-type^="instituto-ama/"] .anim { 
+  opacity: 1 !important; 
+  transform: none !important; 
+  animation: none !important; 
+  visibility: visible !important;
+}
+
+/* Ajustes de especificidade para layout e mídia dentro do editor Gutenberg */
+.editor-styles-wrapper img.h-full {
+  height: 100% !important;
+}
+
+.editor-styles-wrapper img.w-full {
+  width: 100% !important;
+}
+
+.editor-styles-wrapper img.object-cover {
+  object-fit: cover !important;
+}
+
+.editor-styles-wrapper a.bg-primary-500,
+.editor-styles-wrapper a.border-primary-500 {
+  text-decoration: none !important;
+}
+
+@keyframes fadeUp { 
+  from { 
+    opacity: 0; 
+    transform: translateY(24px); 
+  } 
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+}
+
+/* Delays para animação sequencial em grade/listas */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* Barra de rolagem suave alinhada ao design do Instituto AMA */
+::-webkit-scrollbar { 
+  width: 8px; 
+}
+::-webkit-scrollbar-track { 
+  background: #F9F6F1; 
+}
+::-webkit-scrollbar-thumb { 
+  background: #AF865D; 
+  border-radius: 4px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+  background: #6B5247; 
+}
+
+/* ==========================================================================
+   Seção de Parceiros e Logos Institucionais
+   ========================================================================== */
+.partner-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.partner-logo-img {
+  height: 38px;
+  max-height: 42px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .partner-logo-img {
+    height: 42px;
+    max-height: 46px;
+    max-width: 160px;
+  }
+}
+
+.partner-logo-img.logo-cras {
+  height: 46px;
+  max-height: 50px;
+}
+@media (min-width: 768px) {
+  .partner-logo-img.logo-cras {
+    height: 52px;
+    max-height: 56px;
+  }
+}
+
+.partner-logo-img.logo-fiema {
+  height: 30px;
+  max-height: 34px;
+}
+@media (min-width: 768px) {
+  .partner-logo-img.logo-fiema {
+    height: 34px;
+    max-height: 38px;
+  }
+}
+
+/* ==========================================================================
+   Bento Grid do Hero Institucional (relacoes-institucionais.html)
+   ========================================================================== */
+.bento-hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .bento-hero-container {
+    display: grid;
+    grid-template-columns: 4.8fr 7.2fr;
+    grid-template-rows: 430px;
+    gap: 1.15rem;
+    height: 430px;
+    align-items: stretch;
+  }
+}
+
+.bento-card-vertical {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background-color: #2b2623;
+  border: 1px solid rgba(231, 227, 220, 0.8);
+  box-shadow: 0 4px 20px -2px rgba(91, 66, 59, 0.12);
+  height: 330px;
+  min-height: 0;
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .bento-card-vertical {
+    height: 100%;
+  }
+}
+
+.bento-side-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  height: 100%;
+  min-height: 0;
+}
+
+.bento-card-horizontal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background-color: #2b2623;
+  border: 1px solid rgba(231, 227, 220, 0.8);
+  box-shadow: 0 4px 20px -2px rgba(91, 66, 59, 0.12);
+  height: 200px;
+  min-height: 0;
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .bento-card-horizontal {
+    height: calc(50% - 0.575rem);
+    flex: 1;
+  }
+}
+
+.bento-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-img-focus-jucema1 {
+  object-position: center 20%;
+}
+
+.bento-img-focus-senai {
+  object-position: center 25%;
+}
+
+.bento-img-focus-jucema2 {
+  object-position: center 20%;
+}
+
+.bento-card-vertical:hover .bento-hero-img,
+.bento-card-horizontal:hover .bento-hero-img {
+  transform: scale(1.04);
+}
+
+.bento-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 12, 11, 0) 25%, rgba(15, 12, 11, 0.45) 55%, rgba(15, 12, 11, 0.92) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.15rem 1.25rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.bento-badge {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.bento-badge-articulacao {
+  background-color: #AF865D;
+  color: #ffffff;
+}
+
+.bento-badge-capacitacao {
+  background-color: #6B5247;
+  color: #ffffff;
+}
+
+.bento-badge-jucema {
+  background-color: #5B423B;
+  color: #ffffff;
+}
+
+.bento-title {
+  color: #ffffff !important;
+  font-weight: 700;
+  line-height: 1.25;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.bento-desc {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  margin-top: 0.2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}

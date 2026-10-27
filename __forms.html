@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Netlify Forms - Instituto AMA</title>
+</head>
+<body>
+    <!-- Formulário 1: Apoio & Voluntariado -->
+    <form name="formulario-apoio" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="formulario-apoio" />
+        <input type="hidden" name="subject" value="[Instituto AMA] Novo contato de Apoio / Voluntariado" />
+        <input type="hidden" name="_to" value="institutoama10@gmail.com" />
+        <input name="bot-field" />
+        <input name="nome" type="text" />
+        <input name="email" type="email" />
+        <input name="telefone" type="tel" />
+        <select name="interesse">
+            <option value="Quero ser Voluntário / Mentor">Quero ser Voluntário / Mentor</option>
+            <option value="Parceria Corporativa / Empresa ESG">Parceria Corporativa / Empresa ESG</option>
+            <option value="Doação de Materiais ou Alimentos">Doação de Materiais ou Alimentos</option>
+            <option value="Outras Informações / Dúvidas">Outras Informações / Dúvidas</option>
+        </select>
+        <textarea name="mensagem"></textarea>
+    </form>
+
+    <!-- Formulário 2: Proposta de Parceria Corporativa -->
+    <form name="proposta-parceria" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="proposta-parceria" />
+        <input type="hidden" name="subject" value="[Instituto AMA] Nova Proposta de Parceria Corporativa ESG" />
+        <input type="hidden" name="_to" value="institutoama10@gmail.com" />
+        <input name="bot-field" />
+        <input name="partner_name" type="text" />
+        <input name="partner_org" type="text" />
+        <input name="partner_email" type="email" />
+        <select name="partner_subject">
+            <option value="Projetos Co-Branded &amp; Editais">Projetos Co-Branded &amp; Editais</option>
+            <option value="Apoio Institucional Recorrente">Apoio Institucional Recorrente</option>
+            <option value="Voluntariado Corporativo">Voluntariado Corporativo &amp; Mentoria</option>
+            <option value="Adesão ao Selo Amigo AMA">Adesão ao Selo Amigo AMA</option>
+            <option value="Conformidade &amp; Consulta de Documentos">Conformidade &amp; Consulta de Documentos</option>
+            <option value="Outros">Outros</option>
+        </select>
+        <textarea name="partner_message"></textarea>
+    </form>
+</body>
+</html>

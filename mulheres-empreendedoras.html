@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Conheça o Projeto Mulheres Empreendedoras do Instituto AMA: capacitação para negócios femininos, autonomia financeira e o Selo AMA de Origem em São Luís/MA.">
+    <title>Mulheres Empreendedoras | Instituto AMA</title>
+
+    <!-- Favicon / Ícone do Site -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logoB2B-02.svg">
+    <link rel="icon" type="image/webp" href="assets/logo/logoB2B-02.webp">
+    <link rel="apple-touch-icon" href="assets/logo/Apresent.%20Nova%20Marca%20AMA.png">
+
+    <!-- SEO & Indexação -->
+    <link rel="canonical" href="https://institutoama.org.br/mulheres-empreendedoras.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://institutoama.org.br/mulheres-empreendedoras.html">
+    <meta property="og:title" content="Projeto Mulheres Empreendedoras | Instituto AMA">
+    <meta property="og:description" content="Empoderamento feminino através da capacitação para negócios, mentoria e Selo AMA de Origem em São Luís/MA.">
+    <meta property="og:site_name" content="Instituto AMA">
+    <meta property="og:image" content="https://institutoama.org.br/assets/img/mulheres-empreendedoras.webp">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projeto Mulheres Empreendedoras | Instituto AMA">
+    <meta name="twitter:description" content="Empoderamento feminino através da capacitação para negócios, mentoria e Selo AMA de Origem em São Luís/MA.">
+    <meta name="twitter:image" content="https://institutoama.org.br/assets/img/mulheres-empreendedoras.webp">
+
+    <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body class="antialiased bg-background-50 font-sans text-neutral-800">
+    <!-- Header Fixo (Pinegrow Component) -->
+    <header class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50" x-data="{ scrolled: false, mobileMenuOpen: false, isActive(page) { let p = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase().replace('.html', '') || 'index'; let target = page.toLowerCase().replace('.html', ''); return p === target; } }" @scroll.window="scrolled = (window.pageYOffset > 20)" data-pgc="site-header">
+            <div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
+                <a href="index.html" class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" width="85" src="assets/logo/logoB2B-02.svg"/> <div class="hidden xl:flex xl:flex-col">
+                        <span class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight" data-pgc-field="brand-name">Instituto <span class="text-primary-500">AMA</span></span>
+                        <span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
+                    </div> </a>
+                <nav class="hidden items-center justify-between mx-auto p-2 lg:flex" aria-label="Navegação Principal">
+                    <div class="hidden items-center text-sm uppercase lg:flex lg:space-x-4">
+                        <a href="index.html" class="nav-item-link" :class="isActive('index.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Início</a>
+                        <a href="instituto.html" class="nav-item-link" :class="isActive('instituto.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">O Instituto</a>
+                        <a href="projetos.html" class="nav-item-link" :class="isActive('projetos.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Projetos</a>
+                        <a href="noticias.html" class="nav-item-link" :class="isActive('noticias.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Notícias</a>
+                        <a href="relacoes-institucionais.html" class="nav-item-link" :class="isActive('relacoes-institucionais.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Relações Institucionais</a>
+                    </div>
+                </nav>
+                <div class="space-x-2 hidden lg:flex">
+                    <a href="colaborador.html" class="border border-primary-200 duration-400 flex gap-2 group items-center px-4 py-2 rounded-full text-primary-500 text-xs transition-all hover:bg-accent-50/50 hover:border-accent-200 hover:text-accent-600" data-pgc-field="portal-btn"><svg class="w-4 h-4 text-neutral-400 group-hover:text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span>Portal AMA</span></a>
+                    <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-field="support-btn">Apoiar Agora</a>
+                </div>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4" @click.away="mobileMenuOpen = false" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-surface-200 shadow-2xl z-50 overflow-hidden" x-cloak>
+                    <div class="flex flex-col p-6 space-y-4 uppercase" data-pgc-field="mobile-nav-items"><a href="index.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors text-neutral-600 font-semibold hover:bg-surface-50" @click="mobileMenuOpen = false"> <span>Início</span> </a>
+                    <a href="instituto.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors text-neutral-600 font-semibold hover:bg-surface-50" @click="mobileMenuOpen = false"> <span>O Instituto</span> </a>
+                    <a href="projetos.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors bg-primary-50 text-primary-600 font-bold" @click="mobileMenuOpen = false"> <span>Projetos</span> <span class="w-2 h-2 rounded-full bg-primary-500"></span> </a>
+                    <a href="relacoes-institucionais.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors text-neutral-600 font-semibold hover:bg-surface-50" @click="mobileMenuOpen = false"> <span>Relações Institucionais</span> </a>
+                    <a href="colaborador.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors text-neutral-600 font-semibold hover:bg-surface-50" @click="mobileMenuOpen = false"> <span>Portal AMA</span> </a>
+                    <div class="pt-4">
+                        <a href="apoio.html" class="w-full flex items-center justify-center p-4 bg-primary-500 text-white rounded-2xl font-bold shadow-lg shadow-primary-100" @click="mobileMenuOpen = false"> Apoiar Agora </a>
+                    </div></div>
+                </div>
+            </div>
+        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase" data-pgc-field="brand-tagline">Acolhimento & Assistência</span>--></header>
+
+    <main>
+        <!-- Hero Section Temática (Laranja / Sábio) -->
+        <section class="bg-background-500 overflow-hidden py-16 relative lg:py-24">
+
+            <div class="container mx-auto px-4 lg:px-8 relative z-10">
+                <!-- Breadcrumbs -->
+                <nav class="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-8" aria-label="Navegação em migalhas">
+                    <a href="index.html" class="hover:text-secondary-500 transition-colors">Início</a>
+                    <span>/</span>
+                    <a href="projetos.html" class="hover:text-secondary-500 transition-colors">Projetos</a>
+                    <span>/</span>
+                    <span class="text-secondary-600 font-bold">Mulheres Empreendedoras</span>
+                </nav>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Conteúdo Principal Hero -->
+                    <div class="lg:col-span-7 space-y-6">
+                        
+
+                        <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-stone-800 leading-tight">
+                            Mulheres <span class="text-secondary-500">Empreendedoras</span>
+                        </h1>
+
+                        <p class="text-lg sm:text-xl text-stone-600 font-light leading-relaxed">
+                            O Projeto Mulheres Empreendedoras transforma o conhecimento pratico de maes e
+moradoras da comunidade em renda real e independéncia financeira. Através de oficinas
+de gastronomia artesanal, confeitaria, producao de geleias, artesanato e horticultura
+organica, as participantes aprendem técnicas de produgao, precificagdo, higiene e gestéo
+de pequenos negocios.
+                        </p>
+
+                        <div class="pt-4 flex flex-wrap gap-4 items-center">
+                            <a href="apoio.html" class="bg-secondary-500 text-white font-bold rounded-full px-8 py-4 hover:bg-secondary-600 transition-all shadow-xl shadow-secondary-500/20 hover:-translate-y-1 inline-flex items-center gap-3">
+                                <span>Apoiar este Projeto</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                            <a href="#horta-organica" class="border border-emerald-300 text-emerald-700 font-bold rounded-full px-7 py-4 hover:bg-emerald-50 transition-all inline-flex items-center gap-2">
+                                <span>Conhecer Horta Orgânica</span>
+                            </a>
+                            <a href="#selo-origem" class="border border-secondary-200 text-secondary-600 font-bold rounded-full px-7 py-4 hover:bg-secondary-50 transition-all inline-flex items-center gap-2">
+                                <span>Conhecer Selo AMA de Origem</span>
+                            </a>
+                        </div>
+
+                        <!-- Equipe Responsável Badge -->
+                        <div class="pt-6 border-t border-surface-200/80 flex items-center gap-4">
+                            <div class="flex -space-x-3">
+                                <img src="assets/img/avatar/pamala-ribeiro.webp" alt="Pamala Ribeiro" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm">
+                                <img src="assets/img/avatar/marcilene-almeida.webp" alt="Marcilene Almeida" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm">
+                            </div>
+                            <div class="text-xs">
+                                <span class="font-bold text-stone-700 block text-sm">Pamala Ribeiro &amp; Marcilene Almeida</span>
+                                <span class="text-neutral-500">Coordenação de Empreendedorismo &amp; Mentoria</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imagem Principal Hero -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <img src="assets/img/mulheres-empreendedoras.webp" alt="Mulheres em oficina do Projeto Mulheres Empreendedoras" class="border-4 border-white h-96 object-cover relative rounded-3xl shadow-2xl w-full z-10">
+                            
+                            <!-- Card de Destaque Flutuante -->
+                            <div class="absolute -bottom-6 -left-6 z-20 bg-white p-5 rounded-2xl shadow-xl border border-surface-200 max-w-xs flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-secondary-50 flex items-center justify-center text-secondary-500 shrink-0 text-2xl">
+                                    💡
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-neutral-400 uppercase">Impacto de Renda</div>
+                                    <div class="text-sm font-bold text-stone-700">120 Negócios Criados</div>
+                                    <div class="text-xs text-neutral-500">Oficinas &amp; Mentorias 1 para 1</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faixa de Indicadores Auditados (Mesmo estilo da index.html) -->
+        <section class="bg-background-500 border-b border-secondary-300 border-t py-6">
+            <div class="container mx-auto px-4">
+                <div class="gap-8 grid grid-cols-2 lg:grid-cols-4">
+                    <div class="space-y-2 text-center lg:border-secondary-300 lg:border-r">
+                        <div class="text-4xl text-secondary-800">120</div>
+                        <div class="text-secondary-800 text-sm uppercase">Negócios Criados</div>
+                    </div>
+                    <div class="space-y-2 text-center lg:border-secondary-300 lg:border-r">
+                        <div class="text-4xl text-secondary-800">80</div>
+                        <div class="text-secondary-800 text-sm uppercase">Mulheres Capacitadas</div>
+                    </div>
+                    <div class="space-y-2 text-center lg:border-secondary-300 lg:border-r">
+                        <div class="text-4xl text-secondary-800">100%</div>
+                        <div class="text-secondary-800 text-sm uppercase">Mentoria Gratuita</div>
+                    </div>
+                    <div class="text-center space-y-2">
+                        <div class="text-4xl text-secondary-800">Vila Mauro</div>
+                        <div class="text-secondary-800 text-sm uppercase">Fecury I • São Luís/MA</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Metodologia & Selo AMA de Origem -->
+        <section id="selo-origem" class="py-20 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="max-w-3xl mb-16 mx-auto space-y-4">
+                    <h2 class="font-extrabold text-3xl text-center text-stone-800 lg:text-4xl">Autonomia Financeira e Empreendedorismo de Impacto</h2>
+                    
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Destaque do Selo AMA de Origem -->
+                    <div class="bg-secondary-50 border border-secondary-200 group overflow-hidden p-8 relative rounded-3xl shadow-sm transition-all hover:border-secondary-400 lg:col-span-6 lg:p-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-white border border-secondary-200 flex items-center justify-center text-3xl shadow-sm text-secondary-500">
+                                🏷️
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-secondary-600 uppercase tracking-wider block">Garantia de Qualidade &amp; Impacto</span>
+                                <h3 class="text-xl font-extrabold text-stone-800">Selo AMA de Origem</h3>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-neutral-600 leading-relaxed font-sans mb-6">
+                            Concedido aos produtos manufaturados pelas mulheres empreendedoras da comunidade (artesanato, culinária e costura), atestando produção ética, sustentável e de valor comunitário.
+                        </p>
+
+                        <ul class="space-y-3 text-xs text-stone-700 font-medium">
+                            <li class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-secondary-500 text-white flex items-center justify-center text-xs">✓</span>
+                                Certificação de origem e qualidade para feiras e parceiros
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-secondary-500 text-white flex items-center justify-center text-xs">✓</span>
+                                Agregação de valor e identidade cultural maoaense
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-secondary-500 text-white flex items-center justify-center text-xs">✓</span>
+                                Acesso a novos canais de distribuição B2B e mercados locais
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Trilhas de Capacitação -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="bg-white border border-surface-600 flex gap-5 p-6 rounded-3xl shadow-xs transition-all hover:border-secondary-200">
+                            <div class="w-12 h-12 rounded-2xl bg-secondary-50 text-secondary-500 flex items-center justify-center text-xl shrink-0 font-bold">
+                                📈
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-stone-800 text-base mb-1">Gestão Financeira &amp; Precificação</h4>
+                                <p class="text-xs text-neutral-500 leading-relaxed">Controle de custos, fluxo de caixa e precificação justa de produtos e serviços.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-surface-600 flex gap-5 p-6 rounded-3xl shadow-xs transition-all hover:border-secondary-200">
+                            <div class="w-12 h-12 rounded-2xl bg-secondary-50 text-secondary-500 flex items-center justify-center text-xl shrink-0 font-bold">
+                                📱
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-stone-800 text-base mb-1">Marketing Digital &amp; Vendas</h4>
+                                <p class="text-xs text-neutral-500 leading-relaxed">Uso de redes sociais, fotografia de produtos e vendas pelo WhatsApp Business.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-surface-600 flex gap-5 p-6 rounded-3xl shadow-xs transition-all hover:border-secondary-200">
+                            <div class="w-12 h-12 rounded-2xl bg-secondary-50 text-secondary-500 flex items-center justify-center text-xl shrink-0 font-bold">
+                                🤝
+                            </div>
+                            <div>
+                                <h4 class="font-extrabold text-stone-800 text-base mb-1">Mentoria 1 para 1</h4>
+                                <p class="text-xs text-neutral-500 leading-relaxed">Acompanhamento individualizado com especialistas para o plano de negócios e formalização.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Horta Orgânica Comunitária & Sustentabilidade -->
+        <section id="horta-organica" class="py-20 bg-emerald-50/40 border-t border-emerald-100">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="max-w-3xl mb-16 mx-auto text-center space-y-4">
+                    <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-100/70 px-4 py-1.5 rounded-full inline-block">
+                        Horticultura &amp; Culinária Sustentável
+                    </span>
+                    <h2 class="font-extrabold text-3xl text-balance text-stone-800 lg:text-4xl">
+                        Mulheres na Horta Orgânica Comunitária
+                    </h2>
+                    <p class="font-light leading-relaxed text-neutral-600 text-pretty">
+                        Iniciativa voltada à capacitação, valorização e inclusão produtiva de mulheres através do cultivo sustentável de alimentos saudáveis, unindo segurança alimentar, geração de renda e educação ambiental.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Card Horta Orgânica Comunitária -->
+                    <div class="bg-white border border-emerald-200/90 p-8 lg:p-10 rounded-3xl relative overflow-hidden group hover:border-emerald-400 transition-all shadow-sm lg:col-span-6">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-3xl shadow-sm text-emerald-600">
+                                🌿
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block">Sustentabilidade Comunitária</span>
+                                <h3 class="text-xl font-extrabold text-stone-800">Horta Orgânica Comunitária</h3>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-neutral-600 leading-relaxed font-sans mb-6">
+                            Cultivada na própria comunidade, a horta produz hortaliças livres de agrotóxicos para complementação alimentar de crianças e idosos cadastrados no Instituto AMA.
+                        </p>
+
+                        <ul class="space-y-3 text-xs text-stone-700 font-medium">
+                            <li class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">✓</span>
+                                Produção agroecológica e comunitária sem defensivos químicos
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">✓</span>
+                                Educação ambiental e oficinas de cultivo para voluntários
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">✓</span>
+                                Distribuição direta e fresca para as famílias atendidas
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Coluna com Imagem Real da Horta e Destaque de Valor -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <img src="assets/img/horta-organica.webp" alt="Horta Orgânica Comunitária do Instituto AMA" class="border-4 border-white h-96 object-cover relative rounded-3xl shadow-2xl w-full z-10">
+                            
+                            <!-- Card de Destaque Flutuante -->
+                            <div class="absolute -bottom-6 -left-6 z-20 bg-white p-5 rounded-2xl shadow-xl border border-emerald-100 max-w-xs flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 text-2xl font-bold">
+                                    🌱
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-neutral-400 uppercase">100% Agroecológico</div>
+                                    <div class="text-sm font-bold text-stone-800">Cultivo sem Agrotóxicos</div>
+                                    <div class="text-xs text-neutral-500">Insumos para as oficinas gastronômicas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Catálogo de Impact Gifting (Presentes Corporativos B2B) -->
+        <section id="catalogo-impact-gifting" class="bg-background-500 border-surface-200 border-t py-20">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="max-w-3xl mb-16 mx-auto space-y-4">
+                    
+                    <h2 class="font-extrabold text-3xl text-balance text-center text-stone-800 lg:text-4xl">
+                        Catálogo de Impact Gifting <span class="text-secondary-500">(Presentes Corporativos B2B)</span>
+                    </h2>
+                    
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="border border-surface-600 duration-300 flex flex-col group justify-between p-8 rounded-3xl shadow-sm space-y-6 transition-all hover:border-secondary-300 hover:shadow-xl">
+                        <div class="space-y-4">
+                            
+                            <h3 class="text-xl font-extrabold text-stone-800 group-hover:text-secondary-600 transition-colors">
+                                Kit Dueto de Geleias Gourmet
+                            </h3>
+                            <p class="text-sm text-neutral-600 leading-relaxed font-sans">
+                                Potes artesanais produzidos pelas mulheres da comunidade com embalagem de presente corporativo e Selo de Origem.
+                            </p>
+                        </div>
+                        <div>
+                                <span class="text-secondary-600 font-bold block uppercase text-[10px] tracking-wider mb-0.5">Aplicação B2B / ESG</span>
+                                <span>Ideal para brindes de fim de ano ESG.</span>
+                            </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="border border-surface-600 duration-300 flex flex-col group justify-between p-8 rounded-3xl shadow-sm space-y-6 transition-all hover:border-secondary-300 hover:shadow-xl">
+                        <div class="space-y-4">
+                            
+                            <h3 class="text-xl font-extrabold text-stone-800 group-hover:text-secondary-600 transition-colors">
+                                Kits de Biscoitos &amp; Café Familiar
+                            </h3>
+                            <p class="text-sm text-neutral-600 leading-relaxed font-sans">
+                                Biscoitos artesanais de castanha acompanhados de café moído localmente em caixas Kraft sustentáveis.
+                            </p>
+                        </div>
+                        <div>
+                                <span class="text-secondary-600 font-bold block uppercase text-[10px] tracking-wider mb-0.5">Aplicação B2B / ESG</span>
+                                <span>Presente de impacto para clientes B2B.</span>
+                            </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="border border-surface-600 duration-300 flex flex-col group justify-between p-8 rounded-3xl shadow-sm space-y-6 transition-all hover:border-secondary-300 hover:shadow-xl">
+                        <div class="space-y-4">
+                            
+                            <h3 class="text-xl font-extrabold text-stone-800 group-hover:text-secondary-600 transition-colors">
+                                Ecoprodutos de Reciclagem PET
+                            </h3>
+                            <p class="text-sm text-neutral-600 leading-relaxed font-sans">
+                                Estojos, organizadores e bolsas confeccionados a partir de tecidos reciclados de garrafas PET.
+                            </p>
+                        </div>
+                        <div>
+                                <span class="text-secondary-600 font-bold block uppercase text-[10px] tracking-wider mb-0.5">Aplicação B2B / ESG</span>
+                                <span>Sustentabilidade e economia circular.</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria de Imagens de Atividades em Campo -->
+        <section class="py-20 bg-background-50">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-stone-800">Oficinas e Produção Comunitária</h2>
+                    </div>
+                    <p class="text-xs text-neutral-500 max-w-md mt-4 md:mt-0">
+                        Imagens das feiras de empreendedorismo, cultivo da horta orgânica, oficinas manuais e capacitações promovidas pelo Instituto AMA.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                        <img src="assets/img/mulheres-empreendedoras.webp" alt="Oficina do Projeto Mulheres Empreendedoras" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
+                            <span class="text-xs uppercase font-bold text-secondary-300">Oficinas Práticas</span>
+                            <h4 class="font-bold text-base">Capacitação em Produção e Gestão</h4>
+                        </div>
+                    </div>
+
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                        <img src="assets/img/horta-organica.webp" alt="Horta Orgânica Comunitária" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
+                            <span class="text-xs uppercase font-bold text-emerald-300">Horta Comunitária</span>
+                            <h4 class="font-bold text-base">Cultivo Sustentável de Alimentos</h4>
+                        </div>
+                    </div>
+
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                        <img src="assets/img/projeto-mulheres-empreenderoras.webp" alt="Participantes com o Selo AMA de Origem" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
+                            <span class="text-xs uppercase font-bold text-secondary-300">Selo de Origem</span>
+                            <h4 class="font-bold text-base">Produtos Certificados pela Comunidade</h4>
+                        </div>
+                    </div>
+
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                        <img src="assets/img/avatar/do-carmo.webp" alt="Empreendedora com seu negócio" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
+                            <span class="text-xs uppercase font-bold text-secondary-300">Empreendedoras da Vila</span>
+                            <h4 class="font-bold text-base">Protagonismo e Renda Própria</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA de Doação / Apoio Direcionado (Pinegrow Component) -->
+        <section class="py-20 bg-primary-950 text-white relative overflow-hidden" data-pgc="ama-cta-donation">
+            <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl space-y-8">
+                <h2 class="font-extrabold text-3xl text-balance text-white lg:text-5xl" data-pgc-field="title">Apóie o Empreendedorismo Feminino</h2>
+                <p class="font-light leading-relaxed text-balance text-base text-primary-100" data-pgc-field="description">Sua colaboração financia insumos para oficinas, kits de inicialização de micro-negócios e mentorias para as mulheres da comunidade.</p>
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 max-w-md mx-auto space-y-4">
+                    <div class="text-xs text-primary-200 uppercase font-semibold" data-pgc-field="pix-label">Chave PIX Oficial (CNPJ)</div>
+                    <div class="text-xl font-mono font-bold tracking-wider text-white select-all bg-black/20 py-2 px-4 rounded-xl border border-white/10" data-pgc-field="pix-key">48.722.909/0001-80</div>
+                    <div class="text-[11px] text-primary-300" data-pgc-field="pix-footnote">INSTITUTO AMA • Acolhimento, Mentoria e Assistência</div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <a href="apoio.html" class="bg-primary-500 text-white font-bold rounded-full px-8 py-4 hover:bg-primary-600 transition-all shadow-xl hover:-translate-y-1" data-pgc-field="btn-primary">Quero Fazer uma Doação</a>
+                    <a href="https://wa.me/5598900000000?text=Olá!%20Gostaria%20de%20apoiar%20o%20Projeto%20Acolher." class="border border-white/30 text-white font-bold rounded-full px-8 py-4 hover:bg-white/10 transition-all" data-pgc-field="btn-whatsapp">Conversar no WhatsApp</a>
+                </div>
+            </div>
+        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<a href="apoio.html" class="bg-secondary-500 text-white font-bold rounded-full px-8 py-4 hover:bg-secondary-600 transition-all shadow-xl hover:-translate-y-1" data-pgc-field="btn-primary[href]">
+                        Apoiar este Projeto
+                    </a><a href="https://wa.me/5598900000000?text=Olá!%20Gostaria%20de%20apoiar%20o%20Projeto%20Mulheres%20Empreendedoras." class="border border-white/30 text-white font-bold rounded-full px-8 py-4 hover:bg-white/10 transition-all" data-pgc-field="btn-whatsapp[href]">
+                        Conversar no WhatsApp
+                    </a>--></section>
+
+        <!-- Navegação entre Outros Projetos -->
+        <section class="py-20 bg-background-50 border-t border-surface-200">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-extrabold text-stone-800">Outros Projetos do Instituto AMA</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- Card Projeto Acolher -->
+                    <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-coral-200">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="bg-coral-500 h-2.5 rounded-full w-2.5"></span>
+                            <span class="font-bold text-coral-500 text-xs tracking-wider uppercase">Projeto Acolher</span>
+                        </div>
+                        <h4 class="font-extrabold mb-2 text-lg text-stone-700 transition-colors group-hover:text-coral-500">Saúde Mental &amp; Infância</h4>
+                        <p class="text-xs text-neutral-500 leading-relaxed mb-4">Suporte psicossocial e a Tecnologia Sophia.</p>
+                        <a href="projeto-acolher.html" class="font-bold text-coral-500 text-xs group-hover:underline">Saiba mais &rarr;</a>
+                    </div>
+
+                    <!-- Card Projeto Capacitar -->
+                    <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-turquesa-200">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="w-2.5 h-2.5 rounded-full bg-turquesa-500"></span>
+                            <span class="text-xs font-bold text-turquesa-500 uppercase tracking-wider">Projeto Capacitar</span>
+                        </div>
+                        <h4 class="font-extrabold text-stone-700 text-lg mb-2 group-hover:text-turquesa-500 transition-colors">Qualificação Profissional</h4>
+                        <p class="text-xs text-neutral-500 leading-relaxed mb-4">Formação técnica e inclusão no mercado de trabalho.</p>
+                        <a href="projeto-capacitar.html" class="text-xs font-bold text-turquesa-500 group-hover:underline">Saiba mais &rarr;</a>
+                    </div>
+
+                    <!-- Card Ação AMA -->
+                    <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-verde-200">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="w-2.5 h-2.5 rounded-full bg-verde-500"></span>
+                            <span class="text-xs font-bold text-verde-500 uppercase tracking-wider">Ação AMA</span>
+                        </div>
+                        <h4 class="font-extrabold text-stone-700 text-lg mb-2 group-hover:text-verde-500 transition-colors">Resposta Emergencial</h4>
+                        <p class="text-xs text-neutral-500 leading-relaxed mb-4">Mobilização comunitária e segurança alimentar.</p>
+                        <a href="acao-ama.html" class="text-xs font-bold text-verde-500 group-hover:underline">Saiba mais &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Institucional (Pinegrow Component) -->
+    <footer class="bg-primary-950 pb-8 pt-20 text-primary-50" data-pgc="site-footer">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="gap-12 grid grid-cols-1 pb-20 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="space-y-6">
+                        <a href="index.html" class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90" title="Instituto AMA - Início"> <img src="assets/logo/logoB2B.svg" alt="Logo Instituto AMA" class="brightness-0 invert object-contain w-40 group-hover:opacity-100"/> </a>
+                        <p data-pgc-field="about">Transformando vidas através do acolhimento e da mentoria social em nossa comunidade.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-1-title">Links Rápidos</h4>
+                        <ul class="space-y-4" data-pgc-field="col-1-links"><li><a href="instituto.html" class="hover:text-primary-500 transition-colors">História</a></li>
+                        <li><a href="instituto.html#diretoria" class="hover:text-primary-500 transition-colors">Nossa Diretoria</a></li>
+                        <li><a href="relacoes-institucionais.html#documentos" class="hover:text-primary-500 transition-colors">Relatórios Anuais</a></li>
+                        <li><a href="colaborador.html" class="hover:text-primary-500 transition-colors">Área do Colaborador</a></li></ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-2-title">Governança</h4>
+                        <ul class="space-y-4" data-pgc-field="col-2-links"><li><a href="relacoes-institucionais.html#transparencia" class="hover:text-primary-500 transition-colors">Portal da Transparência</a></li>
+                        <li><a href="relacoes-institucionais.html#documentos" class="hover:text-primary-500 transition-colors">Estatuto e Atas</a></li>
+                        <li><a href="relacoes-institucionais.html#parcerias" class="hover:text-primary-500 transition-colors">Parcerias Estratégicas</a></li>
+                        <li><a href="relacoes-institucionais.html#privacidade" class="hover:text-primary-500 transition-colors">LGPD &amp; Privacidade</a></li></ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-3-title">Contato</h4>
+                        <div class="mb-4" data-pgc-field="contact-details"><p>Avenida Principal, São Luís/MA<br>Atendimento Comunitário</p></div>
+                        <a href="https://wa.me/5598900000000" class="font-bold flex items-center gap-2" data-pgc-field="whatsapp"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.893 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.502-5.69-1.451l-6.307 1.66zm6.232-4.105c1.477.876 3.184 1.341 4.926 1.342 5.333 0 9.673-4.34 9.675-9.675.001-2.586-1.008-5.015-2.842-6.849-1.834-1.834-4.26-2.844-6.846-2.845-5.332 0-9.672 4.34-9.674 9.675-.001 1.868.538 3.694 1.554 5.269l-.999 3.648 3.73-.978zm11.238-7.398c-.287-.144-1.698-.838-1.961-.933-.263-.095-.454-.144-.645.144-.191.287-.741.933-.908 1.123-.167.191-.335.215-.621.072-.287-.144-1.21-.447-2.305-1.423-.852-.759-1.428-1.697-1.595-1.984-.167-.287-.018-.442.126-.584.13-.127.287-.335.43-.502.144-.167.191-.287.287-.478.095-.191.048-.358-.024-.502-.072-.144-.645-1.553-.884-2.127-.233-.56-.47-.482-.645-.491-.167-.008-.358-.01-.55-.01s-.502.072-.765.358c-.263.287-1.004.98-1.004 2.39s1.028 2.772 1.171 2.964c.144.191 2.023 3.089 4.899 4.327.684.294 1.218.469 1.634.602.687.218 1.312.187 1.806.114.551-.081 1.698-.693 1.937-1.362.24-.669.24-1.243.167-1.362-.072-.119-.263-.191-.55-.335z"/>
+                        </svg> <span data-pgc-field="whatsapp-label">Conversar via WhatsApp</span></a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-6 items-center justify-between text-primary-300 text-sm md:flex-row">
+                    <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
+                    <div class="flex items-center gap-6">
+                        <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
+                        <a href="relacoes-institucionais.html#privacidade" class="hover:text-white" data-pgc-field="privacy-link">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>

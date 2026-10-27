@@ -1,0 +1,19 @@
+# ==============================================================================
+# Git Ignore - Website Institucional Oficial Instituto AMA
+# ==============================================================================
+
+# Sistema Operacional e IDEs
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+
+# Pinegrow Backups e Metadados Internos
+_pgbackup/
+_pginfo/
+
+# Temporários e Scratch
+*.tmp
+*.bak
+scratch/

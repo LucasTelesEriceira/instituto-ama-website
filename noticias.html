@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Notícias, artigos de impacto, lançamentos e relatórios ESG do Instituto AMA em São Luís/MA. Acompanhe nossas ações comunitárias.">
+    <title>Notícias & Impacto | Instituto AMA</title>
+
+    <!-- Favicon / Ícone do Site -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo/logoB2B-02.svg">
+    <link rel="icon" type="image/webp" href="assets/logo/logoB2B-02.webp">
+    <link rel="apple-touch-icon" href="assets/logo/Apresent.%20Nova%20Marca%20AMA.png">
+
+    <!-- SEO & Indexação -->
+    <link rel="canonical" href="https://institutoama.org.br/noticias.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://institutoama.org.br/noticias.html">
+    <meta property="og:title" content="Notícias & Impacto | Instituto AMA">
+    <meta property="og:description" content="Fique por dentro das novidades, projetos sociais, feiras comunitárias e relatórios de transparência do Instituto AMA.">
+    <meta property="og:site_name" content="Instituto AMA">
+    <meta property="og:image" content="https://institutoama.org.br/assets/Apresent.%20Nova%20Marca%20AMA.png">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Notícias & Impacto | Instituto AMA">
+    <meta name="twitter:description" content="Fique por dentro das novidades, projetos sociais, feiras comunitárias e relatórios de transparência do Instituto AMA.">
+    <meta name="twitter:image" content="https://institutoama.org.br/assets/Apresent.%20Nova%20Marca%20AMA.png">
+
+    <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=auto">
+</head>
+
+<body class="antialiased bg-background-50 font-sans overflow-x-hidden text-neutral-800">
+
+    <!-- Header / Navegação -->
+    <header class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50" x-data="{ scrolled: false, mobileMenuOpen: false, isActive(page) { let p = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase().replace('.html', '') || 'index'; let target = page.toLowerCase().replace('.html', ''); return p === target; } }" @scroll.window="scrolled = (window.pageYOffset > 20)" data-pgc="site-header">
+            <div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
+                <a href="index.html" class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" width="85" src="assets/logo/logoB2B-02.svg"/> <div class="hidden xl:flex xl:flex-col">
+                        <span class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight" data-pgc-field="brand-name">Instituto AMA</span>
+                        <span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
+                    </div> </a>
+                <nav class="hidden items-center justify-between mx-auto p-2 lg:flex" aria-label="Navegação Principal">
+                    <div class="hidden items-center text-sm uppercase lg:flex lg:space-x-4">
+                        <a href="index.html" class="nav-item-link" :class="isActive('index.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Início</a>
+                        <a href="instituto.html" class="nav-item-link" :class="isActive('instituto.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">O Instituto</a>
+                        <a href="projetos.html" class="nav-item-link" :class="isActive('projetos.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Projetos</a>
+                        <a href="noticias.html" class="nav-item-link" :class="isActive('noticias.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Notícias</a>
+                        <a href="relacoes-institucionais.html" class="nav-item-link" :class="isActive('relacoes-institucionais.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Relações Institucionais</a>
+                    </div>
+                </nav>
+                <div class="space-x-2 hidden lg:flex">
+                    <a href="colaborador.html" class="border border-primary-200 duration-400 flex gap-2 group items-center px-4 py-2 rounded-full text-primary-500 text-xs transition-all hover:bg-accent-50/50 hover:border-accent-200 hover:text-accent-600" data-pgc-field="portal-btn"><svg class="w-4 h-4 text-neutral-400 group-hover:text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span>Portal AMA</span></a>
+                    <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-field="support-btn">Apoiar Agora</a>
+                </div>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4" @click.away="mobileMenuOpen = false" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-surface-200 shadow-2xl z-50 overflow-hidden" x-cloak>
+                    <div class="flex flex-col p-6 space-y-4 uppercase" data-pgc-field="mobile-nav-items"><a href="index.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors" :class="isActive('index.html') ? 'bg-primary-50 text-primary-600 font-bold' : 'text-neutral-600 font-semibold hover:bg-surface-50'" @click="mobileMenuOpen = false"> <span>Início</span> <span x-show="isActive('index.html')" class="w-2 h-2 rounded-full bg-primary-500"></span> </a>
+                    <a href="instituto.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors" :class="isActive('instituto.html') ? 'bg-primary-50 text-primary-600 font-bold' : 'text-neutral-600 font-semibold hover:bg-surface-50'" @click="mobileMenuOpen = false"> <span>O Instituto</span> <span x-show="isActive('instituto.html')" class="w-2 h-2 rounded-full bg-primary-500"></span> </a>
+                    <a href="projetos.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors" :class="isActive('projetos.html') ? 'bg-primary-50 text-primary-600 font-bold' : 'text-neutral-600 font-semibold hover:bg-surface-50'" @click="mobileMenuOpen = false"> <span>Projetos</span> <span x-show="isActive('projetos.html')" class="w-2 h-2 rounded-full bg-primary-500"></span> </a>
+                    <a href="noticias.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors" :class="isActive('noticias.html') ? 'bg-primary-50 text-primary-600 font-bold' : 'text-neutral-600 font-semibold hover:bg-surface-50'" @click="mobileMenuOpen = false"> <span>Notícias</span> <span x-show="isActive('noticias.html')" class="w-2 h-2 rounded-full bg-primary-500"></span> </a>
+                    <a href="relacoes-institucionais.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors" :class="isActive('relacoes-institucionais.html') ? 'bg-primary-50 text-primary-600 font-bold' : 'text-neutral-600 font-semibold hover:bg-surface-50'" @click="mobileMenuOpen = false"> <span>Relações Institucionais</span> <span x-show="isActive('relacoes-institucionais.html')" class="w-2 h-2 rounded-full bg-primary-500"></span> </a>
+                    <a href="colaborador.html" class="flex items-center justify-between p-4 rounded-2xl transition-colors" :class="isActive('colaborador.html') ? 'bg-primary-50 text-primary-600 font-bold' : 'text-neutral-600 font-semibold hover:bg-surface-50'" @click="mobileMenuOpen = false"> <span>Portal AMA</span> <span x-show="isActive('colaborador.html')" class="w-2 h-2 rounded-full bg-primary-500"></span> </a>
+                    <div class="pt-4">
+                        <a href="apoio.html" class="w-full flex items-center justify-center p-4 bg-primary-500 text-white rounded-2xl font-bold shadow-lg shadow-primary-100" @click="mobileMenuOpen = false">
+                            Apoiar Agora </a>
+                    </div></div>
+                </div>
+            </div>
+        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase" data-pgc-field="brand-tagline">Acolhimento &amp; Assistência</span>--></header>
+
+    <main x-data="{
+        selectedCategory: 'todos',
+        searchQuery: '',
+        articles: [
+            {
+                id: 8,
+                title: 'Instituto AMA realiza ação de Dia das Crianças e alcança 500 pessoas em São Luís',
+                excerpt: 'Projeto Criança AMA Brincar promoveu lazer, entregou 420 brinquedos e ofereceu apoio alimentar com 380 quentinhas e 266 copos de sopa a crianças e famílias no Residencial Bacanga e bairros vizinhos.',
+                category: 'acolher',
+                categoryLabel: 'Projeto Acolher',
+                categoryBg: 'bg-primary-500',
+                categoryText: 'text-primary-500',
+                badgeBg: 'bg-primary-50 text-primary-700 border-primary-200',
+                date: '12 Out 2026',
+                readTime: '3 min de leitura',
+                author: 'Élida Brígida & Solange Pereira',
+                featured: true,
+                image: 'assets/img/noticia-crianca-ama-brincar.webp'
+            },
+            {
+                id: 7,
+                title: 'Instituto AMA realiza Ação Social com 840 atendimentos na Vila Mauro Fecury I, em São Luís',
+                excerpt: 'Mutirão realizado em setembro reuniu serviços em seis eixos: saúde médica, bucal, acolhimento, estética, infância e cidadania com 45 cestas básicas entregues, em parceria com SESC, IESVIDA e CRAS.',
+                category: 'acao-ama',
+                categoryLabel: 'Ação AMA',
+                categoryBg: 'bg-emerald-500',
+                categoryText: 'text-emerald-500',
+                badgeBg: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+                date: '19 Set 2026',
+                readTime: '4 min de leitura',
+                author: 'Coordenação Projeto Ação AMA',
+                featured: false,
+                image: 'assets/img/noticia-acao-social-mauro-fecury.webp'
+            },
+            {
+                id: 1,
+                title: 'Instituto AMA divulga Relatório de Impacto Social 2025 com mais de 4.200 atendimentos integrados',
+                excerpt: 'Balanço oficial consolida o avanço do Projeto Acolher, ampliação das oficinas de Mulheres Empreendedoras e a expansão da tecnologia multissensorial Sophia na Vila Mauro Fecury I.',
+                category: 'transparencia',
+                categoryLabel: 'Transparência & ESG',
+                categoryBg: 'bg-accent-500',
+                categoryText: 'text-accent-500',
+                badgeBg: 'bg-accent-50 text-accent-700 border-accent-200',
+                date: '18 Mar 2026',
+                readTime: '5 min de leitura',
+                author: 'Diretoria Executiva',
+                featured: false,
+                image: 'assets/img/noticia-acao-social-mauro-fecury.webp'
+            },
+            {
+                id: 2,
+                title: 'Tecnologia Sophia impulsiona o aprendizado e a alfabetização de 120 crianças',
+                excerpt: 'Uso da metodologia de aprendizagem multissensorial fortalece a cognição, reforço escolar e acompanhamento socioemocional no Projeto Acolher.',
+                category: 'acolher',
+                categoryLabel: 'Projeto Acolher',
+                categoryBg: 'bg-primary-500',
+                categoryText: 'text-primary-500',
+                badgeBg: 'bg-primary-50 text-primary-700 border-primary-200',
+                date: '12 Mar 2026',
+                readTime: '3 min de leitura',
+                author: 'Coordenação Pedagógica',
+                featured: false,
+                image: 'assets/img/01.webp'
+            },
+            {
+                id: 3,
+                title: 'Feira de Economia Criativa lança nova linha artesanal com o Selo AMA de Origem',
+                excerpt: 'Mulheres empreendedoras da Vila Mauro Fecury I apresentam produtos manufaturados que geram autonomia financeira e renda para famílias comunitárias.',
+                category: 'empreendedoras',
+                categoryLabel: 'Mulheres Empreendedoras',
+                categoryBg: 'bg-secondary-500',
+                categoryText: 'text-secondary-600',
+                badgeBg: 'bg-amber-50 text-amber-700 border-amber-200',
+                date: '05 Mar 2026',
+                readTime: '4 min de leitura',
+                author: 'Núcleo de Empreendedorismo',
+                featured: false,
+                image: 'assets/img/mulheres-empreendedoras.webp'
+            },
+            {
+                id: 4,
+                title: 'Projeto Capacitar certifica mais 30 jovens com bolsas de qualificação técnica',
+                excerpt: 'Formatura celebrada com parceiros corporativos fortalece o ingresso de jovens no mercado de trabalho e capacitação profissional em São Luís/MA.',
+                category: 'capacitar',
+                categoryLabel: 'Projeto Capacitar',
+                categoryBg: 'bg-turquesa-500',
+                categoryText: 'text-turquesa-500',
+                badgeBg: 'bg-turquesa-50 text-turquesa-700 border-turquesa-200',
+                date: '25 Feb 2026',
+                readTime: '4 min de leitura',
+                author: 'Gestão de Projetos',
+                featured: false,
+                image: 'assets/img/projeto-capacitar.webp'
+            },
+            {
+                id: 5,
+                title: 'Ação AMA realiza mutirão de saúde e orientação jurídica gratuita no final de semana',
+                excerpt: 'Mais de 350 famílias receberam consultas odontológicas, assistência jurídica voluntária e apoio comunitário integrado em nossa sede.',
+                category: 'acao-ama',
+                categoryLabel: 'Ação AMA',
+                categoryBg: 'bg-verde-500',
+                categoryText: 'text-verde-500',
+                badgeBg: 'bg-verde-50 text-verde-700 border-verde-200',
+                date: '14 Feb 2026',
+                readTime: '3 min de leitura',
+                author: 'Equipe de Assistência Social',
+                featured: false,
+                image: 'assets/img/noticia-acao-social-mauro-fecury.webp'
+            },
+            {
+                id: 6,
+                title: 'Instituto AMA fortalece governança B2B para expansão de parcerias corporativas ESG',
+                excerpt: 'Com dados auditados e transparência total, instituição abre novas cotas para empresas investidoras do Selo Amigo AMA.',
+                category: 'transparencia',
+                categoryLabel: 'Transparência & ESG',
+                categoryBg: 'bg-accent-500',
+                categoryText: 'text-accent-500',
+                badgeBg: 'bg-accent-50 text-accent-700 border-accent-200',
+                date: '02 Feb 2026',
+                readTime: '3 min de leitura',
+                author: 'Relações Institucionais',
+                featured: false,
+                image: 'assets/img/projeto-ama.webp'
+            }
+        ],
+        matches(article) {
+            const matchesCategory = this.selectedCategory === 'todos' || article.category === this.selectedCategory;
+            const matchesSearch = this.searchQuery === '' || 
+                article.title.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
+                article.excerpt.toLowerCase().includes(this.searchQuery.toLowerCase());
+            return matchesCategory && matchesSearch;
+        }
+    }">
+
+
+
+        <!-- Seção: Notícia Principal em Destaque -->
+        <section class="bg-background-500 pt-10 pb-8 sm:pt-14 sm:pb-10 border-b border-surface-200">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="bg-white border border-surface-600 duration-300 gap-8 grid grid-cols-1 group items-center p-6 rounded-3xl shadow-sm transition-all hover:border hover:border-primary-200 hover:shadow-lg sm:p-10 lg:grid-cols-12">
+                    <div class="lg:col-span-5 bg-surface-100 rounded-2xl overflow-hidden relative min-h-[260px] border border-surface-200 flex items-center justify-center">
+                        <img src="assets/img/noticia-crianca-ama-brincar.webp" alt="Projeto Criança AMA Brincar - Dia das Crianças" class="w-full h-full object-cover max-h-[300px] transition-transform group-hover:scale-105 duration-500"/>
+                        <span class="absolute top-4 left-4 bg-primary-500 text-white font-extrabold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-xs">Projeto Acolher</span>
+                    </div>
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="flex items-center gap-4 text-xs text-neutral-500 font-sans">
+                            <span class="flex items-center gap-1 font-semibold text-stone-600">
+                                <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                12 Out 2026
+                            </span>
+                            <span>•</span>
+                            <span>3 min de leitura</span>
+                            <span>•</span>
+                            <span class="text-primary-600 font-bold">Destaque Recente</span>
+                        </div>
+                        <h2 class="font-extrabold font-sans text-2xl sm:text-3xl text-stone-700 group-hover:text-primary-600 transition-colors leading-snug">
+                            <a href="noticia.html?id=8" class="hover:underline">Instituto AMA realiza ação de Dia das Crianças e alcança 500 pessoas em São Luís</a>
+                        </h2>
+                        <p class="text-neutral-600 text-sm sm:text-base leading-relaxed font-sans">Projeto Criança AMA Brincar promoveu lazer, entregou 420 brinquedos e ofereceu apoio alimentar com 380 quentinhas e 266 copos de sopa a crianças e famílias no Residencial Bacanga e bairros vizinhos.</p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs text-stone-500 font-medium">Por Élida Brígida &amp; Solange Pereira</span>
+                            <a href="noticia.html?id=8" class="inline-flex items-center gap-2 text-primary-500 font-bold text-sm hover:text-primary-700 transition-colors group-hover:translate-x-1 duration-300">
+                                Ler artigo completo
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros & Busca -->
+        <section class="bg-background-500 border-b border-surface-200 py-6 shadow-xs sticky top-16 z-40">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    
+                    <!-- Botões de Categoria -->
+                    <div class="flex gap-2 items-center overflow-x-auto pb-2 w-full md:pb-0 md:w-auto">
+                        <button @click="selectedCategory = 'todos'" :class="selectedCategory === 'todos' ? 'bg-primary-500 text-white font-bold shadow-md' : 'bg-surface-100 text-neutral-600 hover:bg-surface-200 font-medium'" class="px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all whitespace-nowrap focus:outline-none">
+                            Todos
+                        </button>
+                        <button @click="selectedCategory = 'acolher'" :class="selectedCategory === 'acolher' ? 'bg-primary-500 text-white font-bold shadow-md' : 'bg-surface-100 text-neutral-600 hover:bg-primary-50 hover:text-primary-600 font-medium'" class="px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all whitespace-nowrap focus:outline-none flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#FF7C67]"></span>
+                            Projeto Acolher
+                        </button>
+                        <button @click="selectedCategory = 'acao-ama'" :class="selectedCategory === 'acao-ama' ? 'bg-emerald-500 text-white font-bold shadow-md' : 'bg-surface-100 text-neutral-600 hover:bg-emerald-50 hover:text-emerald-700 font-medium'" class="px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all whitespace-nowrap focus:outline-none flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            Ação AMA
+                        </button>
+                        <button @click="selectedCategory = 'empreendedoras'" :class="selectedCategory === 'empreendedoras' ? 'bg-secondary-500 text-white font-bold shadow-md' : 'bg-surface-100 text-neutral-600 hover:bg-amber-50 hover:text-amber-600 font-medium'" class="px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all whitespace-nowrap focus:outline-none flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#FFAE41]"></span>
+                            Mulheres Empreendedoras
+                        </button>
+                        <button @click="selectedCategory = 'capacitar'" :class="selectedCategory === 'capacitar' ? 'bg-turquesa-500 text-white font-bold shadow-md' : 'bg-surface-100 text-neutral-600 hover:bg-turquesa-50 hover:text-turquesa-700 font-medium'" class="px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all whitespace-nowrap focus:outline-none flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-turquesa-500"></span>
+                            Projeto Capacitar
+                        </button>
+                        <button @click="selectedCategory = 'transparencia'" :class="selectedCategory === 'transparencia' ? 'bg-accent-500 text-white font-bold shadow-md' : 'bg-surface-100 text-neutral-600 hover:bg-accent-50 hover:text-accent-600 font-medium'" class="px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all whitespace-nowrap focus:outline-none flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#4CC4B6]"></span>
+                            Transparência &amp; ESG
+                        </button>
+                    </div>
+
+                    <!-- Input de Busca -->
+                    <div class="relative w-full md:w-72">
+                        <input type="text" x-model="searchQuery" placeholder="Buscar notícia..." class="w-full pl-10 pr-4 py-2.5 bg-surface-50 border border-surface-200 rounded-full text-xs sm:text-sm text-stone-700 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"/>
+                        <svg class="w-4 h-4 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Notícias em Grid -->
+        <section class="bg-background-500 py-12 sm:py-16">
+            <div class="container mx-auto px-4 lg:px-8 space-y-10">
+
+                <!-- Title Grid -->
+                <div class="flex items-center justify-between pb-4">
+                    <h3 class="font-bold font-sans text-xl text-stone-700">
+                        Publicações &amp; Artigos
+                    </h3>
+                    <span class="text-xs text-neutral-500 font-semibold" x-text="`${articles.filter(a => matches(a)).length} notícias encontradas`"></span>
+                </div>
+
+                <!-- Grid de Notícias -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <template x-for="article in articles" :key="article.id">
+                        <div x-show="matches(article)" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" class="border border-surface-600 duration-300 flex flex-col group p-6 sm:p-7 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl">
+                            <div class="h-48 w-full rounded-2xl overflow-hidden bg-surface-100 mb-2 border border-surface-200" style="height: 190px;">
+                                <img :src="article.image" :alt="article.title" class="w-full h-full object-cover group-hover:scale-105 duration-500 transition-transform">
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 rounded-full text-[10px] font-bold border uppercase tracking-wider" :class="article.badgeBg" x-text="article.categoryLabel"></span>
+                                    <span class="text-xs text-neutral-400 font-medium" x-text="article.date"></span>
+                                </div>
+                                <h4 class="font-extrabold font-sans text-lg text-stone-700 group-hover:text-primary-600 transition-colors leading-snug">
+                                    <a href="noticia.html" :href="`noticia.html?id=${article.id}`" class="hover:underline" x-text="article.title"></a>
+                                </h4>
+                                <p class="text-xs text-neutral-500 leading-relaxed font-sans line-clamp-3" x-text="article.excerpt"></p>
+                            </div>
+                            <div class="pt-6 mt-6 border-t border-surface-100 flex items-center justify-between text-xs">
+                                <span class="text-neutral-400 font-medium" x-text="article.readTime"></span>
+                                <a href="noticia.html" :href="`noticia.html?id=${article.id}`" class="font-bold text-primary-500 hover:text-primary-700 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                                    Ler mais
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Mensagem de Nenhuma Notícia Encontrada -->
+                <div x-show="articles.filter(a => matches(a)).length === 0" class="text-center py-16 bg-white rounded-3xl border border-surface-200 space-y-4">
+                    <div class="text-4xl">🔍</div>
+                    <h4 class="font-bold text-stone-700 text-lg">Nenhuma notícia encontrada</h4>
+                    <p class="text-xs text-neutral-500">Tente buscar por outros termos ou selecionar outra categoria.</p>
+                    <button @click="selectedCategory = 'todos'; searchQuery = ''" class="px-6 py-2 bg-primary-500 text-white text-xs font-bold rounded-full hover:bg-primary-600 transition-all">
+                        Limpar Filtros
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Newsletter CTA Card -->
+        
+
+    </main>
+
+    <!-- Footer / Rodapé Oficial -->
+    <footer class="bg-primary-950 pb-8 pt-20 text-primary-50" data-pgc="site-footer">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="gap-12 grid grid-cols-1 pb-20 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="space-y-6">
+                        <a href="index.html" class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90" title="Instituto AMA - Início"> <img src="assets/logo/logoB2B.svg" alt="Logo Instituto AMA" class="brightness-0 invert object-contain w-40 group-hover:opacity-100"/> </a>
+                        <p data-pgc-field="about">Transformando vidas através do acolhimento e da mentoria social em nossa comunidade.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-1-title">Links Rápidos</h4>
+                        <ul class="space-y-4" data-pgc-field="col-1-links"><li><a href="instituto.html" class="hover:text-primary-400 transition-colors">História</a></li>
+                        <li><a href="instituto.html#diretoria" class="hover:text-primary-400 transition-colors">Nossa Diretoria</a></li>
+                        <li><a href="noticias.html" class="hover:text-primary-400 transition-colors">Notícias &amp; Imprensa</a></li>
+                        <li><a href="relacoes-institucionais.html#documentos" class="hover:text-primary-400 transition-colors">Relatórios Anuais</a></li>
+                        <li><a href="colaborador.html" class="hover:text-primary-400 transition-colors">Área do Colaborador</a></li></ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-2-title">Governança</h4>
+                        <ul class="space-y-4" data-pgc-field="col-2-links"><li><a href="relacoes-institucionais.html#transparencia" class="hover:text-primary-400 transition-colors">Portal da Transparência</a></li>
+                        <li><a href="relacoes-institucionais.html#documentos" class="hover:text-primary-400 transition-colors">Estatuto e Atas</a></li>
+                        <li><a href="relacoes-institucionais.html#parcerias" class="hover:text-primary-400 transition-colors">Parcerias Estratégicas</a></li>
+                        <li><a href="relacoes-institucionais.html#privacidade" class="hover:text-primary-400 transition-colors">LGPD &amp; Privacidade</a></li></ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-3-title">Contato</h4>
+                        <div class="mb-4" data-pgc-field="contact-details"><p>Travessa Principal, S/N, Vila Mauro Fecury I<br>São Luís – MA | CNPJ 48.722.909/0001-80</p></div>
+                        <a href="https://wa.me/5598900000000" class="font-bold flex items-center gap-2" data-pgc-field="whatsapp"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.502-5.69-1.451l-6.307 1.66zm6.232-4.105c1.477.876 3.184 1.341 4.926 1.342 5.333 0 9.673-4.34 9.675-9.675.001-2.586-1.008-5.015-2.842-6.849-1.834-1.834-4.26-2.844-6.846-2.845-5.332 0-9.672 4.34-9.674 9.675-.001 1.868.538 3.694 1.554 5.269l-.999 3.648 3.73-.978zm11.238-7.398c-.287-.144-1.698-.838-1.961-.933-.263-.095-.454-.144-.645.144-.191.287-.741.933-.908 1.123-.167.191-.335.215-.621.072-.287-.144-1.21-.447-2.305-1.423-.852-.759-1.428-1.697-1.595-1.984-.167-.287-.018-.442.126-.584.13-.127.287-.335.43-.502.144-.167.191-.287.287-.478.095-.191.048-.358-.024-.502-.072-.144-.645-1.553-.884-2.127-.233-.56-.47-.482-.645-.491-.167-.008-.358-.01-.55-.01s-.502.072-.765.358c-.263.287-1.004.98-1.004 2.39s1.028 2.772 1.171 2.964c.144.191 2.023 3.089 4.899 4.327.684.294 1.218.469 1.634.602.687.218 1.312.187 1.806.114.551-.081 1.698-.693 1.937-1.362.24-.669.24-1.243.167-1.362-.072-.119-.263-.191-.55-.335z"/>
+                        </svg>
+                        <span data-pgc-field="whatsapp-label">Conversar via WhatsApp</span></a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-6 items-center justify-between text-primary-300 text-sm md:flex-row">
+                    <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
+                    <div class="flex items-center gap-6">
+                        <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
+                        <a href="relacoes-institucionais.html#privacidade" class="hover:text-white" data-pgc-field="privacy-link">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>

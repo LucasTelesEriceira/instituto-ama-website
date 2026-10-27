@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Política de Privacidade e Proteção de Dados Pessoais (LGPD) - Instituto AMA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 15mm 15mm 15mm 15mm;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 8.8pt;
+            line-height: 1.5;
+            color: #2D2825;
+            background-color: #FFFFFF;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .header-doc {
+            border-bottom: 2.5px solid #AF865D;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-size: 14pt;
+            font-weight: 800;
+            color: #2D2825;
+            letter-spacing: -0.3px;
+            text-transform: uppercase;
+        }
+
+        .brand-sub {
+            font-size: 8pt;
+            font-weight: 600;
+            color: #AF865D;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-top: 1px;
+        }
+
+        .brand-meta {
+            font-size: 7.2pt;
+            color: #6B5247;
+            margin-top: 3px;
+            line-height: 1.25;
+        }
+
+        .doc-badge {
+            text-align: right;
+            border-left: 2px solid #E5DFD7;
+            padding-left: 14px;
+        }
+
+        .doc-tag {
+            display: inline-block;
+            background-color: #F9F6F1;
+            color: #4A3525;
+            font-size: 7.5pt;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 4px;
+            border: 1px solid #D5CDBD;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .doc-version {
+            font-size: 7pt;
+            color: #6B5247;
+            margin-top: 3px;
+            line-height: 1.2;
+        }
+
+        .title-block {
+            background: linear-gradient(135deg, #F9F6F1 0%, #FFFFFF 100%);
+            border: 1px solid #E5DFD7;
+            border-left: 5px solid #FF7C67;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .title-block h1 {
+            font-size: 12.5pt;
+            font-weight: 800;
+            color: #2D2825;
+            line-height: 1.25;
+            margin-bottom: 4px;
+        }
+
+        .title-block p {
+            font-size: 8pt;
+            color: #6B5247;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #2D2825;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid #EFEAE4;
+            padding-bottom: 3px;
+            page-break-after: avoid;
+        }
+
+        h2 .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #AF865D;
+            color: #FFFFFF;
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            font-size: 7.5pt;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 18px;
+            margin-bottom: 8px;
+        }
+
+        li {
+            margin-bottom: 3px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background-color: #F9F6F1;
+            border: 1px solid #E5DFD7;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-size: 8.5pt;
+            page-break-inside: avoid;
+        }
+
+        .highlight-box.primary {
+            border-left: 4px solid #FF7C67;
+        }
+
+        .highlight-box.accent {
+            border-left: 4px solid #4CC4B6;
+            background-color: #F4FAF9;
+        }
+
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 8pt;
+            page-break-inside: avoid;
+        }
+
+        .table-custom th, .table-custom td {
+            border: 1px solid #E5DFD7;
+            padding: 6px 8px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.35;
+        }
+
+        .table-custom th {
+            background-color: #F9F6F1;
+            color: #2D2825;
+            font-weight: 700;
+            font-size: 7.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .table-custom tr:nth-child(even) td {
+            background-color: #FAFAFA;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 8px 0;
+            page-break-inside: avoid;
+        }
+
+        .card-inner {
+            background-color: #FAFAFA;
+            border: 1px solid #E5DFD7;
+            border-radius: 6px;
+            padding: 8px 12px;
+        }
+
+        .card-inner strong {
+            display: block;
+            color: #2D2825;
+            font-size: 8.5pt;
+            margin-bottom: 2px;
+        }
+
+        .card-inner p {
+            font-size: 7.8pt;
+            color: #6B5247;
+            margin-bottom: 0;
+            line-height: 1.35;
+            text-align: left;
+        }
+
+        .dpo-card {
+            background: linear-gradient(135deg, #F9F6F1 0%, #FFFFFF 100%);
+            border: 1.5px solid #AF865D;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin: 10px 0;
+            page-break-inside: avoid;
+        }
+
+        .dpo-card .dpo-title {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #2D2825;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dpo-card .dpo-email {
+            font-family: monospace;
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #FF7C67;
+            background-color: #FFFFFF;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid #E5DFD7;
+            display: inline-block;
+            margin-top: 3px;
+        }
+
+        .signatures {
+            margin-top: 22px;
+            display: flex;
+            justify-content: space-between;
+            page-break-inside: avoid;
+        }
+
+        .sig-block {
+            width: 46%;
+            text-align: center;
+            border-top: 1px solid #2D2825;
+            padding-top: 5px;
+        }
+
+        .sig-block .name {
+            font-weight: 700;
+            font-size: 8.5pt;
+            color: #2D2825;
+        }
+
+        .sig-block .role {
+            font-size: 7pt;
+            color: #6B5247;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .footer-note {
+            font-size: 7pt;
+            color: #938D8A;
+            text-align: center;
+            margin-top: 16px;
+            border-top: 1px solid #E5DFD7;
+            padding-top: 6px;
+            page-break-inside: avoid;
+        }
+
+        .section-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PÁGINA 1: CABEÇALHO & PRINCÍPIOS -->
+    <header class="header-doc">
+        <div class="brand-info">
+            <span class="brand-title">INSTITUTO AMA</span>
+            <span class="brand-sub">Acolhimento, Mentoria &amp; Assistência</span>
+            <span class="brand-meta">
+                CNPJ: 48.722.909/0001-80 • Fundado em 2021<br>
+                Sede: Travessa Principal, S/N, Vila Mauro Fecury I — São Luís/MA — CEP 65082-120
+            </span>
+        </div>
+        <div class="doc-badge">
+            <span class="doc-tag">Documento Oficial</span>
+            <div class="doc-version">
+                Versão: 1.0 (Ciclo 2026)<br>
+                Classificação: Pública<br>
+                Vigência: Imediata
+            </div>
+        </div>
+    </header>
+
+    <div class="title-block">
+        <h1>POLÍTICA DE PRIVACIDADE &amp; PROTEÇÃO DE DADOS PESSOAIS (LGPD)</h1>
+        <p>Diretrizes institucionais de governança, conformidade e segurança da informação aplicadas ao tratamento de dados de doadores, apoiadores corporativos (ESG/B2B), voluntários, colaboradores e famílias assistidas, em estrita observância à Lei Federal nº 13.709/2018 (LGPD), Marco Civil da Internet (Lei nº 12.965/2014) e Marco Regulatório das OSCs (MROSC - Lei nº 13.019/2014).</p>
+    </div>
+
+    <!-- 1. OBJETIVO E COMPROMISSO INSTITUCIONAL -->
+    <h2><span class="num">1</span> Objetivo &amp; Compromisso Institucional</h2>
+    <p>O <strong>INSTITUTO AMA (Acolhimento, Mentoria e Assistência)</strong>, entidade autônoma do Terceiro Setor constituída como Organização da Sociedade Civil (OSC), reafirma seu compromisso inegociável com a ética, a dignidade da pessoa humana, a transparência pública e a salvaguarda incondicional da privacidade de todos os seus interlocutores.</p>
+    <p>A presente Política regula a coleta, o tratamento, o armazenamento, a segurança e a eliminação de dados pessoais decorrentes de projetos socioassistenciais, campanhas de mobilização de recursos, termos de cooperação institucional e utilização das plataformas digitais oficiais.</p>
+
+    <!-- 2. DEFINIÇÕES FUNDAMENTAIS -->
+    <h2><span class="num">2</span> Definições Fundamentais (Art. 5º da LGPD)</h2>
+    <div class="grid-2">
+        <div class="card-inner">
+            <strong>Dado Pessoal:</strong>
+            <p>Informação relacionada a pessoa natural identificada ou identificável (ex: nome, CPF, e-mail, telefone, endereço residencial).</p>
+        </div>
+        <div class="card-inner">
+            <strong>Dado Pessoal Sensível:</strong>
+            <p>Dado sobre origem racial ou étnica, convicção religiosa, dados de saúde, biometria ou situação de vulnerabilidade extrema.</p>
+        </div>
+        <div class="card-inner">
+            <strong>Titular dos Dados:</strong>
+            <p>Pessoa natural a quem se referem os dados pessoais objeto de tratamento (doadores, parceiros, voluntários, famílias atendidas).</p>
+        </div>
+        <div class="card-inner">
+            <strong>Controlador:</strong>
+            <p>Instituto AMA, a quem competem as decisões sobre o tratamento de dados pessoais no âmbito de suas finalidades estatutárias.</p>
+        </div>
+    </div>
+
+    <!-- 3. PRINCÍPIOS ORIENTADORES -->
+    <h2><span class="num">3</span> Princípios Orientadores do Tratamento de Dados</h2>
+    <p>Todas as operações de tratamento no Instituto AMA obedecem rigorosamente aos princípios previstos no art. 6º da LGPD:</p>
+    <ul>
+        <li><strong>Finalidade e Adequação:</strong> Realização do tratamento para propósitos legítimos, explícitos e informados, sem possibilidade de tratamento posterior incompatível com a missão social.</li>
+        <li><strong>Necessidade (Minimização):</strong> Limitação da coleta ao mínimo indispensável para a execução de cada ação comunitária ou convênio.</li>
+        <li><strong>Livre Acesso e Transparência:</strong> Garantia de consulta facilitada e gratuita sobre a forma e duração do tratamento e a integridade de seus dados.</li>
+        <li><strong>Segurança e Prevenção:</strong> Adoção contínua de medidas técnicas e organizacionais para resguardar os dados contra acessos não autorizados e incidentes de segurança.</li>
+        <li><strong>Não Discriminação:</strong> Impossibilidade de tratamento de dados para fins discriminatórios, abusivos ou ilícitos.</li>
+        <li><strong>Responsabilização e Prestação de Contas:</strong> Demonstração eficaz da observância das normas perante órgãos de fiscalização e a sociedade civil.</li>
+    </ul>
+
+    <!-- 4. CATEGORIAS DE TITULARES E DADOS COLETADOS -->
+    <h2><span class="num">4</span> Categorias de Titulares e Dados Coletados</h2>
+    <table class="table-custom">
+        <thead>
+            <tr>
+                <th style="width: 26%;">Titular</th>
+                <th style="width: 37%;">Dados Coletados</th>
+                <th style="width: 37%;">Finalidade Específica</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Doadores e Contribuintes</strong></td>
+                <td>Nome completo, CPF, e-mail, telefone, registros transacionais (PIX, boleto, cartão via gateway parceiro).</td>
+                <td>Processamento seguro de doações, emissão de recibos e prestação de contas dos projetos sociais financiados.</td>
+            </tr>
+            <tr>
+                <td><strong>Parceiros ESG / Corporativos</strong></td>
+                <td>Razão social, CNPJ, representantes legais (nome, cargo, CPF, e-mail e telefone institucional).</td>
+                <td>Formalização de termos de cooperação, patrocínios corporativos e auditoria de impacto socioambiental.</td>
+            </tr>
+            <tr>
+                <td><strong>Voluntários e Colaboradores</strong></td>
+                <td>Nome, RG, CPF, currículo, endereço, profissão e Termo de Adesão ao Voluntariado (Lei nº 9.608/1998).</td>
+                <td>Gestão operacional de atividades de campo, capacitações pedagógicas e cumprimento de normativas legais.</td>
+            </tr>
+            <tr>
+                <td><strong>Famílias e Assistidos</strong></td>
+                <td>Nome, filiação, composição familiar, documentos de identidade, renda declarada e endereço local.</td>
+                <td>Inscrição nos projetos sociais (Projeto Acolher, Mulheres Empreendedoras, Capacitar) e encaminhamentos à rede SUAS.</td>
+            </tr>
+            <tr>
+                <td><strong>Usuários do Website</strong></td>
+                <td>Endereço IP, data e hora de conexão, tipo de dispositivo e navegador, cookies de sessão indispensáveis.</td>
+                <td>Guarda obrigatória de registros de conexão (art. 15 da Lei nº 12.965/2014) e segurança contra fraudes.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+
+    <!-- 5. PROTEÇÃO ESPECIAL DE CRIANÇAS E ADOLESCENTES -->
+    <h2><span class="num">5</span> Proteção Prioritária de Crianças e Adolescentes (Art. 14 da LGPD &amp; ECA)</h2>
+    <div class="highlight-box primary">
+        <strong>Melhor Interesse da Criança e do Adolescente:</strong>
+        <p>O tratamento de dados de menores no âmbito do <em>Projeto Acolher</em> e do <em>Criança AMA Brincar</em> realiza-se em estrita consonância com o art. 14 da Lei nº 13.709/2018 e o Estatuto da Criança e do Adolescente (Lei nº 8.069/1990).</p>
+    </div>
+    <ul>
+        <li><strong>Consentimento Específico e em Destaque:</strong> O cadastramento de crianças e adolescentes requer a anuência expressa e formal de ao menos um dos pais ou responsável legal.</li>
+        <li><strong>Autorização de Uso de Imagem e Voz:</strong> Registros audiovisuais de eventos socioculturais destinam-se exclusivamente à comprovação de impacto social e são condicionados a termo prévio firmado pelo responsável, resguardada a integridade e dignidade do menor.</li>
+        <li><strong>Proibição de Condicionamento e Venda:</strong> É vedado condicionar o acolhimento comunitário ou alimentação ao fornecimento de dados além dos estritamente necessários. Os dados infantis <strong>jamais</strong> são objeto de comercialização ou compartilhamento com finalidades publicitárias.</li>
+    </ul>
+
+    <!-- 6. BASES LEGAIS PARA O TRATAMENTO -->
+    <h2><span class="num">6</span> Bases Legais do Tratamento de Dados</h2>
+    <p>O Instituto AMA atua rigorosamente amparado nas hipóteses legais estabelecidas nos arts. 7º e 11 da LGPD:</p>
+    <ul>
+        <li><strong>Cumprimento de Obrigação Legal ou Regulatória (Art. 7º, II):</strong> Prestações de contas perante o Ministério Público do Maranhão (Promotoria de Fundações e Entidades de Interesse Social), Receita Federal, Tribunal de Contas do Estado (TCE/MA) e Conselho Municipal dos Direitos da Criança e do Adolescente (CMDCA).</li>
+        <li><strong>Execução de Políticas Públicas e MROSC (Art. 7º, III):</strong> Tratamento decorrente de termos de fomento, colaboração e parcerias públicas fundamentadas na Lei Federal nº 13.019/2014.</li>
+        <li><strong>Execução de Contratos e Parcerias (Art. 7º, V):</strong> Gestão de contratos com fornecedores, doadores corporativos e acordos de cooperação técnica.</li>
+        <li><strong>Consentimento do Titular ou Responsável (Art. 7º, I e Art. 14, §1º):</strong> Autorizações de imagem, cadastros voluntários e inscrições em atividades comunitárias.</li>
+        <li><strong>Legítimo Interesse (Art. 7º, IX):</strong> Prestação de contas e relatórios institucionais a parceiros e doadores, garantida a prevalência dos direitos e liberdades fundamentais do titular.</li>
+    </ul>
+
+    <!-- 7. COMPARTILHAMENTO RESPONSÁVEL -->
+    <h2><span class="num">7</span> Compartilhamento de Dados e Não Comercialização</h2>
+    <p>O Instituto AMA <strong>não comercializa, não aluga e não repassa</strong> dados pessoais para terceiros para fins econômicos ou de marketing. O compartilhamento ocorre apenas quando estritamente imprescindível:</p>
+    <ul>
+        <li><strong>Intermediadores Financeiros Credenciados:</strong> Plataformas de cobrança e gateways homologados para liquidação segura de transações bancárias (PIX, boleto e cartão).</li>
+        <li><strong>Órgãos Públicos Fiscalizadores:</strong> Atendimento a requisições formais e prestações de contas legais inerentes à gestão de recursos públicos e assistência social.</li>
+        <li><strong>Operadores de Tecnologia e Infraestrutura Segura:</strong> Provedores de hospedagem em nuvem e sistemas cadastrais que atendem aos mais altos padrões de segurança e firmam Acordos de Processamento de Dados (DPA) em conformidade com a LGPD.</li>
+    </ul>
+
+    <!-- 8. SEGURANÇA DA INFORMAÇÃO -->
+    <h2><span class="num">8</span> Segurança da Informação &amp; Governança de Acesso</h2>
+    <div class="grid-2">
+        <div class="card-inner">
+            <strong>Tráfego Criptografado (HTTPS/TLS):</strong>
+            <p>Comunicação digital resguardada por certificados de segurança modernos para prevenção contra interceptações.</p>
+        </div>
+        <div class="card-inner">
+            <strong>Controle de Acesso por Função (RBAC):</strong>
+            <p>Permissões restritas e autenticação segura concedidas exclusivamente a colaboradores habilitados para a atividade.</p>
+        </div>
+        <div class="card-inner">
+            <strong>Rotinas de Backup e Resiliência:</strong>
+            <p>Armazenamento redundante e criptografado de cópias de segurança para prevenir perdas acidentais de dados.</p>
+        </div>
+        <div class="card-inner">
+            <strong>Capacitação e Sigilo Institucional:</strong>
+            <p>Todos os colaboradores e voluntários assinam termos de confidencialidade e recebem orientação de ética de dados.</p>
+        </div>
+    </div>
+
+    <!-- 9. RETENÇÃO E DESCARTE SEGURO -->
+    <h2><span class="num">9</span> Retenção e Descarte Seguro de Dados</h2>
+    <p>Os dados pessoais são mantidos pelo período estritamente necessário para cumprir as finalidades legítimas ou durante os prazos prescricionais legais:</p>
+    <ul>
+        <li><strong>Registros Fiscais e Trabalhistas:</strong> Mantidos por 5 (cinco) anos, em cumprimento à legislação tributária e previdenciária.</li>
+        <li><strong>Prestações de Contas de Parcerias e Editais (MROSC):</strong> Retidos pelo prazo de 10 (dez) anos a contar do julgamento definitivo da prestação de contas.</li>
+        <li><strong>Registros de Conexão à Internet:</strong> Retidos pelo período de 6 (seis) meses, em conformidade com o art. 15 da Lei nº 12.965/2014 (Marco Civil da Internet).</li>
+    </ul>
+    <p>Exaurido o prazo legal ou a finalidade, os dados são descartados de forma segura ou submetidos a anonimização irreversível para fins de estudos estatísticos de impacto social.</p>
+
+    
+
+    <!-- 10. DIREITOS DOS TITULARES -->
+    <h2><span class="num">10</span> Direitos dos Titulares de Dados Pessoais (Art. 18 da LGPD)</h2>
+    <p>O titular dos dados pessoais pode, a qualquer momento e mediante requisição expressa e gratuita, exercer os seguintes direitos perante o Instituto AMA:</p>
+    
+    <div class="grid-2">
+        <div class="card-inner">
+            <strong>Confirmação e Acesso:</strong>
+            <p>Obter a confirmação da existência de tratamento e acessar a integralidade de seus dados sob nossa guarda.</p>
+        </div>
+        <div class="card-inner">
+            <strong>Correção e Atualização:</strong>
+            <p>Solicitar a correção de dados incompletos, inexatos ou desatualizados em nossos registros cadastrais.</p>
+        </div>
+        <div class="card-inner">
+            <strong>Anonimização ou Eliminação:</strong>
+            <p>Requerer a anonimização, bloqueio ou eliminação de dados desnecessários ou tratados com base em consentimento.</p>
+        </div>
+        <div class="card-inner">
+            <strong>Revogação de Consentimento:</strong>
+            <p>Revogar, a qualquer tempo, autorizações previamente concedidas para uso de imagem ou comunicações informativas.</p>
+        </div>
+    </div>
+
+    <!-- 11. ENCARREGADO DE DADOS (DPO) -->
+    <h2><span class="num">11</span> Encarregado pelo Tratamento de Dados Pessoais (DPO)</h2>
+    <p>Para o exercício de direitos, dúvidas sobre esta Política, solicitações ou relatórios de incidentes, o Instituto AMA disponibiliza canal oficial e permanente de atendimento ao público e à Autoridade Nacional de Proteção de Dados (ANPD):</p>
+
+    <div class="dpo-card">
+        <div class="dpo-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#AF865D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Canal do Encarregado de Proteção de Dados Pessoais (DPO)
+        </div>
+        <p style="margin-top: 4px; font-size: 8pt; color: #4A3525; line-height: 1.45;">
+            <strong>Responsável Institucional:</strong> Comitê de Governança, Transparência &amp; Compliance do Instituto AMA<br>
+            <strong>E-mail Institucional:</strong> <span class="dpo-email">institutoama10@gmail.com</span><br>
+            <strong>Endereço para Atendimento:</strong> Travessa Principal, S/N, Vila Mauro Fecury I, São Luís/MA, CEP 65082-120<br>
+            <strong>Prazo de Atendimento:</strong> Até 15 (quinze) dias úteis contados a partir da solicitação formal do titular.
+        </p>
+    </div>
+
+    <!-- 12. DISPOSIÇÕES FINAIS E FORO -->
+    <h2><span class="num">12</span> Vigência, Alterações e Foro de Eleição</h2>
+    <p>Esta Política de Privacidade entra em vigor na data de sua publicação oficial no portal de governança e transparência do Instituto AMA, revogando entendimentos anteriores. O Instituto AMA reserva-se o direito de atualizar este documento periodicamente em decorrência de melhorias em suas práticas ou alterações legislativas.</p>
+    <p>Fica eleito o Foro da Comarca de <strong>São Luís, Estado do Maranhão</strong>, como o competente para dirimir quaisquer litígios oriundos do presente instrumento, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+
+    <!-- ASSINATURAS INSTITUCIONAIS -->
+    <div class="signatures">
+        <div class="sig-block">
+            <div class="name">DIRETORIA EXECUTIVA</div>
+            <div class="role">Instituto AMA — Acolhimento, Mentoria &amp; Assistência</div>
+        </div>
+        <div class="sig-block">
+            <div class="name">COMITÊ DE GOVERNANÇA &amp; DPO</div>
+            <div class="role">Encarregado pelo Tratamento de Dados Pessoais (LGPD)</div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        Instituto AMA • CNPJ: 48.722.909/0001-80 • "Transformando afeto em futuro." • São Luís/MA • Documento em conformidade com a Lei Federal nº 13.709/2018.
+    </div>
+
+</body>
+</html>
