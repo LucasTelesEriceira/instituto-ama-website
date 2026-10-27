@@ -32,6 +32,7 @@
     <meta name="twitter:image" content="https://institutoama.org.br/assets/img/mulheres-empreendedoras.webp">
 
     <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -61,10 +62,10 @@
                     <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-field="support-btn">Apoiar Agora</a>
                 </div>
                 <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
-                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
-                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
@@ -97,7 +98,7 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <!-- Conteúdo Principal Hero -->
-                    <div class="lg:col-span-7 space-y-6">
+                    <div class="lg:col-span-7 space-y-6 anim delay-1">
                         
 
                         <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-stone-800 leading-tight">
@@ -119,12 +120,10 @@ de pequenos negocios.
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                 </svg>
                             </a>
-                            <a href="#horta-organica" class="border border-emerald-300 text-emerald-700 font-bold rounded-full px-7 py-4 hover:bg-emerald-50 transition-all inline-flex items-center gap-2">
+                            <a href="#horta-organica" class="border border-secondary-200 text-secondary-600 font-bold rounded-full px-7 py-4 hover:bg-secondary-50 transition-all inline-flex items-center gap-2">
                                 <span>Conhecer Horta Orgânica</span>
                             </a>
-                            <a href="#selo-origem" class="border border-secondary-200 text-secondary-600 font-bold rounded-full px-7 py-4 hover:bg-secondary-50 transition-all inline-flex items-center gap-2">
-                                <span>Conhecer Selo AMA de Origem</span>
-                            </a>
+                            
                         </div>
 
                         <!-- Equipe Responsável Badge -->
@@ -141,7 +140,7 @@ de pequenos negocios.
                     </div>
 
                     <!-- Imagem Principal Hero -->
-                    <div class="lg:col-span-5 relative">
+                    <div class="lg:col-span-5 relative anim delay-2">
                         <div class="relative mx-auto max-w-md lg:max-w-none">
                             <img src="assets/img/mulheres-empreendedoras.webp" alt="Mulheres em oficina do Projeto Mulheres Empreendedoras" class="border-4 border-white h-96 object-cover relative rounded-3xl shadow-2xl w-full z-10">
                             
@@ -166,19 +165,19 @@ de pequenos negocios.
         <section class="bg-background-500 border-b border-secondary-300 border-t py-6">
             <div class="container mx-auto px-4">
                 <div class="gap-8 grid grid-cols-2 lg:grid-cols-4">
-                    <div class="space-y-2 text-center lg:border-secondary-300 lg:border-r">
+                    <div class="space-y-2 text-center lg:border-secondary-300 lg:border-r anim delay-1">
                         <div class="text-4xl text-secondary-800">120</div>
                         <div class="text-secondary-800 text-sm uppercase">Negócios Criados</div>
                     </div>
-                    <div class="space-y-2 text-center lg:border-secondary-300 lg:border-r">
+                    <div class="space-y-2 text-center lg:border-secondary-300 lg:border-r anim delay-2">
                         <div class="text-4xl text-secondary-800">80</div>
                         <div class="text-secondary-800 text-sm uppercase">Mulheres Capacitadas</div>
                     </div>
-                    <div class="space-y-2 text-center lg:border-secondary-300 lg:border-r">
+                    <div class="space-y-2 text-center lg:border-secondary-300 lg:border-r anim delay-3">
                         <div class="text-4xl text-secondary-800">100%</div>
                         <div class="text-secondary-800 text-sm uppercase">Mentoria Gratuita</div>
                     </div>
-                    <div class="text-center space-y-2">
+                    <div class="text-center space-y-2 anim delay-4">
                         <div class="text-4xl text-secondary-800">Vila Mauro</div>
                         <div class="text-secondary-800 text-sm uppercase">Fecury I • São Luís/MA</div>
                     </div>
@@ -189,14 +188,14 @@ de pequenos negocios.
         <!-- Seção Metodologia & Selo AMA de Origem -->
         <section id="selo-origem" class="py-20 bg-white">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="max-w-3xl mb-16 mx-auto space-y-4">
-                    <h2 class="font-extrabold text-3xl text-center text-stone-800 lg:text-4xl">Autonomia Financeira e Empreendedorismo de Impacto</h2>
+                <div class="max-w-3xl mb-16 space-y-4 anim delay-1">
+                    <h2 class="font-extrabold text-3xl text-stone-800 lg:text-4xl">Autonomia Financeira e Empreendedorismo de Impacto</h2>
                     
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <!-- Destaque do Selo AMA de Origem -->
-                    <div class="bg-secondary-50 border border-secondary-200 group overflow-hidden p-8 relative rounded-3xl shadow-sm transition-all hover:border-secondary-400 lg:col-span-6 lg:p-10">
+                    <div class="bg-secondary-50 border border-secondary-200 group overflow-hidden p-8 relative rounded-3xl shadow-sm transition-all hover:border-secondary-400 lg:col-span-6 lg:p-10 anim delay-2">
                         <div class="flex items-center gap-4 mb-6">
                             <div class="w-14 h-14 rounded-2xl bg-white border border-secondary-200 flex items-center justify-center text-3xl shadow-sm text-secondary-500">
                                 🏷️
@@ -228,7 +227,7 @@ de pequenos negocios.
                     </div>
 
                     <!-- Trilhas de Capacitação -->
-                    <div class="lg:col-span-6 space-y-6">
+                    <div class="lg:col-span-6 space-y-6 anim delay-3">
                         <div class="bg-white border border-surface-600 flex gap-5 p-6 rounded-3xl shadow-xs transition-all hover:border-secondary-200">
                             <div class="w-12 h-12 rounded-2xl bg-secondary-50 text-secondary-500 flex items-center justify-center text-xl shrink-0 font-bold">
                                 📈
@@ -264,10 +263,10 @@ de pequenos negocios.
         </section>
 
         <!-- Seção Horta Orgânica Comunitária & Sustentabilidade -->
-        <section id="horta-organica" class="py-20 bg-emerald-50/40 border-t border-emerald-100">
+        <section id="horta-organica" class="bg-background-500 border-emerald-100 border-t py-20">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="max-w-3xl mb-16 mx-auto text-center space-y-4">
-                    <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-100/70 px-4 py-1.5 rounded-full inline-block">
+                <div class="max-w-3xl mb-16 space-y-4 anim delay-1">
+                    <span class="bg-secondary-100 font-bold inline-block px-4 py-1.5 rounded-full text-secondary-600 text-xs tracking-widest uppercase">
                         Horticultura &amp; Culinária Sustentável
                     </span>
                     <h2 class="font-extrabold text-3xl text-balance text-stone-800 lg:text-4xl">
@@ -280,13 +279,13 @@ de pequenos negocios.
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <!-- Card Horta Orgânica Comunitária -->
-                    <div class="bg-white border border-emerald-200/90 p-8 lg:p-10 rounded-3xl relative overflow-hidden group hover:border-emerald-400 transition-all shadow-sm lg:col-span-6">
+                    <div class="bg-white border border-secondary-200 group overflow-hidden p-8 relative rounded-3xl shadow-sm transition-all hover:border-emerald-400 lg:col-span-6 lg:p-10 anim delay-2">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-3xl shadow-sm text-emerald-600">
+                            <div class="bg-secondary-50 border border-secondary-200 flex h-14 items-center justify-center rounded-2xl shadow-sm text-3xl w-14">
                                 🌿
                             </div>
                             <div>
-                                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block">Sustentabilidade Comunitária</span>
+                                <span class="block font-bold text-secondary-500 text-xs tracking-wider uppercase">Sustentabilidade Comunitária</span>
                                 <h3 class="text-xl font-extrabold text-stone-800">Horta Orgânica Comunitária</h3>
                             </div>
                         </div>
@@ -297,28 +296,28 @@ de pequenos negocios.
 
                         <ul class="space-y-3 text-xs text-stone-700 font-medium">
                             <li class="flex items-center gap-3">
-                                <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">✓</span>
+                                <span class="bg-secondary-600 flex h-5 items-center justify-center rounded-full text-white text-xs w-5">✓</span>
                                 Produção agroecológica e comunitária sem defensivos químicos
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">✓</span>
+                                <span class="bg-secondary-600 flex h-5 items-center justify-center rounded-full text-white text-xs w-5">✓</span>
                                 Educação ambiental e oficinas de cultivo para voluntários
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">✓</span>
+                                <span class="bg-secondary-600 flex h-5 items-center justify-center rounded-full text-white text-xs w-5">✓</span>
                                 Distribuição direta e fresca para as famílias atendidas
                             </li>
                         </ul>
                     </div>
 
                     <!-- Coluna com Imagem Real da Horta e Destaque de Valor -->
-                    <div class="lg:col-span-6 relative">
+                    <div class="lg:col-span-6 relative anim delay-3">
                         <div class="relative mx-auto max-w-md lg:max-w-none">
                             <img src="assets/img/horta-organica.webp" alt="Horta Orgânica Comunitária do Instituto AMA" class="border-4 border-white h-96 object-cover relative rounded-3xl shadow-2xl w-full z-10">
                             
                             <!-- Card de Destaque Flutuante -->
                             <div class="absolute -bottom-6 -left-6 z-20 bg-white p-5 rounded-2xl shadow-xl border border-emerald-100 max-w-xs flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 text-2xl font-bold">
+                                <div class="bg-secondary-50 flex font-bold h-12 items-center justify-center rounded-xl shrink-0 text-2xl w-12">
                                     🌱
                                 </div>
                                 <div>
@@ -336,15 +335,15 @@ de pequenos negocios.
         <!-- Seção Catálogo de Impact Gifting (Presentes Corporativos B2B) -->
         <section id="catalogo-impact-gifting" class="bg-background-500 border-surface-200 border-t py-20">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="max-w-3xl mb-16 mx-auto space-y-4">
+                <div class="max-w-3xl mb-16 space-y-4 anim delay-1">
                     
-                    <h2 class="font-extrabold text-3xl text-balance text-center text-stone-800 lg:text-4xl">
+                    <h2 class="font-extrabold text-3xl text-balance text-stone-800 lg:text-4xl">
                         Catálogo de Impact Gifting <span class="text-secondary-500">(Presentes Corporativos B2B)</span>
                     </h2>
                     
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 anim delay-2">
                     <!-- Item 1 -->
                     <div class="border border-surface-600 duration-300 flex flex-col group justify-between p-8 rounded-3xl shadow-sm space-y-6 transition-all hover:border-secondary-300 hover:shadow-xl">
                         <div class="space-y-4">
@@ -402,7 +401,7 @@ de pequenos negocios.
         <!-- Galeria de Imagens de Atividades em Campo -->
         <section class="py-20 bg-background-50">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 anim delay-1">
                     <div>
                         <h2 class="text-3xl font-extrabold text-stone-800">Oficinas e Produção Comunitária</h2>
                     </div>
@@ -412,7 +411,7 @@ de pequenos negocios.
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72 anim delay-1">
                         <img src="assets/img/mulheres-empreendedoras.webp" alt="Oficina do Projeto Mulheres Empreendedoras" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
                             <span class="text-xs uppercase font-bold text-secondary-300">Oficinas Práticas</span>
@@ -420,7 +419,7 @@ de pequenos negocios.
                         </div>
                     </div>
 
-                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72 anim delay-2">
                         <img src="assets/img/horta-organica.webp" alt="Horta Orgânica Comunitária" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
                             <span class="text-xs uppercase font-bold text-emerald-300">Horta Comunitária</span>
@@ -428,7 +427,7 @@ de pequenos negocios.
                         </div>
                     </div>
 
-                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72 anim delay-3">
                         <img src="assets/img/projeto-mulheres-empreenderoras.webp" alt="Participantes com o Selo AMA de Origem" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
                             <span class="text-xs uppercase font-bold text-secondary-300">Selo de Origem</span>
@@ -436,7 +435,7 @@ de pequenos negocios.
                         </div>
                     </div>
 
-                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72 anim delay-4">
                         <img src="assets/img/avatar/do-carmo.webp" alt="Empreendedora com seu negócio" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
                             <span class="text-xs uppercase font-bold text-secondary-300">Empreendedoras da Vila</span>
@@ -449,7 +448,7 @@ de pequenos negocios.
 
         <!-- CTA de Doação / Apoio Direcionado (Pinegrow Component) -->
         <section class="py-20 bg-primary-950 text-white relative overflow-hidden" data-pgc="ama-cta-donation">
-            <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl space-y-8">
+            <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl space-y-8 anim delay-1">
                 <h2 class="font-extrabold text-3xl text-balance text-white lg:text-5xl" data-pgc-field="title">Apóie o Empreendedorismo Feminino</h2>
                 <p class="font-light leading-relaxed text-balance text-base text-primary-100" data-pgc-field="description">Sua colaboração financia insumos para oficinas, kits de inicialização de micro-negócios e mentorias para as mulheres da comunidade.</p>
                 <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 max-w-md mx-auto space-y-4">
@@ -471,11 +470,11 @@ de pequenos negocios.
         <!-- Navegação entre Outros Projetos -->
         <section class="py-20 bg-background-50 border-t border-surface-200">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="text-center mb-12">
+                <div class="text-center mb-12 anim delay-1">
                     <h3 class="text-2xl font-extrabold text-stone-800">Outros Projetos do Instituto AMA</h3>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto anim delay-2">
                     <!-- Card Projeto Acolher -->
                     <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-coral-200">
                         <div class="flex items-center gap-2 mb-4">
@@ -537,8 +536,7 @@ de pequenos negocios.
                     </div>
                     <div>
                         <h4 class="font-bold mb-6 tracking-widest uppercase text-white" data-pgc-field="col-3-title">Contato</h4>
-                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details">
-                            <a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
+                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details"><a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
                                 <svg class="h-5 w-5 shrink-0 text-coral-400 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -550,8 +548,7 @@ de pequenos negocios.
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                                 <span class="break-all text-xs sm:text-sm">institutoama10@gmail.com</span>
-                            </a>
-                        </div>
+                            </a></div>
                         <div class="pt-2">
                             <span class="text-xs font-semibold uppercase tracking-wider text-primary-300 block mb-3">Redes &amp; Canais Oficiais</span>
                             <div class="flex items-center gap-2.5">
@@ -579,9 +576,9 @@ de pequenos negocios.
                             </div>
                         </div>
                     </div>
-                <div class="flex flex-col gap-6 items-center justify-between text-primary-300 text-sm md:flex-row">
+                <div class="flex flex-wrap gap-6 justify-between text-primary-300 text-sm md:col-span-2 xl:col-span-4">
                     <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
-                    <div class="flex items-center gap-6">
+                    <div class="flex gap-6 items-center xl:row-start-4">
                         <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
                         <a href="relacoes-institucionais.html#privacidade" class="hover:text-white" data-pgc-field="privacy-link">Política de Privacidade</a>
                     </div>

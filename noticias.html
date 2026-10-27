@@ -68,10 +68,10 @@
                     <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-field="support-btn">Apoiar Agora</a>
                 </div>
                 <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
-                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
-                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
@@ -228,7 +228,7 @@
 
         <!-- Seção: Notícia Principal em Destaque -->
         <section class="bg-background-500 pt-10 pb-8 sm:pt-14 sm:pb-10 border-b border-surface-200">
-            <div class="container mx-auto px-4 lg:px-8">
+            <div class="container mx-auto px-4 lg:px-8 anim delay-1">
                 <div class="bg-white border border-surface-600 duration-300 gap-8 grid grid-cols-1 group items-center p-6 rounded-3xl shadow-sm transition-all hover:border hover:border-primary-200 hover:shadow-lg sm:p-10 lg:grid-cols-12">
                     <div class="lg:col-span-5 bg-surface-100 rounded-2xl overflow-hidden relative min-h-[260px] border border-surface-200 flex items-center justify-center">
                         <img src="assets/img/noticia-crianca-ama-brincar.webp" alt="Projeto Criança AMA Brincar - Dia das Crianças" class="w-full h-full object-cover max-h-[300px] transition-transform group-hover:scale-105 duration-500"/>
@@ -263,7 +263,7 @@
 
         <!-- Filtros & Busca -->
         <section class="bg-background-500 border-b border-surface-200 py-6 shadow-xs sticky top-16 z-40">
-            <div class="container mx-auto px-4 lg:px-8">
+            <div class="container mx-auto px-4 lg:px-8 anim delay-2">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                     
                     <!-- Botões de Categoria -->
@@ -307,7 +307,7 @@
 
         <!-- Seção de Notícias em Grid -->
         <section class="bg-background-500 py-12 sm:py-16">
-            <div class="container mx-auto px-4 lg:px-8 space-y-10">
+            <div class="container mx-auto px-4 lg:px-8 space-y-10 anim delay-2">
 
                 <!-- Title Grid -->
                 <div class="flex items-center justify-between pb-4">
@@ -388,8 +388,7 @@
                     </div>
                     <div>
                         <h4 class="font-bold mb-6 tracking-widest uppercase text-white" data-pgc-field="col-3-title">Contato</h4>
-                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details">
-                            <a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
+                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details"><a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
                                 <svg class="h-5 w-5 shrink-0 text-coral-400 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -401,8 +400,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                                 <span class="break-all text-xs sm:text-sm">institutoama10@gmail.com</span>
-                            </a>
-                        </div>
+                            </a></div>
                         <div class="pt-2">
                             <span class="text-xs font-semibold uppercase tracking-wider text-primary-300 block mb-3">Redes &amp; Canais Oficiais</span>
                             <div class="flex items-center gap-2.5">
@@ -430,9 +428,9 @@
                             </div>
                         </div>
                     </div>
-                <div class="flex flex-col gap-6 items-center justify-between text-primary-300 text-sm md:flex-row">
+                <div class="flex flex-wrap gap-6 justify-between text-primary-300 text-sm md:col-span-2 xl:col-span-4">
                     <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
-                    <div class="flex items-center gap-6">
+                    <div class="flex gap-6 items-center xl:row-start-4">
                         <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
                         <a href="relacoes-institucionais.html#privacidade" class="hover:text-white" data-pgc-field="privacy-link">Política de Privacidade</a>
                     </div>

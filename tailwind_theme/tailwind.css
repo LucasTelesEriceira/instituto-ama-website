@@ -939,6 +939,9 @@ select{
 .col-span-2{
   grid-column: span 2 / span 2;
 }
+.col-span-4{
+  grid-column: span 4 / span 4;
+}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -1356,6 +1359,9 @@ select{
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+.grid-cols-4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 .flex-row{
   flex-direction: row;
 }
@@ -1649,6 +1655,10 @@ select{
   --tw-border-opacity: 1;
   border-color: rgb(255 204 141 / var(--tw-border-opacity));
 }
+.border-secondary-400{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 189 105 / var(--tw-border-opacity));
+}
 .border-secondary-500{
   --tw-border-opacity: 1;
   border-color: rgb(255 174 65 / var(--tw-border-opacity));
@@ -1830,8 +1840,16 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(254 242 242 / var(--tw-bg-opacity));
 }
+.bg-secondary-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 231 205 / var(--tw-bg-opacity));
+}
 .bg-secondary-100\/20{
   background-color: rgb(255 231 205 / 0.2);
+}
+.bg-secondary-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 218 174 / var(--tw-bg-opacity));
 }
 .bg-secondary-50{
   --tw-bg-opacity: 1;
@@ -1840,6 +1858,10 @@ select{
 .bg-secondary-500{
   --tw-bg-opacity: 1;
   background-color: rgb(255 174 65 / var(--tw-bg-opacity));
+}
+.bg-secondary-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 159 60 / var(--tw-bg-opacity));
 }
 .bg-stone-800{
   background-color: oklch(0.268 0.007 34.298);
@@ -2397,6 +2419,10 @@ select{
 .text-secondary-800{
   --tw-text-opacity: 1;
   color: rgb(191 131 49 / var(--tw-text-opacity));
+}
+.text-secondary-900{
+  --tw-text-opacity: 1;
+  color: rgb(171 117 44 / var(--tw-text-opacity));
 }
 .text-stone-500{
   color: oklch(0.553 0.013 58.071);
@@ -2964,6 +2990,59 @@ body.block-editor-page .anim,
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
+@media (min-width: 1024px){
+
+
+  .lg\:container{
+    width: 100%;
+  }
+
+
+  @media (min-width: 640px){
+
+
+    .lg\:container{
+      max-width: 640px;
+    }
+  }
+
+
+  @media (min-width: 768px){
+
+
+    .lg\:container{
+      max-width: 768px;
+    }
+  }
+
+
+  @media (min-width: 1024px){
+
+
+    .lg\:container{
+      max-width: 1024px;
+    }
+  }
+
+
+  @media (min-width: 1280px){
+
+
+    .lg\:container{
+      max-width: 1280px;
+    }
+  }
+
+
+  @media (min-width: 1536px){
+
+
+    .lg\:container{
+      max-width: 1536px;
+    }
+  }
+}
+
 .last\:border-0:last-child{
   border-width: 0px;
 }
@@ -3221,8 +3300,40 @@ body.block-editor-page .anim,
   background-color: rgb(255 255 255 / 0.3);
 }
 
+.hover\:bg-gradient-to-b:hover{
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.hover\:bg-gradient-to-bl:hover{
+  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
+}
+
+.hover\:bg-gradient-to-br:hover{
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.hover\:bg-gradient-to-l:hover{
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
+}
+
+.hover\:bg-gradient-to-r:hover{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.hover\:bg-gradient-to-t:hover{
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.hover\:bg-gradient-to-tl:hover{
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+}
+
 .hover\:bg-gradient-to-tr:hover{
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+
+.hover\:bg-none:hover{
+  background-image: none;
 }
 
 .hover\:from-amber-500:hover{
@@ -3642,6 +3753,11 @@ body.block-editor-page .anim,
 }
 
 @media (min-width: 768px){
+
+
+  .md\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
 
 
   .md\:mt-0{
@@ -4092,6 +4208,11 @@ body.block-editor-page .anim,
   }
 
 
+  .xl\:row-start-4{
+    grid-row-start: 4;
+  }
+
+
   .xl\:inline{
     display: inline;
   }
@@ -4124,6 +4245,11 @@ body.block-editor-page .anim,
 
   .xl\:max-w-2xl{
     max-width: 42rem;
+  }
+
+
+  .xl\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
 

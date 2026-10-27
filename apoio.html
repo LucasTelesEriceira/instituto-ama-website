@@ -36,6 +36,7 @@
     <meta name="twitter:image" content="https://institutoama.org.br/assets/img/og-image.jpg">
 
     <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -67,10 +68,10 @@
                     <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-field="support-btn">Apoiar Agora</a>
                 </div>
                 <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
-                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
-                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
@@ -90,14 +91,14 @@
         <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase" data-pgc-field="brand-tagline">Acolhimento & Assistência</span><img alt="Logo Instituto AMA" class="object-contain" width="85" src="assets/logo/logo.png" data-pgc-field="logo"/>--></header><main class="pb-24 pt-12 xl:pt-24">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 anim delay-1">
                     <h1 class="font-bold text-4xl text-primary-500 lg:text-6xl">Você pode ser a luz na vida de alguém.</h1>
                     <p class="mt-6 text-accent-800 text-xl">Escolha a melhor forma de apoiar o Instituto AMA e faça parte desta rede de cuidado.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <!-- Donation Box -->
-                    <div class="bg-white p-12 rounded-[3rem] shadow-xl border border-surface-200">
+                    <div class="bg-white p-12 rounded-[3rem] shadow-xl border border-surface-200 anim delay-2">
                         <h2 class="font-bold mb-8 text-3xl text-accent-800 text-center">Doação Imediata</h2>
                         <div class="space-y-6">
                             <div class="bg-surface-50 p-6 rounded-2xl flex items-center justify-center border border-surface-200">
@@ -112,7 +113,7 @@
                     </div>
 
                     <!-- Formulário de Apoio, Voluntariado e Parcerias -->
-                    <div class="bg-white p-8 sm:p-10 rounded-[3rem] shadow-xl border border-surface-200 flex flex-col justify-between" id="parceria" x-data="{
+                    <div class="bg-white p-8 sm:p-10 rounded-[3rem] shadow-xl border border-surface-200 flex flex-col justify-between anim delay-3" id="parceria" x-data="{
                         loading: false,
                         sent: false,
                         error: false,
@@ -261,8 +262,7 @@
                     </div>
                     <div>
                         <h4 class="font-bold mb-6 tracking-widest uppercase text-white" data-pgc-field="col-3-title">Contato</h4>
-                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details">
-                            <a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
+                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details"><a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
                                 <svg class="h-5 w-5 shrink-0 text-coral-400 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -274,8 +274,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                                 <span class="break-all text-xs sm:text-sm">institutoama10@gmail.com</span>
-                            </a>
-                        </div>
+                            </a></div>
                         <div class="pt-2">
                             <span class="text-xs font-semibold uppercase tracking-wider text-primary-300 block mb-3">Redes &amp; Canais Oficiais</span>
                             <div class="flex items-center gap-2.5">
@@ -303,13 +302,13 @@
                             </div>
                         </div>
                     </div>
-                <div class="flex flex-col gap-6 items-center justify-between text-primary-300 text-sm md:flex-row">
+                <div class="flex flex-wrap gap-6 justify-between text-primary-300 text-sm md:col-span-2 xl:col-span-4">
                     <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
-                    <div class="flex items-center gap-6">
+                    <div class="flex gap-6 items-center xl:row-start-4">
                         <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
                         <a href="relacoes-institucionais.html#transparencia" class="hover:text-white" data-pgc-field="privacy-link">Política de Privacidade</a>
                     </div>
                 </div>
             </div>
-        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<img src="assets/logo/logo.png" alt="Logo Instituto AMA" class="object-contain brightness-0 invert group-hover:opacity-100" width="125" data-pgc-field="logo"/><span class="font-extrabold font-sans leading-none text-xl tracking-tight text-white" data-pgc-field="brand-name">Instituto <span class="text-primary-500">AMA</span></span><span class="text-[9px] font-bold text-neutral-400 uppercase tracking-[0.2em] mt-1.5" data-pgc-field="brand-tagline">Acolhimento &amp; Assistência</span>--></footer></body>
+        </footer></body>
 </html>

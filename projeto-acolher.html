@@ -32,6 +32,7 @@
     <meta name="twitter:image" content="https://institutoama.org.br/assets/img/projeto-acolher.webp">
 
     <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -61,10 +62,10 @@
                     <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-field="support-btn">Apoiar Agora</a>
                 </div>
                 <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
-                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
-                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
@@ -84,7 +85,7 @@
     <main>
         <!-- Hero Section Temática (Coral / Prestativo) -->
         <section class="bg-background-500 overflow-hidden py-16 relative lg:py-24">
-            <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="container mx-auto px-4 relative z-10 lg:px-8">
                 <!-- Breadcrumbs -->
                 <nav class="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-8" aria-label="Navegação em migalhas">
                     <a href="index.html" class="hover:text-coral-500 transition-colors">Início</a>
@@ -96,7 +97,7 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <!-- Conteúdo Principal Hero -->
-                    <div class="lg:col-span-7 space-y-6">
+                    <div class="lg:col-span-7 space-y-6 anim delay-1">
                         
 
                         <h1 class="font-extrabold leading-tight text-4xl text-coral-500 sm:text-5xl lg:text-6xl">
@@ -136,7 +137,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
                     </div>
 
                     <!-- Imagem Principal Hero -->
-                    <div class="lg:col-span-5 relative">
+                    <div class="lg:col-span-5 relative anim delay-2">
                         <div class="relative mx-auto max-w-md lg:max-w-none">
                             <img src="assets/img/projeto-acolher.webp" alt="Crianças e comunidade participantes do Projeto Acolher" class="relative z-10 w-full h-96 object-cover rounded-3xl shadow-2xl border-4 border-white">
                             
@@ -161,19 +162,19 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
         <section class="bg-background-500 border-b border-coral-100 border-t py-6">
             <div class="container mx-auto px-4">
                 <div class="gap-8 grid grid-cols-2 lg:grid-cols-4">
-                    <div class="space-y-2 text-center lg:border-coral-200 lg:border-r">
+                    <div class="space-y-2 text-center lg:border-coral-200 lg:border-r anim delay-1">
                         <div class="text-4xl text-coral-600">850+</div>
                         <div class="text-coral-600 text-sm uppercase">Atendimentos Integrados</div>
                     </div>
-                    <div class="space-y-2 text-center lg:border-coral-100 lg:border-r">
+                    <div class="space-y-2 text-center lg:border-coral-100 lg:border-r anim delay-2">
                         <div class="text-4xl text-coral-600">120</div>
                         <div class="text-coral-600 text-sm uppercase">Crianças Acolhidas</div>
                     </div>
-                    <div class="space-y-2 text-center lg:border-coral-100 lg:border-r">
+                    <div class="space-y-2 text-center lg:border-coral-100 lg:border-r anim delay-3">
                         <div class="text-4xl text-coral-600">100%</div>
                         <div class="text-coral-600 text-sm uppercase">Gratuidade Auditada</div>
                     </div>
-                    <div class="text-center space-y-2">
+                    <div class="text-center space-y-2 anim delay-4">
                         <div class="text-4xl text-coral-600">Vila Mauro</div>
                         <div class="text-coral-600 text-sm uppercase">Fecury I • São Luís/MA</div>
                     </div>
@@ -184,7 +185,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
         <!-- Seção Metodologia & Tecnologia Sophia -->
         <section id="metodologia" class="bg-white py-24">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="max-w-3xl mx-auto text-center mb-16 space-y-4">
+                <div class="max-w-3xl mb-16 space-y-4 anim delay-1">
                     <h2 class="font-extrabold text-3xl text-coral-500 lg:text-4xl">Engenharia Social e Aprendizado Multissensorial</h2>
                     <p class="leading-relaxed font-light">
                         O Projeto Acolher alia acolhimento afetivo comunitário a ferramentas inovadoras de apoio psicossocial e desenvolvimento cognitivo.
@@ -193,7 +194,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <!-- Card de Destaque da Tecnologia Sophia -->
-                    <div class="bg-surface-50 border border-surface-600 group overflow-hidden p-8 relative rounded-3xl shadow-sm transition-all hover:-translate-y-2 hover:border-coral-200 hover:shadow-xl lg:col-span-6 lg:p-10">
+                    <div class="bg-surface-50 border border-surface-600 group overflow-hidden p-8 relative rounded-3xl shadow-sm transition-all hover:-translate-y-2 hover:border-coral-200 hover:shadow-xl lg:col-span-6 lg:p-10 anim delay-2">
                         <div class="flex items-center gap-4 mb-6">
                             <img src="assets/sophia.svg" alt="Tecnologia Sophia" class="h-20 object-contain w-20">
                             <h3 class="font-extrabold text-coral-500 text-xl">Sophia: Tecnologia de Aprendizado Multissensorial</h3>
@@ -220,7 +221,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
                     </div>
 
                     <!-- Pilares do Atendimento Humano -->
-                    <div class="space-y-3 lg:col-span-6">
+                    <div class="space-y-3 lg:col-span-6 anim delay-3">
                         <div class="border border-surface-600 duration-500 flex gap-5 p-6 rounded-3xl transition-all hover:-translate-y-2 hover:border-coral-200 hover:shadow-xl">
                             <div class="w-12 h-12 rounded-2xl bg-coral-50 text-coral-500 flex items-center justify-center text-xl shrink-0 font-bold">
                                 💬
@@ -258,7 +259,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
         <!-- Galeria de Imagens de Atividades em Campo -->
         <section class="bg-background-500 py-24">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 anim delay-1">
                     <div>
                         <h2 class="font-extrabold text-3xl text-coral-500">Atividades e Oficinas em Ação</h2>
                     </div>
@@ -268,7 +269,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72 anim delay-1">
                         <img src="assets/img/projeto-acolher.webp" alt="Atividade com crianças no Projeto Acolher" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
                             <span class="text-xs uppercase font-bold text-coral-300">Oficinas Pedagógicas</span>
@@ -276,7 +277,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
                         </div>
                     </div>
 
-                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72 anim delay-2">
                         <img src="assets/img/projeto-acolher-02.webp" alt="Acompanhamento do Projeto Acolher" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
                             <span class="text-xs uppercase font-bold text-coral-300">Reforço Escolar</span>
@@ -284,7 +285,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
                         </div>
                     </div>
 
-                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72">
+                    <div class="group relative overflow-hidden rounded-3xl shadow-md h-72 anim delay-3">
                         <img src="assets/img/projeto-acolher-03.webp" alt="Grupo de mães e apoio familiar" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 p-6 flex flex-col justify-end text-white transition-opacity">
                             <span class="text-xs uppercase font-bold text-coral-300">Apoio Psicossocial</span>
@@ -297,7 +298,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
 
         <!-- Card de Depoimento / Transformação Real -->
         <section class="py-20 bg-white border-t border-surface-200">
-            <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center space-y-8">
+            <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center space-y-8 anim delay-1">
                 <div class="inline-block p-4 rounded-full bg-coral-50 text-coral-500 text-3xl">
                     💬
                 </div>
@@ -413,11 +414,11 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
         <!-- Navegação entre Outros Projetos -->
         <section class="py-20 bg-background-50 border-t border-surface-200">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="text-center mb-12">
+                <div class="text-center mb-12 anim delay-1">
                     <h3 class="text-2xl font-extrabold text-stone-800">Outros Projetos do Instituto AMA</h3>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto anim delay-2">
                     <!-- Card Mulheres Empreendedoras -->
                     <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-secondary-200">
                         <div class="flex items-center gap-2 mb-4">
@@ -479,8 +480,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
                     </div>
                     <div>
                         <h4 class="font-bold mb-6 tracking-widest uppercase text-white" data-pgc-field="col-3-title">Contato</h4>
-                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details">
-                            <a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
+                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details"><a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
                                 <svg class="h-5 w-5 shrink-0 text-coral-400 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -492,8 +492,7 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                                 <span class="break-all text-xs sm:text-sm">institutoama10@gmail.com</span>
-                            </a>
-                        </div>
+                            </a></div>
                         <div class="pt-2">
                             <span class="text-xs font-semibold uppercase tracking-wider text-primary-300 block mb-3">Redes &amp; Canais Oficiais</span>
                             <div class="flex items-center gap-2.5">
@@ -521,9 +520,9 @@ projeto garante o direito de aprender em um ambiente seguro, afetuoso e estrutur
                             </div>
                         </div>
                     </div>
-                <div class="flex flex-col gap-6 items-center justify-between text-primary-300 text-sm md:flex-row">
+                <div class="flex flex-wrap gap-6 justify-between text-primary-300 text-sm md:col-span-2 xl:col-span-4">
                     <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
-                    <div class="flex items-center gap-6">
+                    <div class="flex gap-6 items-center xl:row-start-4">
                         <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
                         <a href="relacoes-institucionais.html#privacidade" class="hover:text-white" data-pgc-field="privacy-link">Política de Privacidade</a>
                     </div>

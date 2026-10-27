@@ -92,6 +92,11 @@
         rel="stylesheet"
         type="text/css"
     >
+    <link
+        href="css/custom.css"
+        rel="stylesheet"
+        type="text/css"
+    >
     <script
         defer
         src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -101,69 +106,23 @@
 
 <body>
 
-    <header
-        class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50"
-        x-data="{ scrolled: false, mobileMenuOpen: false, isActive(page) { let p = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase().replace('.html', '') || 'index'; let target = page.toLowerCase().replace('.html', ''); return p === target; } }"
-        @scroll.window="scrolled = (window.pageYOffset > 20)"
-        data-pgc="site-header"
-    >
-        <div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
-            <a
-                href="index.html"
-                class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                title="Instituto AMA - Início"
-            > <img
-                    alt="Logo Instituto AMA"
-                    class="object-contain"
-                    width="85"
-                    src="assets/logo/logoB2B-02.svg"
-                />
-                <div class="hidden xl:flex xl:flex-col">
-                    <span
-                        class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight"
-                        data-pgc-field="brand-name"
-                    >Instituto <span class="text-primary-500">AMA</span></span>
-                    <span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
-                </div>
-            </a>
-            <nav
-                class="hidden items-center justify-between mx-auto p-2 lg:flex"
-                aria-label="Navegação Principal"
-            >
-                <div class="hidden items-center text-sm uppercase lg:flex lg:space-x-4">
-                    <a
-                        href="index.html"
-                        class="nav-item-link"
-                        :class="isActive('index.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'"
-                    >Início</a>
-                    <a
-                        href="instituto.html"
-                        class="nav-item-link"
-                        :class="isActive('instituto.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'"
-                    >O Instituto</a>
-                    <a
-                        href="projetos.html"
-                        class="nav-item-link"
-                        :class="isActive('projetos.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'"
-                    >Projetos</a>
-                    <a
-                        href="noticias.html"
-                        class="nav-item-link"
-                        :class="isActive('noticias.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'"
-                    >Notícias</a>
-                    <a
-                        href="relacoes-institucionais.html"
-                        class="nav-item-link"
-                        :class="isActive('relacoes-institucionais.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'"
-                    >Relações Institucionais</a>
-                </div>
-            </nav>
-            <div class="space-x-2 hidden lg:flex">
-                <a
-                    href="colaborador.html"
-                    class="border border-primary-200 duration-400 flex gap-2 group items-center px-4 py-2 rounded-full text-primary-500 text-xs transition-all hover:bg-accent-50/50 hover:border-accent-200 hover:text-accent-600"
-                    data-pgc-field="portal-btn"
-                ><svg
+    <header class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50" x-data="{ scrolled: false, mobileMenuOpen: false, isActive(page) { let p = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase().replace('.html', '') || 'index'; let target = page.toLowerCase().replace('.html', ''); return p === target; } }" @scroll.window="scrolled = (window.pageYOffset > 20)" data-pgc="site-header">
+            <div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
+                <a href="index.html" class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" width="85" src="assets/logo/logoB2B-02.svg"/> <div class="hidden xl:flex xl:flex-col">
+                        <span class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight" data-pgc-field="brand-name">Instituto <span class="text-primary-500">AMA</span></span>
+                        <span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
+                    </div> </a>
+                <nav class="hidden items-center justify-between mx-auto p-2 lg:flex" aria-label="Navegação Principal">
+                    <div class="hidden items-center text-sm uppercase lg:flex lg:space-x-4">
+                        <a href="index.html" class="nav-item-link" :class="isActive('index.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Início</a>
+                        <a href="instituto.html" class="nav-item-link" :class="isActive('instituto.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">O Instituto</a>
+                        <a href="projetos.html" class="nav-item-link" :class="isActive('projetos.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Projetos</a>
+                        <a href="noticias.html" class="nav-item-link" :class="isActive('noticias.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Notícias</a>
+                        <a href="relacoes-institucionais.html" class="nav-item-link" :class="isActive('relacoes-institucionais.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">Relações Institucionais</a>
+                    </div>
+                </nav>
+                <div class="space-x-2 hidden lg:flex">
+                    <a href="colaborador.html" class="border border-primary-200 duration-400 flex gap-2 group items-center px-4 py-2 rounded-full text-primary-500 text-xs transition-all hover:bg-accent-50/50 hover:border-accent-200 hover:text-accent-600" data-pgc-field="portal-btn"><svg
                         class="w-4 h-4 text-neutral-400 group-hover:text-accent-500"
                         fill="none"
                         stroke="currentColor"
@@ -178,66 +137,18 @@
                         ></path>
                     </svg>
                     <span>Portal AMA</span></a>
-                <a
-                    href="apoio.html"
-                    class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600"
-                    data-pgc-field="support-btn"
-                >Apoiar Agora</a>
-            </div>
-            <button
-                @click="mobileMenuOpen = !mobileMenuOpen"
-                class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden"
-                :aria-expanded="mobileMenuOpen"
-                aria-label="Abrir menu"
-            >
-                <svg
-                    x-show="!mobileMenuOpen"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2.5"
-                        d="M4 6h16M4 12h16m-7 6h7"
-                    />
-                </svg>
-                <svg
-                    x-show="mobileMenuOpen"
-                    x-cloak
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2.5"
-                        d="M6 18L18 6M6 6l12 12"
-                    />
-                </svg>
-            </button>
-            <div
-                x-show="mobileMenuOpen"
-                x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-4"
-                x-transition:enter-end="opacity-100 translate-y-0"
-                x-transition:leave="transition ease-in duration-150"
-                x-transition:leave-start="opacity-100 translate-y-0"
-                x-transition:leave-end="opacity-0 -translate-y-4"
-                @click.away="mobileMenuOpen = false"
-                class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-surface-200 shadow-2xl z-50 overflow-hidden"
-                x-cloak
-            >
-                <div
-                    class="flex flex-col p-6 space-y-4 uppercase"
-                    data-pgc-field="mobile-nav-items"
-                ><a
+                    <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-field="support-btn">Apoiar Agora</a>
+                </div>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4" @click.away="mobileMenuOpen = false" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-surface-200 shadow-2xl z-50 overflow-hidden" x-cloak>
+                    <div class="flex flex-col p-6 space-y-4 uppercase" data-pgc-field="mobile-nav-items"><a
                         href="index.html"
                         class="flex items-center justify-between p-4 rounded-2xl transition-colors"
                         :class="isActive('index.html') ? 'bg-primary-50 text-primary-600 font-bold' : 'text-neutral-600 font-semibold hover:bg-surface-50'"
@@ -298,19 +209,17 @@
                             @click="mobileMenuOpen = false"
                         >
                             Apoiar Agora </a>
-                    </div>
+                    </div></div>
                 </div>
             </div>
-        </div>
-        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase" data-pgc-field="brand-tagline">Acolhimento & Assistência</span><img alt="Logo Instituto AMA" class="object-contain" width="85" src="assets/logo/logo.png" data-pgc-field="logo"/>-->
-    </header>
+        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase" data-pgc-field="brand-tagline">Acolhimento & Assistência</span><img alt="Logo Instituto AMA" class="object-contain" width="85" src="assets/logo/logo.png" data-pgc-field="logo"/>--></header>
     <main>
         <section class="bg-surface-50 overflow-hidden pb-24 pt-12 relative xl:py-24">
             <!-- Subtle Background Accents -->
             <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-primary-100/30 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-96 h-96 bg-secondary-100/20 rounded-full blur-3xl pointer-events-none"></div>
 
-            <div class="container relative mx-auto px-6 lg:px-8">
+            <div class="container relative mx-auto px-6 lg:px-8 anim delay-1">
                 <div
                     class="max-w-4xl mx-auto text-center space-y-8"
                     x-data="{ visible: false }"
@@ -350,177 +259,92 @@
 
             <div class="container mx-auto px-6 lg:px-8">
                 <!-- Header -->
-                <div class="mb-16">
+                <div class="mb-16 anim delay-1">
                     <h2 class="font-bold text-3xl text-center text-stone-600 tracking-tight md:text-4xl">Membros da Diretoria Executiva</h2>
 
 
                 </div>
 
                 <!-- Team Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch anim delay-2">
 
                     <!-- José Chagas -->
-                    <div
-                        class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl"
-                        data-pgc="team-member"
-                    >
+                    <div class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="team-member">
                         <div class="flex flex-wrap gap-4 items-center relative">
                             <div class="flex items-center -space-x-3 shrink-0">
-                                <img
-                                    src="https://pinegrow.com/placeholders/img16.jpg"
-                                    alt="Foto do Membro da Equipe"
-                                    class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md"
-                                    data-pgc-field="avatar"
-                                />
+                                <img src="https://pinegrow.com/placeholders/img16.jpg" alt="Foto do Membro da Equipe" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
                             </div>
                             <div class="flex-1 min-w-44">
-                                <h3
-                                    class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600"
-                                    data-pgc-field="name"
-                                >José Chagas</h3>
-                                <span
-                                    class="inline-block self-center text-balance text-stone-500 text-xs uppercase"
-                                    data-pgc-field="role"
-                                >Presidente</span>
+                                <h3 class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600" data-pgc-field="name">José Chagas</h3>
+                                <span class="inline-block self-center text-balance text-stone-500 text-xs uppercase" data-pgc-field="role">Presidente</span>
                             </div>
                         </div>
                         <div class="flex-1 flex flex-col pt-2">
-                            <p
-                                class="text-sm text-neutral-500 leading-relaxed font-sans"
-                                data-pgc-field="bio"
-                            >Idealizador e fundador do Instituto AMA. Líder comunitário com vasta atuação na Região Itaqui-Bacanga.</p>
+                            <p class="text-sm text-neutral-500 leading-relaxed font-sans" data-pgc-field="bio">Idealizador e fundador do Instituto AMA. Líder comunitário com vasta atuação na Região Itaqui-Bacanga.</p>
                         </div>
                     </div>
 
                     <!-- Pr. Wanderlyn França -->
-                    <div
-                        class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl"
-                        data-pgc="team-member"
-                    >
+                    <div class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="team-member">
                         <div class="flex flex-wrap gap-4 items-center relative">
                             <div class="flex items-center -space-x-3 shrink-0">
-                                <img
-                                    src="https://pinegrow.com/placeholders/img16.jpg"
-                                    alt="Foto do Membro da Equipe"
-                                    class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md"
-                                    data-pgc-field="avatar"
-                                />
+                                <img src="https://pinegrow.com/placeholders/img16.jpg" alt="Foto do Membro da Equipe" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
                             </div>
                             <div class="flex-1 min-w-44">
-                                <h3
-                                    class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600"
-                                    data-pgc-field="name"
-                                >Pr. Wanderlyn França</h3>
-                                <span
-                                    class="inline-block self-center text-balance text-stone-500 text-xs uppercase"
-                                    data-pgc-field="role"
-                                >Vice-Presidente</span>
+                                <h3 class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600" data-pgc-field="name">Pr. Wanderlyn França</h3>
+                                <span class="inline-block self-center text-balance text-stone-500 text-xs uppercase" data-pgc-field="role">Vice-Presidente</span>
                             </div>
                         </div>
                         <div class="flex-1 flex flex-col pt-2">
-                            <p
-                                class="text-sm text-neutral-500 leading-relaxed font-sans"
-                                data-pgc-field="bio"
-                            >Coordenador institucional e articulador de parcerias comunitárias e sociais estratégicas.</p>
+                            <p class="text-sm text-neutral-500 leading-relaxed font-sans" data-pgc-field="bio">Coordenador institucional e articulador de parcerias comunitárias e sociais estratégicas.</p>
                         </div>
                     </div>
 
                     <!-- Pr. Eduardo Rabeo -->
-                    <div
-                        class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl"
-                        data-pgc="team-member"
-                    >
+                    <div class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="team-member">
                         <div class="flex flex-wrap gap-4 items-center relative">
                             <div class="flex items-center -space-x-3 shrink-0">
-                                <img
-                                    src="https://pinegrow.com/placeholders/img16.jpg"
-                                    alt="Foto do Membro da Equipe"
-                                    class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md"
-                                    data-pgc-field="avatar"
-                                />
+                                <img src="https://pinegrow.com/placeholders/img16.jpg" alt="Foto do Membro da Equipe" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
                             </div>
                             <div class="flex-1 min-w-44">
-                                <h3
-                                    class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600"
-                                    data-pgc-field="name"
-                                >Pr. Eduardo Rabeo</h3>
-                                <span
-                                    class="inline-block self-center text-balance text-stone-500 text-xs uppercase"
-                                    data-pgc-field="role"
-                                >1º Secretário</span>
+                                <h3 class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600" data-pgc-field="name">Pr. Eduardo Rabeo</h3>
+                                <span class="inline-block self-center text-balance text-stone-500 text-xs uppercase" data-pgc-field="role">1º Secretário</span>
                             </div>
                         </div>
                         <div class="flex-1 flex flex-col pt-2">
-                            <p
-                                class="text-sm text-neutral-500 leading-relaxed font-sans"
-                                data-pgc-field="bio"
-                            >Responsável pela gestão documental, atas, correspondências institucionais e registros administrativos.</p>
+                            <p class="text-sm text-neutral-500 leading-relaxed font-sans" data-pgc-field="bio">Responsável pela gestão documental, atas, correspondências institucionais e registros administrativos.</p>
                         </div>
                     </div>
 
                     <!-- Pamala Ribeiro -->
-                    <div
-                        class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl"
-                        data-pgc="team-member"
-                    >
+                    <div class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="team-member">
                         <div class="flex flex-wrap gap-4 items-center relative">
                             <div class="flex items-center -space-x-3 shrink-0">
-                                <img
-                                    src="https://pinegrow.com/placeholders/img16.jpg"
-                                    alt="Foto do Membro da Equipe"
-                                    class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md"
-                                    data-pgc-field="avatar"
-                                />
+                                <img src="https://pinegrow.com/placeholders/img16.jpg" alt="Foto do Membro da Equipe" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
                             </div>
                             <div class="flex-1 min-w-44">
-                                <h3
-                                    class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600"
-                                    data-pgc-field="name"
-                                >Pamala Ribeiro</h3>
-                                <span
-                                    class="inline-block self-center text-balance text-stone-500 text-xs uppercase"
-                                    data-pgc-field="role"
-                                >2ª Secretária &amp; Mulheres</span>
+                                <h3 class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600" data-pgc-field="name">Pamala Ribeiro</h3>
+                                <span class="inline-block self-center text-balance text-stone-500 text-xs uppercase" data-pgc-field="role">2ª Secretária &amp; Mulheres</span>
                             </div>
                         </div>
                         <div class="flex-1 flex flex-col pt-2">
-                            <p
-                                class="text-sm text-neutral-500 leading-relaxed font-sans"
-                                data-pgc-field="bio"
-                            >Gestora do Projeto Mulheres Empreendedoras e suporte fundamental na administração da Secretaria Geral.</p>
+                            <p class="text-sm text-neutral-500 leading-relaxed font-sans" data-pgc-field="bio">Gestora do Projeto Mulheres Empreendedoras e suporte fundamental na administração da Secretaria Geral.</p>
                         </div>
                     </div>
 
                     <!-- Edivaldo Ferreira -->
-                    <div
-                        class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl"
-                        data-pgc="team-member"
-                    >
+                    <div class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="team-member">
                         <div class="flex flex-wrap gap-4 items-center relative">
                             <div class="flex items-center -space-x-3 shrink-0">
-                                <img
-                                    src="https://pinegrow.com/placeholders/img16.jpg"
-                                    alt="Foto do Membro da Equipe"
-                                    class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md"
-                                    data-pgc-field="avatar"
-                                />
+                                <img src="https://pinegrow.com/placeholders/img16.jpg" alt="Foto do Membro da Equipe" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
                             </div>
                             <div class="flex-1 min-w-44">
-                                <h3
-                                    class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600"
-                                    data-pgc-field="name"
-                                >Edivaldo Ferreira</h3>
-                                <span
-                                    class="inline-block self-center text-balance text-stone-500 text-xs uppercase"
-                                    data-pgc-field="role"
-                                >Tesoureiro</span>
+                                <h3 class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600" data-pgc-field="name">Edivaldo Ferreira</h3>
+                                <span class="inline-block self-center text-balance text-stone-500 text-xs uppercase" data-pgc-field="role">Tesoureiro</span>
                             </div>
                         </div>
                         <div class="flex-1 flex flex-col pt-2">
-                            <p
-                                class="text-sm text-neutral-500 leading-relaxed font-sans"
-                                data-pgc-field="bio"
-                            >Responsável pela gestão financeira rigorosa, transparência nas contas e elaboração de balanços anuais.</p>
+                            <p class="text-sm text-neutral-500 leading-relaxed font-sans" data-pgc-field="bio">Responsável pela gestão financeira rigorosa, transparência nas contas e elaboração de balanços anuais.</p>
                         </div>
                     </div>
 
@@ -545,136 +369,56 @@
                 <!-- Coordination Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Projeto Acolher -->
-                    <div
-                        class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md"
-                        data-pgc="ama-project-card"
-                    >
-                        <h4
-                            class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600"
-                            data-pgc-field="title"
-                        >Élida Brígida &amp; Solange Ribeiro</h4>
-                        <p
-                            class="font-sans leading-relaxed text-accent-800 text-xs"
-                            data-pgc-field="description"
-                        >Reforço escolar, apoio psicológico, colônia de férias e curso de música infantil.</p>
-                        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Projeto Acolher</span>-->
-                    </div>
+                    <div class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md" data-pgc="ama-project-card">
+                    <h4 class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600" data-pgc-field="title">Élida Brígida &amp; Solange Ribeiro</h4>
+                    <p class="font-sans leading-relaxed text-accent-800 text-xs" data-pgc-field="description">Reforço escolar, apoio psicológico, colônia de férias e curso de música infantil.</p>
+                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Projeto Acolher</span>--></div>
 
                     <!-- Mulheres Empreendedoras -->
-                    <div
-                        class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md"
-                        data-pgc="ama-project-card"
-                    >
-                        <h4
-                            class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600"
-                            data-pgc-field="title"
-                        >Pamala Ribeiro &amp; Marcilene Almeida</h4>
-                        <p
-                            class="font-sans leading-relaxed text-accent-800 text-xs"
-                            data-pgc-field="description"
-                        >Oficinas de confeitaria, culinária sustentável, corte &amp; costura e geração de renda.</p>
-                        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Mulheres Empreendedoras</span>-->
-                    </div>
+                    <div class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md" data-pgc="ama-project-card">
+                    <h4 class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600" data-pgc-field="title">Pamala Ribeiro &amp; Marcilene Almeida</h4>
+                    <p class="font-sans leading-relaxed text-accent-800 text-xs" data-pgc-field="description">Oficinas de confeitaria, culinária sustentável, corte &amp; costura e geração de renda.</p>
+                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Mulheres Empreendedoras</span>--></div>
 
                     <!-- Projeto Capacitar -->
-                    <div
-                        class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md"
-                        data-pgc="ama-project-card"
-                    >
-                        <h4
-                            class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600"
-                            data-pgc-field="title"
-                        >João Carlos Silva &amp; Glailson Pinto</h4>
-                        <p
-                            class="font-sans leading-relaxed text-accent-800 text-xs"
-                            data-pgc-field="description"
-                        >Cursos de qualificação profissional, parcerias de estágio e oficinas profissionalizantes.</p>
-                        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Projeto Capacitar</span>-->
-                    </div>
+                    <div class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md" data-pgc="ama-project-card">
+                    <h4 class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600" data-pgc-field="title">João Carlos Silva &amp; Glailson Pinto</h4>
+                    <p class="font-sans leading-relaxed text-accent-800 text-xs" data-pgc-field="description">Cursos de qualificação profissional, parcerias de estágio e oficinas profissionalizantes.</p>
+                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Projeto Capacitar</span>--></div>
 
                     <!-- Ação AMA -->
-                    <div
-                        class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md"
-                        data-pgc="ama-project-card"
-                    >
-                        <h4
-                            class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600"
-                            data-pgc-field="title"
-                        >Silas Barros, Clênio Silva &amp; Auri Silva</h4>
-                        <p
-                            class="font-sans leading-relaxed text-accent-800 text-xs"
-                            data-pgc-field="description"
-                        >Mutirões de saúde, odontologia, doações e cidadania urbana e rural comunitária.</p>
-                        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Ação AMA (Itinerante)</span>-->
-                    </div>
+                    <div class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md" data-pgc="ama-project-card">
+                    <h4 class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600" data-pgc-field="title">Silas Barros, Clênio Silva &amp; Auri Silva</h4>
+                    <p class="font-sans leading-relaxed text-accent-800 text-xs" data-pgc-field="description">Mutirões de saúde, odontologia, doações e cidadania urbana e rural comunitária.</p>
+                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Ação AMA (Itinerante)</span>--></div>
 
                     <!-- Comunicação -->
-                    <div
-                        class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md"
-                        data-pgc="ama-project-card"
-                    >
-                        <h4
-                            class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600"
-                            data-pgc-field="title"
-                        >Hudson Abreu, Maria dos Anjos &amp; Obiane Oliveira</h4>
-                        <p
-                            class="font-sans leading-relaxed text-accent-800 text-xs"
-                            data-pgc-field="description"
-                        >Redes sociais, registros institucionais, cobertura de imprensa e visibilidade comunitária.</p>
-                        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Comunicação & Mídia</span>-->
-                    </div>
+                    <div class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md" data-pgc="ama-project-card">
+                    <h4 class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600" data-pgc-field="title">Hudson Abreu, Maria dos Anjos &amp; Obiane Oliveira</h4>
+                    <p class="font-sans leading-relaxed text-accent-800 text-xs" data-pgc-field="description">Redes sociais, registros institucionais, cobertura de imprensa e visibilidade comunitária.</p>
+                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Comunicação & Mídia</span>--></div>
 
                     <!-- Pedagógica -->
-                    <div
-                        class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md"
-                        data-pgc="ama-project-card"
-                    >
-                        <h4
-                            class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600"
-                            data-pgc-field="title"
-                        >Marcilene &amp; Raquel</h4>
-                        <p
-                            class="font-sans leading-relaxed text-accent-800 text-xs"
-                            data-pgc-field="description"
-                        >Orientação pedagógica, planos de aula e avaliação de ensino continuado.</p>
-                        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Pedagógica & Ensino</span>-->
-                    </div>
+                    <div class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md" data-pgc="ama-project-card">
+                    <h4 class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600" data-pgc-field="title">Marcilene &amp; Raquel</h4>
+                    <p class="font-sans leading-relaxed text-accent-800 text-xs" data-pgc-field="description">Orientação pedagógica, planos de aula e avaliação de ensino continuado.</p>
+                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Pedagógica & Ensino</span>--></div>
 
                     <!-- Apoio e Logística -->
-                    <div
-                        class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md"
-                        data-pgc="ama-project-card"
-                    >
-                        <h4
-                            class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600"
-                            data-pgc-field="title"
-                        >Clênio Ramos, Maria Merces, George Farias &amp; Denizar Oliveira</h4>
-                        <p
-                            class="font-sans leading-relaxed text-accent-800 text-xs"
-                            data-pgc-field="description"
-                        >Coordenação de apoio logístico, infraestrutura das sedes, materiais e operações comunitárias.</p>
-                        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Apoio Operacional</span>-->
-                    </div>
+                    <div class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md" data-pgc="ama-project-card">
+                    <h4 class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600" data-pgc-field="title">Clênio Ramos, Maria Merces, George Farias &amp; Denizar Oliveira</h4>
+                    <p class="font-sans leading-relaxed text-accent-800 text-xs" data-pgc-field="description">Coordenação de apoio logístico, infraestrutura das sedes, materiais e operações comunitárias.</p>
+                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Apoio Operacional</span>--></div>
 
                     <!-- Eventos -->
-                    <div
-                        class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md"
-                        data-pgc="ama-project-card"
-                    >
-                        <h4
-                            class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600"
-                            data-pgc-field="title"
-                        >Jaciara & Dos Anjos</h4>
-                        <p
-                            class="font-sans leading-relaxed text-accent-800 text-xs"
-                            data-pgc-field="description"
-                        >Organização de festividades, feiras culturais e encontros de rede.</p>
-                        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Eventos & Cultura</span>-->
-                    </div>
+                    <div class="border border-surface-600 duration-500 group p-6 rounded-3xl shadow-xs transition-all hover:-translate-y-2 hover:border hover:border-primary-200 hover:shadow-md" data-pgc="ama-project-card">
+                    <h4 class="font-extrabold font-sans mb-2 text-accent-800 text-balance text-lg transition-colors group-hover:text-primary-600" data-pgc-field="title">Jaciara & Dos Anjos</h4>
+                    <p class="font-sans leading-relaxed text-accent-800 text-xs" data-pgc-field="description">Organização de festividades, feiras culturais e encontros de rede.</p>
+                <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<span class="text-[10px] font-bold text-primary-500 uppercase tracking-wider" data-pgc-field="tag">Eventos & Cultura</span>--></div>
                 </div>
 
                 <!-- Interns Highlight -->
-                <div class="mt-16 bg-white rounded-[2.5rem] p-8 md:p-12 border border-surface-200 text-center shadow-xl shadow-surface-200/50">
+                <div class="mt-16 bg-white rounded-[2.5rem] p-8 md:p-12 border border-surface-200 text-center shadow-xl shadow-surface-200/50 anim delay-2">
                     <div class="max-w-2xl mx-auto">
                         <h4 class="font-extrabold font-sans mb-4 text-stone-600 text-xl">Estagiários & Voluntários de Apoio</h4>
                         <p class="text-sm text-neutral-500 font-sans mb-8">
@@ -694,34 +438,16 @@
         </section>
     </main>
 
-    <footer
-        class="bg-primary-950 pb-8 pt-20 text-primary-50"
-        data-pgc="site-footer"
-    >
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="gap-12 grid grid-cols-1 pb-20 md:grid-cols-2 lg:grid-cols-4">
-                <div class="space-y-6">
-                    <a
-                        href="index.html"
-                        class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90"
-                        title="Instituto AMA - Início"
-                    > <img
-                            src="assets/logo/logoB2B.svg"
-                            alt="Logo Instituto AMA"
-                            class="brightness-0 invert object-contain w-40 group-hover:opacity-100"
-                        /> </a>
-                    <p data-pgc-field="about">Transformando vidas através do acolhimento e da mentoria social em nossa comunidade.</p>
-                </div>
-                <div>
-                    <h4
-                        class="font-bold mb-6 tracking-widest uppercase"
-                        data-pgc-field="col-1-title"
-                    >Links Rápidos</h4>
-                    <ul
-                        class="space-y-4"
-                        data-pgc-field="col-1-links"
-                    >
-                        <li>
+    <footer class="bg-primary-950 pb-8 pt-20 text-primary-50" data-pgc="site-footer">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="gap-12 grid grid-cols-1 pb-20 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="space-y-6">
+                        <a href="index.html" class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90" title="Instituto AMA - Início"> <img src="assets/logo/logoB2B.svg" alt="Logo Instituto AMA" class="brightness-0 invert object-contain w-40 group-hover:opacity-100"/> </a>
+                        <p data-pgc-field="about">Transformando vidas através do acolhimento e da mentoria social em nossa comunidade.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-1-title">Links Rápidos</h4>
+                        <ul class="space-y-4" data-pgc-field="col-1-links"><li>
                             <a
                                 href="instituto.html"
                                 class="hover:text-primary-500 transition-colors"
@@ -744,19 +470,11 @@
                                 href="colaborador.html"
                                 class="hover:text-primary-500 transition-colors"
                             >Área do Colaborador</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4
-                        class="font-bold mb-6 tracking-widest uppercase"
-                        data-pgc-field="col-2-title"
-                    >Governança</h4>
-                    <ul
-                        class="space-y-4"
-                        data-pgc-field="col-2-links"
-                    >
-                        <li>
+                        </li></ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-6 tracking-widest uppercase" data-pgc-field="col-2-title">Governança</h4>
+                        <ul class="space-y-4" data-pgc-field="col-2-links"><li>
                             <a
                                 href="relacoes-institucionais.html#transparencia"
                                 class="hover:text-primary-500 transition-colors"
@@ -779,13 +497,11 @@
                                 href="relacoes-institucionais.html#transparencia"
                                 class="hover:text-primary-500 transition-colors"
                             >LGPD e Conformidade</a>
-                        </li>
-                    </ul>
-                </div>
+                        </li></ul>
+                    </div>
                     <div>
                         <h4 class="font-bold mb-6 tracking-widest uppercase text-white" data-pgc-field="col-3-title">Contato</h4>
-                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details">
-                            <a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
+                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details"><a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
                                 <svg class="h-5 w-5 shrink-0 text-coral-400 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -797,8 +513,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                                 <span class="break-all text-xs sm:text-sm">institutoama10@gmail.com</span>
-                            </a>
-                        </div>
+                            </a></div>
                         <div class="pt-2">
                             <span class="text-xs font-semibold uppercase tracking-wider text-primary-300 block mb-3">Redes &amp; Canais Oficiais</span>
                             <div class="flex items-center gap-2.5">
@@ -826,20 +541,15 @@
                             </div>
                         </div>
                     </div>
-            <div class="flex flex-col gap-6 items-center justify-between text-primary-300 text-sm md:flex-row">
-                <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
-                <div class="flex items-center gap-6">
-                    <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
-                    <a
-                        href="relacoes-institucionais.html#transparencia"
-                        class="hover:text-white"
-                        data-pgc-field="privacy-link"
-                    >Política de Privacidade</a>
+                <div class="flex flex-wrap gap-6 justify-between text-primary-300 text-sm md:col-span-2 xl:col-span-4">
+                    <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
+                    <div class="flex gap-6 items-center xl:row-start-4">
+                        <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
+                        <a href="relacoes-institucionais.html#transparencia" class="hover:text-white" data-pgc-field="privacy-link">Política de Privacidade</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<img src="assets/logo/logo.png" alt="Logo Instituto AMA" class="object-contain brightness-0 invert group-hover:opacity-100" width="125" data-pgc-field="logo"/><span class="font-extrabold font-sans leading-none text-xl tracking-tight text-white" data-pgc-field="brand-name">Instituto <span class="text-primary-500">AMA</span></span><span class="text-[9px] font-bold text-neutral-400 uppercase tracking-[0.2em] mt-1.5" data-pgc-field="brand-tagline">Acolhimento &amp; Assistência</span>-->
-    </footer>
+        </footer>
 </body>
 
 </html>

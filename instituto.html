@@ -30,6 +30,7 @@
         <meta name="twitter:description" content="Conheça a história, missão, visão, valores, Diretoria Geral e atuação social do Instituto AMA em São Luís/MA.">
         <meta name="twitter:image" content="https://institutoama.org.br/assets/img/og-image.jpg">
         <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <link href="css/custom.css" rel="stylesheet" type="text/css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <script src="js/main.js"></script>
     </head>
@@ -56,10 +57,10 @@
                     <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-field="support-btn">Apoiar Agora</a>
                 </div>
                 <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
-                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
-                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
@@ -83,7 +84,7 @@
                 <!-- Decorative background elements -->
                 <div class="container mx-auto px-4 lg:px-8">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        <div class="space-y-6 lg:col-span-8 xl:col-span-7">
+                        <div class="space-y-6 lg:col-span-8 xl:col-span-7 anim delay-1">
                             <h1 class="font-extrabold font-sans leading-[1.15] text-3xl text-balance text-primary-500 tracking-tight md:max-w-md lg:max-w-lg lg:text-4xl">
                             Amor que acolhe. Sabedoria que transforma. </h1>
                             <div class="font-sans leading-relaxed space-y-4 text-accent-800 text-lg">
@@ -94,7 +95,7 @@
                             </div>
                         </div>
                         <!-- Highlight Card / Selo de Origem -->
-                        <div class="hidden lg:col-span-4 lg:inline lg:w-full xl:col-span-5">
+                        <div class="hidden lg:col-span-4 lg:inline lg:w-full xl:col-span-5 anim delay-2">
                             <img src="assets/logo/selo.svg" alt="Selo de Origem Instituto AMA" class="duration-500 object-contain transition-transform w-full group-hover:rotate-3 group-hover:scale-105 lg:mx-auto lg:w-80">
                         </div>
                     </div>
@@ -103,12 +104,12 @@
             <!-- Missão, Visão e Valores -->
             <section class="py-20 border-y border-surface-200">
                 <div class="container mx-auto px-4 lg:px-8">
-                    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3 anim delay-1">
                         <h2 class="font-extrabold font-sans text-3xl text-primary-500 tracking-tight">Nossa Identidade &amp; Compromisso Social</h2>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <!-- Missão (Caregiver / Coral #FF7C67) -->
-                        <div class="bg-background-50 border duration-300 group p-10 rounded-3xl shadow-xs space-y-6 transition-all hover:-translate-y-1 hover:bg-background-100 hover:border-coral-500 hover:shadow-xl">
+                        <div class="bg-background-50 border duration-300 group p-10 rounded-3xl shadow-xs space-y-6 transition-all hover:-translate-y-1 hover:bg-background-100 hover:border-coral-500 hover:shadow-xl anim delay-1">
                             <div class="flex items-center space-x-4">
                                 <div class="bg-coral-50 flex h-16 items-center justify-center rounded-2xl text-coral-500 transition-transform w-16 group-hover:scale-110">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
@@ -124,7 +125,7 @@
                             Promover a autonomia integral de crianças, jovens e famílias em vulnerabilidade social através do acolhimento humano, da educação multissensorial e do desenvolvimento econômico comunitário. </p>
                         </div>
                         <!-- Visão (Sage / Laranja #FFAE41) -->
-                        <div class="bg-background-50 border duration-300 group p-10 rounded-3xl shadow-xs space-y-6 transition-all hover:-translate-y-1 hover:bg-background-100 hover:border-secondary-500 hover:shadow-xl">
+                        <div class="bg-background-50 border duration-300 group p-10 rounded-3xl shadow-xs space-y-6 transition-all hover:-translate-y-1 hover:bg-background-100 hover:border-secondary-500 hover:shadow-xl anim delay-2">
                             <div class="flex items-center space-x-4">
                                 <div class="bg-secondary-50 flex h-16 items-center justify-center rounded-2xl text-secondary-500 transition-transform w-16 group-hover:scale-110">
                                     <svg class="h-8 w-8" version xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xml:space fill="none" stroke="currentColor">
@@ -140,7 +141,7 @@
                             Ser reconhecido até 2027 como o principal polo autônomo de inovação e engenharia de impacto social do Maranhão, servindo de modelo nacional em governança, transparência e transformação de vida. </p>
                         </div>
                         <!-- Valores (Innocent / Turquesa #4CC4B6) -->
-                        <div class="bg-background-50 border duration-300 group p-10 rounded-3xl shadow-xs space-y-6 transition-all hover:-translate-y-1 hover:bg-background-100 hover:border-turquesa-500 hover:shadow-xl">
+                        <div class="bg-background-50 border duration-300 group p-10 rounded-3xl shadow-xs space-y-6 transition-all hover:-translate-y-1 hover:bg-background-100 hover:border-turquesa-500 hover:shadow-xl anim delay-3">
                             <div class="flex items-center space-x-4">
                                 <div class="bg-turquesa-50 flex h-16 items-center justify-center rounded-2xl text-turquesa-500 transition-transform w-16 group-hover:scale-110">
                                     <svg class="h-8 w-8" version xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xml:space fill="none" stroke="currentColor">
@@ -163,14 +164,14 @@
             <section id="diretoria" class="bg-background-500 overflow-hidden py-24 relative">
                 <div class="container mx-auto px-6 lg:px-8">
                     <!-- Header -->
-                    <div class="mb-16 text-center max-w-3xl mx-auto space-y-3">
+                    <div class="mb-16 text-center max-w-3xl mx-auto space-y-3 anim delay-1">
                         <h2 class="font-extrabold text-3xl text-primary-500 tracking-tight md:text-4xl">
                         Membros da Diretoria Executiva  </h2>
                         <p class="font-sans max-w-xl mx-auto text-accent-800 text-sm">
                         Liderança responsável pelo cumprimento do estatuto social, prestação de contas e diretrizes estratégicas da instituição. </p>
                     </div>
                     <!-- Team Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch anim delay-2">
                         <!-- 1. José Chagas -->
                         <div class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="team-member">
                         <div class="flex flex-wrap gap-4 items-center relative">
@@ -279,10 +280,7 @@
                         <div class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="team-member">
                         <div class="flex flex-wrap gap-4 items-center relative">
                             <div class="flex items-center -space-x-3 shrink-0">
-                                <img src="assets/img/avatar/clenio-ramos.webp" alt="Clênio Ramos" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
-                                <img src="assets/img/avatar/maria-merces.webp" alt="Maria Merces" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
-                                <img src="assets/img/avatar/george.webp" alt="George Farias" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
-                                <img src="assets/img/avatar/denizar.webp" alt="Denizar Oliveira" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
+                                <img src="assets/img/avatar/clenio-ramos.webp" alt="Clênio Ramos" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/><img src="assets/img/avatar/maria-merces.webp" alt="Maria Merces" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/><img src="assets/img/avatar/george.webp" alt="George Farias" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/><img src="assets/img/avatar/denizar.webp" alt="Denizar Oliveira" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
                             </div>
                             <div class="flex-1 min-w-44">
                                 <h3 class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600" data-pgc-field="name">Clênio Ramos, Maria Merces, George Farias &amp; Denizar Oliveira</h3>
@@ -355,9 +353,7 @@
                         <div class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="team-member">
                         <div class="flex flex-wrap gap-4 items-center relative">
                             <div class="flex items-center -space-x-3 shrink-0">
-                                <img src="assets/img/avatar/hudson.webp" alt="Hudson Abreu" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
-                                <img src="assets/img/avatar/dos-anjos.webp" alt="Maria dos Anjos" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
-                                <img src="assets/img/avatar/obiane-oliveira.webp" alt="Obiane Oliveira" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
+                                <img src="assets/img/avatar/hudson.webp" alt="Hudson Abreu" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/><img src="assets/img/avatar/dos-anjos.webp" alt="Maria dos Anjos" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/><img src="assets/img/avatar/obiane-oliveira.webp" alt="Obiane Oliveira" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
                             </div>
                             <div class="flex-1 min-w-44">
                                 <h3 class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600" data-pgc-field="name">Hudson Abreu, Maria dos Anjos &amp; Obiane Oliveira</h3>
@@ -372,9 +368,7 @@
                         <div class="border border-surface-600 duration-300 flex flex-col group p-8 rounded-3xl space-y-2 transition-all hover:-translate-y-2 hover:bg-background-50 hover:border-primary-200 hover:shadow-xl" data-pgc="team-member">
                         <div class="flex flex-wrap gap-4 items-center relative">
                             <div class="flex items-center -space-x-3 shrink-0">
-                                <img src="assets/img/avatar/silas-barros.webp" alt="Silas Barros" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
-                                <img src="assets/img/avatar/clenio-ramos.webp" alt="Clênio Silva" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
-                                <img src="assets/img/avatar/auri-silva.webp" alt="Auri Silva" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
+                                <img src="assets/img/avatar/silas-barros.webp" alt="Silas Barros" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/><img src="assets/img/avatar/clenio-ramos.webp" alt="Clênio Silva" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/><img src="assets/img/avatar/auri-silva.webp" alt="Auri Silva" class="h-20 object-cover rounded-3xl w-20 duration-300 shadow-sm transition-all ring-2 ring-white group-hover:scale-105 group-hover:shadow-md" data-pgc-field="avatar"/>
                             </div>
                             <div class="flex-1 min-w-44">
                                 <h3 class="font-extrabold font-sans text-balance text-base text-stone-600 transition-colors group-hover:text-primary-600" data-pgc-field="name">Silas Barros, Clênio Silva &amp; Auri Silva</h3>
@@ -393,7 +387,7 @@
                 <!-- Background Decoration -->
                 <div class="container relative mx-auto px-6 lg:px-8">
                     <!-- Section Header -->
-                    <div class="gap-16 grid grid-cols-1 lg:gap-8 lg:grid-cols-12">
+                    <div class="gap-16 grid grid-cols-1 lg:gap-8 lg:grid-cols-12 anim delay-1">
                         <div class="space-y-6 lg:col-span-7 xl:col-span-8">
                             <div class="max-w-3xl space-y-4 text-center">
                                 <h2 class="font-extrabold font-sans text-3xl text-left text-primary-500 tracking-tight md:text-4xl">Coordenação de Projetos</h2>
@@ -453,7 +447,7 @@
             <!-- Infraestrutura Atual & Nova Sede -->
             <section class="py-24 relative">
                 <div class="container mx-auto px-4 lg:px-8">
-                    <div class="bg-background-500 border border-surface-600 gap-8 grid grid-cols-1 items-center p-8 rounded-3xl md:p-14 lg:grid-cols-12">
+                    <div class="bg-background-500 border border-surface-600 gap-8 grid grid-cols-1 items-center p-8 rounded-3xl md:p-14 lg:grid-cols-12 anim delay-1">
                         <div class="space-y-6 lg:col-span-7">
                             <span class="inline-block text-primary-600 font-bold text-xs uppercase tracking-widest font-sans">Infraestrutura &amp; Expansão</span>
                             <h2 class="font-extrabold font-sans leading-tight max-w-lg text-3xl text-pretty text-primary-500 lg:max-w-md lg:text-4xl xl:max-w-2xl">
@@ -518,8 +512,7 @@
                     </div>
                     <div>
                         <h4 class="font-bold mb-6 tracking-widest uppercase text-white" data-pgc-field="col-3-title">Contato</h4>
-                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details">
-                            <a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
+                        <div class="mb-4 space-y-3 text-sm text-primary-100" data-pgc-field="contact-details"><a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors group" title="Ver no Google Maps">
                                 <svg class="h-5 w-5 shrink-0 text-coral-400 mt-0.5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -531,8 +524,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                                 <span class="break-all text-xs sm:text-sm">institutoama10@gmail.com</span>
-                            </a>
-                        </div>
+                            </a></div>
                         <div class="pt-2">
                             <span class="text-xs font-semibold uppercase tracking-wider text-primary-300 block mb-3">Redes &amp; Canais Oficiais</span>
                             <div class="flex items-center gap-2.5">
@@ -560,14 +552,14 @@
                             </div>
                         </div>
                     </div>
-                <div class="flex flex-col gap-6 items-center justify-between text-primary-300 text-sm md:flex-row">
+                <div class="flex flex-wrap gap-6 justify-between text-primary-300 text-sm md:col-span-2 xl:col-span-4">
                     <p data-pgc-field="copyright">&copy; 2026 Instituto AMA. Todos os direitos reservados.</p>
-                    <div class="flex items-center gap-6">
+                    <div class="flex gap-6 items-center xl:row-start-4">
                         <span data-pgc-field="pix">PIX: CNPJ 48.722.909/0001-80</span>
                         <a href="relacoes-institucionais.html#privacidade" class="hover:text-white" data-pgc-field="privacy-link">Política de Privacidade</a>
                     </div>
                 </div>
             </div>
-        <!--[Pinegrow components saved data - this data is no longer used in the component. We're saving it just in case. Clear this with Components -> Clear saved unused edits]<img src="assets/logo/logo.png" alt="Logo Instituto AMA" class="object-contain brightness-0 invert group-hover:opacity-100" width="125" data-pgc-field="logo"/>--></footer>
+        </footer>
     </body>
 </html>
