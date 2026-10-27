@@ -55,23 +55,13 @@ document.addEventListener('alpine:init', () => {
     documents: [
       {
         id: 1,
-        title: 'Estatuto Social do Instituto AMA',
-        category: 'institucional',
-        date: '2021-08-15',
+        title: 'Relatório de Prestação de Contas & ESG',
+        category: 'financeiro',
+        date: '2026-01-15',
         type: 'PDF',
-        size: '1.2 MB',
-        description: 'Documento de constituição jurídica, finalidades e regras de governança da organização.',
-        url: '#'
-      },
-      {
-        id: 2,
-        title: 'Ata de Eleição e Posse da Diretoria Geral (2025-2029)',
-        category: 'institucional',
-        date: '2025-01-10',
-        type: 'PDF',
-        size: '850 KB',
-        description: 'Registro oficial dos membros eleitos para a gestão do quadriênio 2025-2029.',
-        url: '#'
+        size: '179 KB',
+        description: 'Demonstrativo consolidado de impacto social, governança e conformidade com o MROSC.',
+        url: 'assets/docs/relatorio-prestacao-contas-esg-instituto-ama.pdf'
       },
       {
         id: 3,
