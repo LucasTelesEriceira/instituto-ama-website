@@ -1604,9 +1604,20 @@ select{
   --tw-border-opacity: 1;
   border-color: rgb(255 124 103 / var(--tw-border-opacity));
 }
+.border-emerald-100{
+  --tw-border-opacity: 1;
+  border-color: rgb(209 250 229 / var(--tw-border-opacity));
+}
 .border-emerald-200{
   --tw-border-opacity: 1;
   border-color: rgb(167 243 208 / var(--tw-border-opacity));
+}
+.border-emerald-200\/90{
+  border-color: rgb(167 243 208 / 0.9);
+}
+.border-emerald-300{
+  --tw-border-opacity: 1;
+  border-color: rgb(110 231 183 / var(--tw-border-opacity));
 }
 .border-neutral-200{
   border-color: oklch(0.922 0 0);
@@ -1755,13 +1766,23 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(209 250 229 / var(--tw-bg-opacity));
 }
+.bg-emerald-100\/70{
+  background-color: rgb(209 250 229 / 0.7);
+}
 .bg-emerald-50{
   --tw-bg-opacity: 1;
   background-color: rgb(236 253 245 / var(--tw-bg-opacity));
 }
+.bg-emerald-50\/40{
+  background-color: rgb(236 253 245 / 0.4);
+}
 .bg-emerald-500{
   --tw-bg-opacity: 1;
   background-color: rgb(16 185 129 / var(--tw-bg-opacity));
+}
+.bg-emerald-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
 }
 .bg-neutral-100{
   background-color: oklch(0.97 0 0);
@@ -2273,6 +2294,10 @@ select{
 .text-coral-700{
   --tw-text-opacity: 1;
   color: rgb(212 103 86 / var(--tw-text-opacity));
+}
+.text-emerald-300{
+  --tw-text-opacity: 1;
+  color: rgb(110 231 183 / var(--tw-text-opacity));
 }
 .text-emerald-600{
   --tw-text-opacity: 1;
@@ -3005,6 +3030,11 @@ body.block-editor-page .anim,
   border-color: rgb(255 124 103 / var(--tw-border-opacity));
 }
 
+.hover\:border-emerald-400:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(52 211 153 / var(--tw-border-opacity));
+}
+
 .hover\:border-primary-200:hover{
   --tw-border-opacity: 1;
   border-color: rgb(177 164 160 / var(--tw-border-opacity));
@@ -3087,6 +3117,11 @@ body.block-editor-page .anim,
 .hover\:bg-coral-600:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(233 114 94 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-emerald-50:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 253 245 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-emerald-600:hover{
