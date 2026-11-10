@@ -135,50 +135,308 @@ document.addEventListener('alpine:init', () => {
     }
   }));
 
-  // Componente de Autenticação da Área do Colaborador
-  Alpine.data('collaboratorAuth', () => ({
-    credentials: {
-      matricula: '',
-      senha: '',
-      lembrar: false
-    },
-    loading: false,
-    errorMessage: '',
-    successMessage: '',
-    showPassword: false,
-
-    submitLogin() {
-      this.errorMessage = '';
-      this.successMessage = '';
-
-      if (!this.credentials.matricula || !this.credentials.senha) {
-        this.errorMessage = 'Por favor, preencha a matrícula/CPF e a senha de acesso.';
-        return;
-      }
-
-      this.loading = true;
-
-      // Simulação de resposta da API de Autenticação
-      setTimeout(() => {
-        this.loading = false;
-        if (this.credentials.senha.length < 4) {
-          this.errorMessage = 'Credenciais não encontradas ou conta inativa. Entre em contato com a Secretaria do Instituto AMA.';
-        } else {
-          this.successMessage = 'Autenticação realizada com sucesso! Redirecionando com segurança ao Sistema AMA...';
-          setTimeout(() => {
-            alert('Acesso autorizado! Redirecionando para o ambiente seguro do colaborador.');
-          }, 1000);
-        }
-      }, 1200);
-    }
-  }));
-
   // Componente de Abas para a página de Projetos
   Alpine.data('projectTabs', (defaultTab = 'acolher') => ({
     activeTab: defaultTab,
     
     setTab(tab) {
       this.activeTab = tab;
+    }
+  }));
+
+  // Componente de Editais & Chamadas Públicas (Consome API oficial)
+  Alpine.data('editaisHub', () => ({
+    searchQuery: '',
+    selectedStatus: 'todos',
+    selectedEsfera: 'todos',
+    loading: false,
+    error: null,
+    editais: [],
+
+    async init() {
+      await this.fetchEditais();
+    },
+
+    async fetchEditais() {
+      this.loading = true;
+      this.error = null;
+      try {
+        const apiUrl = window.AMA_API_BASE_URL || 'https://app.institutoamabr.org/wp-json/ama/v2/public/editais';
+        const res = await fetch(apiUrl, {
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          const data = await res.json();
+          this.editais = (data && Array.isArray(data.items)) ? data.items : [];
+        } else {
+          this.error = 'Não foi possível carregar a lista de editais no momento.';
+          this.editais = [];
+        }
+      } catch (e) {
+        this.error = 'Falha de comunicação com a base de dados de editais.';
+        this.editais = [];
+      } finally {
+        this.loading = false;
+      }
+    },
+
+    getStatusBadge(status) {
+      const map = {
+        'prospeccao': { label: 'Em Prospecção', bg: 'bg-neutral-100 text-neutral-700 border-neutral-200' },
+        'elaboracao': { label: 'Inscrições / Elaboração', bg: 'bg-amber-50 text-amber-800 border-amber-200' },
+        'submetido': { label: 'Submetido', bg: 'bg-blue-50 text-blue-800 border-blue-200' },
+        'em_analise': { label: 'Em Julgamento', bg: 'bg-sky-50 text-sky-800 border-sky-200' },
+        'diligencia': { label: 'Em Diligência', bg: 'bg-orange-50 text-orange-800 border-orange-200' },
+        'aprovado': { label: 'Proposta Aprovada', bg: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
+        'recursos_liberados': { label: 'Recursos Liberados', bg: 'bg-teal-50 text-teal-800 border-teal-200' },
+        'em_execucao': { label: 'Em Execução', bg: 'bg-primary-50 text-primary-800 border-primary-200' },
+        'prestacao_contas': { label: 'Prestação de Contas', bg: 'bg-purple-50 text-purple-800 border-purple-200' },
+        'concluido': { label: 'Concluído', bg: 'bg-stone-100 text-stone-700 border-stone-200' }
+      };
+      return map[status] || { label: 'Publicado', bg: 'bg-neutral-100 text-neutral-700 border-neutral-200' };
+    },
+
+    getEsferaLabel(esfera) {
+      const map = {
+        'publico_federal': 'Federal',
+        'publico_estadual': 'Estadual',
+        'publico_municipal': 'Municipal',
+        'emenda_parlamentar': 'Emenda Parlamentar',
+        'privado': 'Setor Privado / ESG',
+        'fundacao': 'Fundação / Instituto',
+        'internacional': 'Internacional'
+      };
+      return map[esfera] || esfera;
+    },
+
+    formatDate(dateStr) {
+      if (!dateStr) return 'A definir';
+      try {
+        const parts = dateStr.split('-');
+        if (parts.length === 3) {
+          return `${parts[2]}/${parts[1]}/${parts[0]}`;
+        }
+        return dateStr;
+      } catch (e) {
+        return dateStr;
+      }
+    },
+
+    get filteredEditais() {
+      return this.editais.filter(ed => {
+        const matchesStatus = this.selectedStatus === 'todos' || ed.status === this.selectedStatus;
+        const matchesEsfera = this.selectedEsfera === 'todos' || ed.tipo_esfera === this.selectedEsfera;
+        const query = this.searchQuery.toLowerCase().trim();
+        const matchesQuery = !query || 
+          (ed.titulo && ed.titulo.toLowerCase().includes(query)) ||
+          (ed.codigo && ed.codigo.toLowerCase().includes(query)) ||
+          (ed.orgao_financiador && ed.orgao_financiador.toLowerCase().includes(query)) ||
+          (ed.objeto_resumo && ed.objeto_resumo.toLowerCase().includes(query)) ||
+          (ed.area_tematica && ed.area_tematica.toLowerCase().includes(query));
+        
+        return matchesStatus && matchesEsfera && matchesQuery;
+      });
+    }
+  }));
+
+  // Componente de Ouvidoria & Canal Ético (Consome API oficial)
+  Alpine.data('ouvidoriaHub', () => ({
+    activeTab: 'formulario', // 'formulario' | 'consulta' | 'sucesso'
+    tipo: 'denuncia',
+    sigilo: true,
+    assunto: '',
+    descricao: '',
+    departamento_alvo: 'geral',
+    perfil_manifestante: 'comunidade',
+    prioridade: 'media',
+    nome_manifestante: '',
+    email_manifestante: '',
+    telefone_manifestante: '',
+
+    // Submissão
+    submitting: false,
+    submitError: null,
+    protocoloGerado: '',
+    protocoloResult: null,
+    copied: false,
+
+    // Consulta
+    searchProtocolo: '',
+    consultando: false,
+    consultaError: null,
+    consultaResult: null,
+
+    get apiBase() {
+      if (window.AMA_API_BASE_URL) {
+        return window.AMA_API_BASE_URL.replace(/\/public\/editais.*$/, '').replace(/\/$/, '');
+      }
+      return 'https://app.institutoamabr.org/wp-json/ama/v2';
+    },
+
+    async submitManifestacao() {
+      if (!this.assunto.trim()) {
+        this.submitError = 'Por favor, informe o assunto da manifestação.';
+        return;
+      }
+      if (!this.descricao.trim()) {
+        this.submitError = 'Por favor, detalhe a sua manifestação no campo de descrição.';
+        return;
+      }
+      if (!this.sigilo && !this.nome_manifestante.trim()) {
+        this.submitError = 'Como a opção identificada está selecionada, informe seu nome completo.';
+        return;
+      }
+
+      this.submitting = true;
+      this.submitError = null;
+
+      const payload = {
+        tipo: this.tipo,
+        sigilo: this.sigilo ? 1 : 0,
+        assunto: this.assunto.trim(),
+        descricao: this.descricao.trim(),
+        departamento_alvo: this.departamento_alvo,
+        perfil_manifestante: this.perfil_manifestante,
+        prioridade: this.tipo === 'denuncia' ? 'urgente' : this.prioridade,
+        nome_manifestante: this.sigilo ? '' : this.nome_manifestante.trim(),
+        email_manifestante: this.sigilo ? '' : this.email_manifestante.trim(),
+        telefone_manifestante: this.sigilo ? '' : this.telefone_manifestante.trim()
+      };
+
+      try {
+        const res = await fetch(`${this.apiBase}/ouvidoria/manifestacoes`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.protocolo) {
+          this.protocoloGerado = data.protocolo;
+          this.protocoloResult = data.item || null;
+          this.activeTab = 'sucesso';
+          this.resetForm();
+        } else {
+          this.submitError = data.message || 'Falha ao registrar manifestação. Verifique os dados e tente novamente.';
+        }
+      } catch (err) {
+        this.submitError = 'Não foi possível conectar ao servidor de ouvidoria. Verifique sua conexão ou tente mais tarde.';
+      } finally {
+        this.submitting = false;
+      }
+    },
+
+    async consultarProtocolo() {
+      const proto = this.searchProtocolo.trim().toUpperCase();
+      if (!proto) {
+        this.consultaError = 'Digite o número do protocolo para realizar a consulta.';
+        return;
+      }
+
+      this.consultando = true;
+      this.consultaError = null;
+      this.consultaResult = null;
+
+      try {
+        const res = await fetch(`${this.apiBase}/ouvidoria/manifestacoes/consulta-publica?protocolo=${encodeURIComponent(proto)}`, {
+          headers: { 'Accept': 'application/json' }
+        });
+        const data = await res.json();
+
+        if (res.ok && data.encontrado) {
+          this.consultaResult = data;
+        } else {
+          this.consultaError = data.message || `Nenhuma manifestação encontrada com o protocolo "${proto}". Verifique a digitação.`;
+        }
+      } catch (err) {
+        this.consultaError = 'Erro de comunicação ao consultar o protocolo. Tente novamente mais tarde.';
+      } finally {
+        this.consultando = false;
+      }
+    },
+
+    copyProtocolo(proto) {
+      if (!proto) return;
+      navigator.clipboard.writeText(proto).then(() => {
+        this.copied = true;
+        setTimeout(() => { this.copied = false; }, 2500);
+      });
+    },
+
+    resetForm() {
+      this.assunto = '';
+      this.descricao = '';
+      this.nome_manifestante = '';
+      this.email_manifestante = '';
+      this.telefone_manifestante = '';
+      this.sigilo = true;
+      this.tipo = 'denuncia';
+      this.departamento_alvo = 'geral';
+      this.prioridade = 'media';
+    },
+
+    getStatusBadge(status) {
+      if (!status) return { label: 'Recebido', bg: 'bg-neutral-100 text-neutral-700 border-neutral-200' };
+      const map = {
+        'novo': { label: 'Recebido / Triagem', bg: 'bg-amber-50 text-amber-800 border-amber-200' },
+        'em_analise': { label: 'Em Análise / Apuração', bg: 'bg-blue-50 text-blue-800 border-blue-200' },
+        'encaminhado': { label: 'Encaminhado ao Setor', bg: 'bg-purple-50 text-purple-800 border-purple-200' },
+        'respondido': { label: 'Respondido Oficialmente', bg: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
+        'arquivado': { label: 'Arquivado', bg: 'bg-stone-100 text-stone-700 border-stone-200' }
+      };
+      return map[status] || { label: status, bg: 'bg-neutral-100 text-neutral-700 border-neutral-200' };
+    },
+
+    getTipoLabel(tipo) {
+      if (!tipo) return 'Manifestação';
+      const map = {
+        'denuncia': 'Denúncia',
+        'reclamacao': 'Reclamação',
+        'sugestao': 'Sugestão',
+        'elogio': 'Elogio',
+        'informacao': 'Pedido de Informação'
+      };
+      return map[tipo] || tipo;
+    },
+
+    getPrioridadeBadge(prioridade) {
+      if (!prioridade) return { label: 'Normal', bg: 'bg-neutral-100 text-neutral-700 border-neutral-200' };
+      const map = {
+        'baixa': { label: 'Prioridade Baixa', bg: 'bg-stone-100 text-stone-700 border-stone-200' },
+        'media': { label: 'Prioridade Média', bg: 'bg-blue-50 text-blue-800 border-blue-200' },
+        'alta': { label: 'Prioridade Alta', bg: 'bg-amber-50 text-amber-800 border-amber-200' },
+        'urgente': { label: 'Urgente (SLA Especial)', bg: 'bg-rose-50 text-rose-800 border-rose-200' }
+      };
+      return map[prioridade] || { label: prioridade, bg: 'bg-neutral-100 text-neutral-700 border-neutral-200' };
+    },
+
+    formatDateTime(dateStr) {
+      if (!dateStr) return 'Não informado';
+      try {
+        const d = new Date(dateStr.replace(' ', 'T'));
+        if (isNaN(d.getTime())) return dateStr;
+        return d.toLocaleDateString('pt-BR', {
+          day: '2-digit', month: '2-digit', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        });
+      } catch (e) {
+        return dateStr;
+      }
+    },
+
+    formatDate(dateStr) {
+      if (!dateStr) return 'A definir';
+      try {
+        const parts = dateStr.split('-');
+        if (parts.length === 3) return `${parts[2]}/${parts[1]}/${parts[0]}`;
+        return dateStr;
+      } catch (e) {
+        return dateStr;
+      }
     }
   }));
 

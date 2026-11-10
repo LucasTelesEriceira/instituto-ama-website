@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="Ouvidoria Geral e Canal de Denúncias do Instituto AMA em São Luís/MA. Canal ético, confidencial e independente para manifestações, denúncias de assédio, proteção de vulneráveis e conformidade com editais públicos." name="description"/>
+<title>Ouvidoria &amp; Canal de Denúncias | Instituto AMA</title>
+<!-- Favicon / Ícones -->
+<link href="assets/logo/logoB2B-02.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/logo/logoB2B-02.webp" rel="icon" type="image/webp"/>
+<link href="assets/logo/logo.png" rel="apple-touch-icon"/>
+<!-- SEO & Indexação -->
+<link href="https://institutoamabr.org/ouvidoria.html" rel="canonical"/>
+<meta content="index, follow" name="robots"/>
+<!-- Open Graph / Redes Sociais -->
+<meta content="website" property="og:type"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="https://institutoamabr.org/ouvidoria.html" property="og:url"/>
+<meta content="Ouvidoria &amp; Canal de Denúncias | Instituto AMA" property="og:title"/>
+<meta content="Canal oficial e sigiloso de escuta, denúncias e transparência pública do Instituto AMA. Atendimento online e presencial com protocolo e prazos regulamentados." property="og:description"/>
+<meta content="Instituto AMA" property="og:site_name"/>
+<meta content="https://institutoamabr.org/assets/img/og-image.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<!-- Twitter / X -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Ouvidoria &amp; Canal de Denúncias | Instituto AMA" name="twitter:title"/>
+<meta content="Canal oficial e confidencial de ouvidoria e denúncias do Instituto AMA." name="twitter:description"/>
+<meta content="https://institutoamabr.org/assets/img/og-image.jpg" name="twitter:image"/>
+<!-- Assets e Estilos -->
+<link as="image" fetchpriority="high" href="assets/logo/logoB2B-02.svg" rel="preload" type="image/svg+xml"/>
+<link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css"/>
+<link href="css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- main.js DEVE ser carregado antes do Alpine para que os componentes estejam registrados no alpine:init -->
+<script defer="" src="js/main.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script><script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>[x-cloak] { display: none !important; }</style>
+</head>
+<body class="antialiased bg-background-50 font-sans overflow-x-hidden text-neutral-800">
+<!-- Header / Navegação Principal -->
+<header @scroll.window="scrolled = (window.pageYOffset &gt; 20)" class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50" data-pgc="site-header" x-data="{ 
+                    scrolled: false, 
+                    mobileMenuOpen: false, 
+                    openDropdown: null, 
+                    mobileAccordion: null,
+                    navTimeout: null,
+                    openMenu(name) {
+                        clearTimeout(this.navTimeout);
+                        this.openDropdown = name;
+                    },
+                    closeMenu(delay = 150) {
+                        this.navTimeout = setTimeout(() =&gt; {
+                            this.openDropdown = null;
+                        }, delay);
+                    },
+                    closeImmediately() {
+                        clearTimeout(this.navTimeout);
+                        this.openDropdown = null;
+                    },
+                    isActive(pages) { 
+                        let p = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase().replace('.html', '') || 'index'; 
+                        if (Array.isArray(pages)) { 
+                            return pages.some(page =&gt; p === page.toLowerCase().replace('.html', '')); 
+                        } 
+                        return p === pages.toLowerCase().replace('.html', ''); 
+                    } 
+                }">
+<div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
+<a class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" href="index.html" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" src="assets/logo/logoB2B-02.svg" width="85"/> <div class="hidden xl:flex xl:flex-col">
+<span class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight" data-pgc-edit="brand-name">Instituto AMA</span>
+<span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
+</div> </a>
+<!-- Navegação Desktop: Arquitetura Minimalista em 3 Eixos -->
+<nav @mouseleave="closeMenu(200)" aria-label="Navegação Principal" class="hidden items-center justify-between mx-auto p-2 lg:flex">
+<div class="hidden items-center text-sm uppercase lg:flex lg:space-x-2 xl:space-x-4">
+<!-- 1. Início -->
+<a :class="isActive('index.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'" @mouseenter="closeImmediately()" class="nav-item-link px-3 py-2 rounded-xl transition-colors" href="index.html">Início</a>
+<!-- 2. Eixo Institucional -->
+<div @mouseenter="openMenu('institucional')" @mouseleave="closeMenu(150)" class="relative py-2">
+<button :class="isActive(['instituto.html', 'diretoria.html', 'noticias.html', 'noticia.html']) ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'" @click="openDropdown = (openDropdown === 'institucional' ? null : 'institucional')" class="inline-flex items-center gap-1.5 nav-item-link px-3 py-2 rounded-xl transition-colors focus:outline-none" type="button">
+<span>Institucional</span>
+<svg :class="openDropdown === 'institucional' ? 'rotate-180 text-primary-500' : 'text-neutral-400'" class="inline-block w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div @click.away="closeImmediately()" @mouseenter="openMenu('institucional')" @mouseleave="closeMenu(150)" class="absolute left-0 top-full pt-2 w-64 z-50 normal-case" x-cloak="" x-show="openDropdown === 'institucional'" x-transition:enter="transition ease-out duration-150" x-transition:enter-end="opacity-100 translate-y-0 scale-100" x-transition:enter-start="opacity-0 translate-y-1.5 scale-95">
+<div class="bg-white rounded-2xl shadow-xl border border-surface-200 p-2">
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="instituto.html">
+<div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">O Instituto AMA</span>
+<span class="block text-[11px] text-neutral-400 font-light">História, manifesto e propósito</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="instituto.html#diretoria">
+<div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Nossa Diretoria</span>
+<span class="block text-[11px] text-neutral-400 font-light">Liderança e conselho técnico</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="noticias.html">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Notícias &amp; Ações</span>
+<span class="block text-[11px] text-neutral-400 font-light">Atualizações e cobertura oficial</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- 3. Eixo Projetos -->
+<div @mouseenter="openMenu('projetos')" @mouseleave="closeMenu(150)" class="relative py-2">
+<button :class="isActive(['projetos.html', 'projeto-acolher.html', 'mulheres-empreendedoras.html', 'projeto-capacitar.html', 'acao-ama.html']) ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'" @click="openDropdown = (openDropdown === 'projetos' ? null : 'projetos')" class="inline-flex items-center gap-1.5 nav-item-link px-3 py-2 rounded-xl transition-colors focus:outline-none" type="button">
+<span>Projetos</span>
+<svg :class="openDropdown === 'projetos' ? 'rotate-180 text-primary-500' : 'text-neutral-400'" class="inline-block w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div @click.away="closeImmediately()" @mouseenter="openMenu('projetos')" @mouseleave="closeMenu(150)" class="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-72 z-50 normal-case" x-cloak="" x-show="openDropdown === 'projetos'" x-transition:enter="transition ease-out duration-150" x-transition:enter-end="opacity-100 translate-y-0 scale-100" x-transition:enter-start="opacity-0 translate-y-1.5 scale-95">
+<div class="bg-white rounded-2xl shadow-xl border border-surface-200 p-2">
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="projetos.html">
+<div class="w-8 h-8 rounded-lg bg-surface-100 text-neutral-700 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Todos os Projetos</span>
+<span class="block text-[11px] text-neutral-400 font-light">Visão geral dos 4 pilares de impacto</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="projeto-acolher.html">
+<div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+<span class="text-sm">🧒🏽</span>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Projeto Acolher</span>
+<span class="block text-[11px] text-neutral-400 font-light">Infância, acolhimento e Tecnologia Sophia</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="mulheres-empreendedoras.html">
+<div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
+<span class="text-sm">👩🏽‍💼</span>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Mulheres Empreendedoras</span>
+<span class="block text-[11px] text-neutral-400 font-light">Autonomia feminina e Selo AMA</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="projeto-capacitar.html">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+<span class="text-sm">🎓</span>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Projeto Capacitar</span>
+<span class="block text-[11px] text-neutral-400 font-light">Qualificação profissional e bolsas</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="acao-ama.html">
+<div class="w-8 h-8 rounded-lg bg-accent-50 text-accent-700 flex items-center justify-center shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
+<span class="text-sm">🤝</span>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Ação AMA</span>
+<span class="block text-[11px] text-neutral-400 font-light">Mobilização e mutirões de saúde</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- 4. Eixo Governança -->
+<div @mouseenter="openMenu('governanca')" @mouseleave="closeMenu(150)" class="relative py-2">
+<button :class="isActive(['editais.html', 'relacoes-institucionais.html', 'ouvidoria.html', 'transparencia.html']) ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'" @click="openDropdown = (openDropdown === 'governanca' ? null : 'governanca')" class="inline-flex items-center gap-1.5 nav-item-link px-3 py-2 rounded-xl transition-colors focus:outline-none" type="button">
+<span>Governança</span>
+<svg :class="openDropdown === 'governanca' ? 'rotate-180 text-primary-500' : 'text-neutral-400'" class="inline-block w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div @click.away="closeImmediately()" @mouseenter="openMenu('governanca')" @mouseleave="closeMenu(150)" class="absolute right-0 top-full pt-2 w-72 z-50 normal-case" x-cloak="" x-show="openDropdown === 'governanca'" x-transition:enter="transition ease-out duration-150" x-transition:enter-end="opacity-100 translate-y-0 scale-100" x-transition:enter-start="opacity-0 translate-y-1.5 scale-95">
+<div class="bg-white rounded-2xl shadow-xl border border-surface-200 p-2">
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="editais.html">
+<div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Editais &amp; Chamadas</span>
+<span class="block text-[11px] text-neutral-400 font-light">Termos de fomento e emendas ativas</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="relacoes-institucionais.html">
+<div class="w-8 h-8 rounded-lg bg-accent-50 text-accent-700 flex items-center justify-center shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Relações Institucionais</span>
+<span class="block text-[11px] text-neutral-400 font-light">Parcerias corporativas e ESG</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="ouvidoria.html">
+<div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center shrink-0 group-hover:bg-rose-500 group-hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Ouvidoria &amp; Denúncias</span>
+<span class="block text-[11px] text-neutral-400 font-light">Canal ético confidencial (MROSC)</span>
+</div>
+</a>
+<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="relacoes-institucionais.html#transparencia">
+<div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Portal da Transparência</span>
+<span class="block text-[11px] text-neutral-400 font-light">Certidões, CNPJ e relatórios auditados</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="space-x-2 hidden lg:flex">
+<a class="border border-primary-200 duration-400 flex gap-2 group items-center px-4 py-2 rounded-full text-primary-500 text-xs transition-all hover:bg-accent-50/50 hover:border-accent-200 hover:text-accent-600" data-pgc-edit="portal-btn[href]" href="https://app.institutoamabr.org"> <svg class="w-4 h-4 text-neutral-400 group-hover:text-accent-500" fill="none" stroke="currentColor" version="1.1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg> <span>Portal AMA</span> </a>
+<a class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-edit="support-btn[href]" href="apoio.html">
+                    Apoiar Agora </a>
+</div>
+<button :aria-expanded="mobileMenuOpen" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Abrir menu" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" version="1.1" viewbox="0 0 24 24" x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<svg class="h-6 w-6" fill="none" stroke="currentColor" version="1.1" viewbox="0 0 24 24" x-cloak="" x-show="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<!-- Menu Mobile Responsivo: Agrupado em Acordeões Elegantes -->
+<div @click.away="mobileMenuOpen = false" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-surface-200 shadow-2xl z-50 overflow-y-auto max-h-[85vh]" x-cloak="" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-end="opacity-100 translate-y-0" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:leave="transition ease-in duration-150" x-transition:leave-end="opacity-0 -translate-y-4" x-transition:leave-start="opacity-100 translate-y-0">
+<div class="flex flex-col p-6 space-y-3" data-pgc-edit="mobile-nav-items">
+<!-- 1. Início -->
+<a :class="isActive('index.html') ? 'bg-primary-50 text-primary-600' : 'text-neutral-700 hover:bg-surface-50'" @click="mobileMenuOpen = false" class="flex items-center justify-between p-3.5 rounded-2xl transition-colors uppercase font-bold text-xs" href="index.html">
+<span>Início</span>
+<span class="w-2 h-2 rounded-full bg-primary-500" x-show="isActive('index.html')"></span>
+</a>
+<!-- 2. Acordeão Institucional -->
+<div class="border border-surface-200 rounded-2xl overflow-hidden">
+<button @click="mobileAccordion = (mobileAccordion === 'institucional' ? null : 'institucional')" class="w-full flex items-center justify-between p-3.5 bg-surface-50 text-neutral-800 font-bold uppercase text-xs" type="button">
+<span class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-500"></span>
+<span>Institucional</span>
+</span>
+<svg :class="mobileAccordion === 'institucional' ? 'rotate-180 text-primary-500' : ''" class="w-4 h-4 transition-transform text-neutral-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="p-2 space-y-1 bg-white border-t border-surface-200 text-xs" x-show="mobileAccordion === 'institucional'" x-transition="">
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="instituto.html">O Instituto AMA</a>
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="instituto.html#diretoria">Nossa Diretoria</a>
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="noticias.html">Notícias &amp; Ações</a>
+</div>
+</div>
+<!-- 3. Acordeão Projetos -->
+<div class="border border-surface-200 rounded-2xl overflow-hidden">
+<button @click="mobileAccordion = (mobileAccordion === 'projetos' ? null : 'projetos')" class="w-full flex items-center justify-between p-3.5 bg-surface-50 text-neutral-800 font-bold uppercase text-xs" type="button">
+<span class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-500"></span>
+<span>Projetos Sociais</span>
+</span>
+<svg :class="mobileAccordion === 'projetos' ? 'rotate-180 text-secondary-500' : ''" class="w-4 h-4 transition-transform text-neutral-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="p-2 space-y-1 bg-white border-t border-surface-200 text-xs" x-show="mobileAccordion === 'projetos'" x-transition="">
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="projetos.html">Todos os Projetos</a>
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="projeto-acolher.html">Projeto Acolher (Infância)</a>
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="mulheres-empreendedoras.html">Mulheres Empreendedoras</a>
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="projeto-capacitar.html">Projeto Capacitar (Jovens)</a>
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="acao-ama.html">Ação AMA (Comunidade)</a>
+</div>
+</div>
+<!-- 4. Acordeão Governança -->
+<div class="border border-surface-200 rounded-2xl overflow-hidden">
+<button @click="mobileAccordion = (mobileAccordion === 'governanca' ? null : 'governanca')" class="w-full flex items-center justify-between p-3.5 bg-surface-50 text-neutral-800 font-bold uppercase text-xs" type="button">
+<span class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-accent-500"></span>
+<span>Governança &amp; Transparência</span>
+</span>
+<svg :class="mobileAccordion === 'governanca' ? 'rotate-180 text-accent-500' : ''" class="w-4 h-4 transition-transform text-neutral-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="p-2 space-y-1 bg-white border-t border-surface-200 text-xs" x-show="mobileAccordion === 'governanca'" x-transition="">
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="editais.html">Editais &amp; Chamadas Públicas</a>
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="relacoes-institucionais.html">Relações Institucionais &amp; Parcerias</a>
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="ouvidoria.html">Ouvidoria &amp; Canal de Denúncias</a>
+<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="relacoes-institucionais.html#transparencia">Portal da Transparência &amp; Certidões</a>
+</div>
+</div>
+<!-- Portal AMA -->
+<a @click="mobileMenuOpen = false" class="flex items-center justify-between p-3.5 rounded-2xl transition-colors text-neutral-700 font-semibold uppercase text-xs hover:bg-surface-50" href="https://app.institutoamabr.org">
+<span class="flex items-center gap-2">
+<svg class="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Portal AMA</span>
+</span>
+</a>
+<div class="pt-3">
+<a @click="mobileMenuOpen = false" class="w-full flex items-center justify-center p-3.5 bg-primary-500 text-white rounded-2xl font-bold uppercase text-xs shadow-lg shadow-primary-100" href="apoio.html">
+                                Apoiar Agora
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="bg-background-500 overflow-hidden py-24 relative"><div class="container flex flex-col gap-12 items-center justify-between mx-auto px-4 relative z-10 md:px-8 lg:flex-row xl:px-16">
+    <!-- Coluna de Texto -->
+    <div class="lg:w-8/12">
+        <h1 class="anim delay-1 font-extrabold leading-tight text-3xl text-balance text-neutral-900 tracking-tight sm:text-4xl md:text-5xl">
+            Ouvidoria Geral &amp; <span class="text-primary-500">Canal de Denúncias</span>
+        </h1>
+        <p class="anim delay-2 font-light leading-relaxed mt-6 text-balance text-base text-neutral-600 sm:text-lg">
+            Canal oficial, sigiloso e independente de escuta do Instituto AMA. Criado para acolher manifestações da comunidade, beneficiários, parceiros e colaboradores — atendendo aos requisitos de governança da Lei 13.019/2014 e dos editais públicos de fomento social.
+        </p>
+        <!-- Selos de Segurança e Garantia -->
+        <div class="anim delay-3 gap-3 grid grid-cols-1 mt-8 pt-6 text-left sm:grid-cols-3">
+            <div class="bg-surface-50 border border-surface-200 rounded-2xl p-4 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block text-xs font-bold text-neutral-800">Sigilo &amp; Anonimato</span>
+                    <span class="block text-[11px] text-neutral-500">Opção de manifestação anônima protegida.</span>
+                </div>
+            </div>
+            <div class="bg-surface-50 border border-surface-200 rounded-2xl p-4 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-accent-100 text-accent-700 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block text-xs font-bold text-neutral-800">Protocolo e SLA</span>
+                    <span class="block text-[11px] text-neutral-500">Geração automática com prazo legal.</span>
+                </div>
+            </div>
+            <div class="bg-surface-50 border border-surface-200 rounded-2xl p-4 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block text-xs font-bold text-neutral-800">Canais Híbridos</span>
+                    <span class="block text-[11px] text-neutral-500">Site ou acolhimento na sede.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Coluna da Ilustração -->
+    <div class="anim delay-4 hidden lg:inline lg:w-5/12">
+        <img src="generated_images/ouvidoria_ilustracao.png" alt="Ilustração Ouvidoria Instituto AMA" class="drop-shadow-2xl h-auto max-w-full mx-auto w-full md:max-w-md lg:max-w-full">
+    </div>
+</div>
+
+</section>
+<!-- Seção Interativa da Ouvidoria -->
+<section class="py-24" x-data="ouvidoriaHub">
+<div class="container flex flex-col flex-wrap gap-12 items-stretch justify-center mx-auto px-4 relative z-10 md:px-8 lg:flex-row lg:gap-6 xl:px-16">
+<!-- Abas Superiores de Controle -->
+<div class="flex items-center justify-center mb-8" data-pg-collapsed>
+<div class="bg-surface-500 border border-surface-200 inline-flex p-1.5 rounded-2xl">
+<button :class="activeTab === 'formulario' ? 'bg-white text-primary-600 shadow-sm font-bold' : 'text-neutral-500 hover:text-neutral-800 font-medium'" @click="activeTab = 'formulario'" class="px-6 py-2.5 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Nova Manifestação</span>
+</button>
+<button :class="activeTab === 'consulta' ? 'bg-white text-primary-600 shadow-sm font-bold' : 'text-neutral-500 hover:text-neutral-800 font-medium'" @click="activeTab = 'consulta'" class="px-6 py-2.5 rounded-xl text-xs sm:text-sm transition-all flex items-center gap-2" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Consultar Protocolo</span>
+</button>
+</div>
+</div>
+<!-- ABA 1: FORMULÁRIO DE MANIFESTAÇÃO -->
+<div class="bg-surface-500 p-6 rounded-3xl shadow-sm sm:p-10" x-show="activeTab === 'formulario'" x-transition:enter="transition ease-out duration-200" x-transition:enter-end="opacity-100 translate-y-0" x-transition:enter-start="opacity-0 translate-y-2" data-pg-collapsed>
+<form @submit.prevent="submitManifestacao" class="space-y-6">
+<!-- Tipo de Manifestação -->
+<div>
+<label class="block text-xs font-bold text-neutral-800 uppercase tracking-wider mb-2">
+                                Tipo de Manifestação <span class="text-rose-500">*</span>
+</label>
+<div class="bg-background-500 gap-2 grid grid-cols-2 p-2 rounded-2xl sm:grid-cols-5">
+<button :class="tipo === 'denuncia' ? 'border-rose-500 bg-rose-50 text-rose-700 ring-2 ring-rose-200' : 'border-surface-200 bg-surface-50 text-neutral-700 hover:bg-surface-100'" @click="tipo = 'denuncia'" class="p-3 rounded-2xl border text-center transition-all text-xs font-semibold flex flex-col items-center justify-center gap-1" type="button">
+<span class="text-base">🚨</span>
+<span>Denúncia</span>
+</button>
+<button :class="tipo === 'reclamacao' ? 'border-amber-500 bg-amber-50 text-amber-700 ring-2 ring-amber-200' : 'border-surface-200 bg-surface-50 text-neutral-700 hover:bg-surface-100'" @click="tipo = 'reclamacao'" class="p-3 rounded-2xl border text-center transition-all text-xs font-semibold flex flex-col items-center justify-center gap-1" type="button">
+<span class="text-base">⚠️</span>
+<span>Reclamação</span>
+</button>
+<button :class="tipo === 'sugestao' ? 'border-primary-500 bg-primary-50 text-primary-700 ring-2 ring-primary-200' : 'border-surface-200 bg-surface-50 text-neutral-700 hover:bg-surface-100'" @click="tipo = 'sugestao'" class="p-3 rounded-2xl border text-center transition-all text-xs font-semibold flex flex-col items-center justify-center gap-1" type="button">
+<span class="text-base">💡</span>
+<span>Sugestão</span>
+</button>
+<button :class="tipo === 'elogio' ? 'border-emerald-500 bg-emerald-50 text-emerald-700 ring-2 ring-emerald-200' : 'border-surface-200 bg-surface-50 text-neutral-700 hover:bg-surface-100'" @click="tipo = 'elogio'" class="p-3 rounded-2xl border text-center transition-all text-xs font-semibold flex flex-col items-center justify-center gap-1" type="button">
+<span class="text-base">👏</span>
+<span>Elogio</span>
+</button>
+<button :class="tipo === 'informacao' ? 'border-sky-500 bg-sky-50 text-sky-700 ring-2 ring-sky-200' : 'border-surface-200 bg-surface-50 text-neutral-700 hover:bg-surface-100'" @click="tipo = 'informacao'" class="p-3 rounded-2xl border text-center transition-all text-xs font-semibold flex flex-col items-center justify-center gap-1 col-span-2 sm:col-span-1" type="button">
+<span class="text-base">ℹ️</span>
+<span>Informação</span>
+</button>
+</div>
+<p class="mt-2 text-xs text-rose-600 font-medium" x-show="tipo === 'denuncia'">
+                                Denúncias recebem tratamento prioritário com SLA de até 10 dias úteis e proteção especial da Ouvidoria Interna.
+                            </p>
+</div>
+<!-- Chave de Sigilo / Anonimato -->
+<div class="bg-surface-50 border border-surface-200 rounded-2xl p-4 sm:p-5">
+<div class="flex items-start sm:items-center justify-between gap-4">
+<div class="space-y-1">
+<span class="text-xs font-bold text-neutral-800 uppercase tracking-wider block">Garantia de Sigilo</span>
+<h4 class="text-sm font-semibold text-neutral-900">Deseja manter sua manifestação em modo anônimo?</h4>
+<p class="text-xs text-neutral-500 leading-relaxed font-light">
+                                        No modo anônimo, nenhum dado de contato pessoal é gravado no sistema interno. Você acompanhará exclusivamente pelo número de protocolo.
+                                    </p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1 sm:mt-0">
+<input class="sr-only peer" type="checkbox" x-model="sigilo"/>
+<span class="w-11 h-6 bg-surface-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></span>
+</label>
+</div>
+<!-- Campos de Identificação (aparecem somente se sigilo for desligado) -->
+<div class="border-surface-200 border-t gap-6 grid grid-cols-1 mt-4 pt-4 sm:grid-cols-2 xl:grid-cols-3" x-show="!sigilo" x-transition="">
+<div data-pg-collapsed>
+<label class="block text-xs font-semibold text-neutral-700 mb-1">Seu Nome Completo <span class="text-rose-500">*</span></label>
+<input class="bg-background-500 border border-surface-200 px-3 py-2 rounded-xl text-neutral-800 text-xs w-full focus:border-pink-500 focus:border-primary-500 focus:ring-1 focus:ring-primary-500" placeholder="Ex.: Maria de Fátima" type="text" x-model="nome_manifestante"/>
+</div>
+<div data-pg-collapsed>
+<label class="block text-xs font-semibold text-neutral-700 mb-1">Seu E-mail (Opcional)</label>
+<input class="bg-background-500 border border-surface-200 px-3 py-2 rounded-xl text-neutral-800 text-xs w-full focus:border-primary-500 focus:ring-1 focus:ring-primary-500" placeholder="seuemail@exemplo.com" type="email" x-model="email_manifestante"/>
+</div>
+<div data-pg-collapsed>
+<label class="block text-xs font-semibold text-neutral-700 mb-1">Telefone / WhatsApp (Opcional)</label>
+<input class="bg-background-500 border border-surface-200 px-3 py-2 rounded-xl text-neutral-800 text-xs w-full focus:border-primary-500 focus:ring-1 focus:ring-primary-500" placeholder="(98) 99999-9999" type="tel" x-model="telefone_manifestante" x-mask="(99) 99999-9999"/>
+</div>
+</div>
+</div>
+<!-- Classificação do Manifestante e Área Alvo -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-bold text-neutral-800 uppercase tracking-wider mb-1">Seu Vínculo com o AMA</label>
+<select class="bg-surface-50 border border-surface-200 px-3.5 py-2.5 rounded-xl text-neutral-700 text-xs transition-all w-full focus:bg-white focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500" x-model="perfil_manifestante">
+<option value="comunidade">Membro da Comunidade / Cidadão</option>
+<option value="beneficiario">Beneficiário(a) ou Familiar de Projeto</option>
+<option value="voluntario">Voluntário(a) / Apoiador(a)</option>
+<option value="parceiro">Parceiro Institucional / Fornecedor</option>
+<option value="colaborador">Colaborador(a) / Equipe Interna</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-neutral-800 uppercase tracking-wider mb-1">Área / Setor Alvo</label>
+<select class="bg-surface-50 border border-surface-200 px-3.5 py-2.5 rounded-xl text-neutral-700 text-xs transition-all w-full focus:bg-white focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500" x-model="departamento_alvo">
+<option value="geral">Geral / Ouvidoria Institucional</option>
+<option value="diretoria">Diretoria Executiva &amp; Governança</option>
+<option value="projetos">Coordenação de Projetos (Acolher, Mulheres, Capacitar)</option>
+<option value="administrativo">Administrativo &amp; Financeiro</option>
+<option value="recursos_humanos">Gestão de Pessoas &amp; Voluntariado</option>
+</select>
+</div>
+</div>
+<!-- Assunto -->
+<div>
+<label class="block text-xs font-bold text-neutral-800 uppercase tracking-wider mb-1">
+                                Assunto da Manifestação <span class="text-rose-500">*</span>
+</label>
+<input class="bg-surface-50 border border-surface-200 placeholder-neutral-400 px-4 py-3 rounded-xl text-neutral-800 text-sm transition-all w-full focus:bg-white focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500" placeholder="Ex.: Relato sobre atendimento no Projeto Acolher / Dúvida sobre edital público" type="text" x-model="assunto"/>
+</div>
+<!-- Descrição Detalhada -->
+<div>
+<div class="flex flex-wrap items-center justify-between mb-1">
+<label class="block text-xs font-bold text-neutral-800 uppercase tracking-wider">
+                                    Descrição Detalhada dos Fatos <span class="text-rose-500">*</span>
+</label>
+<span class="text-[11px] text-neutral-400 font-light">Seja o mais específico possível</span>
+</div>
+<textarea class="bg-surface-50 border border-surface-200 p-4 placeholder-neutral-400 rounded-2xl text-neutral-800 text-sm transition-all w-full focus:bg-white focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500" placeholder="Descreva com detalhes o que aconteceu, datas aproximadas, locais, pessoas envolvidas ou o motivo da sua manifestação. Caso seja denúncia, informe qualquer elemento que auxilie na apuração com responsabilidade." rows="5" x-model="descricao"></textarea>
+</div>
+<!-- Alerta de Erro de Validação/Envio -->
+<div class="p-4 bg-rose-50 border border-rose-200 rounded-2xl text-xs text-rose-700 flex items-start gap-2.5" x-show="submitError" x-transition="">
+<svg class="w-4 h-4 shrink-0 text-rose-600 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span x-text="submitError"></span>
+</div>
+<!-- Termos e Botão de Envio -->
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-[11px] text-neutral-500 leading-normal text-center sm:text-left font-light">
+                                Suas informações são protegidas pelas políticas de compliance do Instituto AMA e pela LGPD. Não há tolerância para retaliações a denunciantes de boa-fé.
+                            </p>
+<button :disabled="submitting" class="w-full sm:w-auto shrink-0 bg-primary-500 text-white font-bold px-8 py-3.5 rounded-full hover:bg-primary-600 transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50 text-xs sm:text-sm" type="submit">
+<svg class="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="submitting">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span x-text="submitting ? 'Protocolando Manifestação...' : 'Registrar e Gerar Protocolo'"></span>
+</button>
+</div>
+</form>
+</div>
+<!-- ABA 2: MANIFESTAÇÃO PROTOCOLADA COM SUCESSO -->
+<div class="bg-white rounded-3xl border border-surface-200 p-8 sm:p-12 shadow-sm text-center max-w-2xl mx-auto" x-show="activeTab === 'sucesso'" x-transition:enter="transition ease-out duration-200" x-transition:enter-end="opacity-100 scale-100" x-transition:enter-start="opacity-0 scale-95" data-pg-collapsed>
+<div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 border border-emerald-100">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<span class="text-xs uppercase tracking-widest text-emerald-700 font-bold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100 inline-block mb-2">Protocolo Oficial Gerado</span>
+<h3 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight mb-2">Manifestação Registrada com Sucesso!</h3>
+<p class="text-xs sm:text-sm text-neutral-600 font-light max-w-lg mx-auto mb-6">
+                        Sua manifestação foi inserida no sistema de governança do Instituto AMA. Guarde com atenção o número do seu protocolo para acompanhar os despachos e a apuração da ouvidoria.
+                    </p>
+<!-- Card de Destaque do Protocolo -->
+<div class="bg-surface-50 border-2 border-dashed border-primary-200 rounded-2xl p-6 mb-6">
+<span class="block text-[11px] text-neutral-500 uppercase tracking-widest font-semibold mb-1">Seu Número de Protocolo</span>
+<div class="flex items-center justify-center gap-3">
+<span class="font-mono text-xl sm:text-2xl font-bold text-primary-600 tracking-wider" x-text="protocoloGerado"></span>
+<button @click="copyProtocolo(protocoloGerado)" class="p-2 rounded-xl bg-white border border-surface-200 text-neutral-600 hover:text-primary-600 hover:bg-surface-100 transition-all" title="Copiar protocolo" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="!copied">
+<path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="copied">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+<span class="text-[11px] text-emerald-600 font-semibold block mt-1" x-show="copied">Copiado para a área de transferência!</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-3">
+<button @click="searchProtocolo = protocoloGerado; activeTab = 'consulta'; consultarProtocolo()" class="bg-primary-500 text-white font-bold px-6 py-3 rounded-full text-xs hover:bg-primary-600 transition-all shadow-md" type="button">
+                            Acompanhar Protocolo Agora →
+                        </button>
+<button @click="activeTab = 'formulario'" class="bg-surface-100 text-neutral-700 font-bold px-6 py-3 rounded-full text-xs hover:bg-surface-200 transition-all border border-surface-200" type="button">
+                            Registrar Outra Manifestação
+                        </button>
+</div>
+</div>
+<!-- ABA 3: CONSULTAR PROTOCOLO -->
+<div class="space-y-6" x-show="activeTab === 'consulta'" x-transition:enter="transition ease-out duration-200" x-transition:enter-end="opacity-100 translate-y-0" x-transition:enter-start="opacity-0 translate-y-2" data-pg-collapsed>
+<!-- Caixa de Pesquisa do Protocolo -->
+<div class="bg-background-500 border border-surface-200 p-6 rounded-3xl shadow-sm sm:p-8">
+<h3 class="text-lg font-bold text-neutral-900 mb-1">Consultar Andamento da Manifestação</h3>
+<p class="text-xs text-neutral-500 mb-4 font-light">Informe o número do protocolo gerado no momento do registro (ex.: AMA-OUV-2026-0001).</p>
+<form @submit.prevent="consultarProtocolo" class="flex flex-col sm:flex-row gap-3">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-neutral-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input @input="searchProtocolo = searchProtocolo.toUpperCase()" class="w-full bg-surface-50 border border-surface-200 rounded-2xl pl-11 pr-4 py-3.5 text-xs sm:text-sm font-mono text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all uppercase" placeholder="Digite o protocolo (ex: AMA-OUV-2026-0001)" type="text" x-model="searchProtocolo"/>
+</div>
+<button :disabled="consultando" class="bg-primary-500 text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-primary-600 transition-all shadow-md flex items-center justify-center gap-2 text-xs sm:text-sm disabled:opacity-50 shrink-0" type="submit">
+<svg class="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="consultando">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span x-text="consultando ? 'Consultando...' : 'Consultar'"></span>
+</button>
+</form>
+<!-- Mensagem de Erro de Consulta -->
+<div class="mt-4 p-4 bg-rose-50 border border-rose-200 rounded-2xl text-xs text-rose-700 flex items-start gap-2.5" x-show="consultaError" x-transition="">
+<svg class="w-4 h-4 shrink-0 text-rose-600 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span x-text="consultaError"></span>
+</div>
+</div>
+<!-- Resultado da Consulta -->
+<div class="bg-white rounded-3xl border border-surface-200 p-6 sm:p-8 shadow-sm space-y-6" x-show="consultaResult &amp;&amp; consultaResult.encontrado" x-transition="">
+<!-- Header do Resultado -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-surface-200">
+<div>
+<span class="text-xs text-neutral-400 uppercase tracking-widest font-semibold block">Protocolo Oficial</span>
+<div class="flex items-center gap-2">
+<h4 class="font-mono text-xl font-extrabold text-neutral-900" x-text="consultaResult.manifestacao.protocolo"></h4>
+<button @click="copyProtocolo(consultaResult.manifestacao.protocolo)" class="p-1.5 rounded-lg text-neutral-400 hover:text-primary-600 transition-colors" title="Copiar protocolo" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<span :class="getStatusBadge(consultaResult.manifestacao.status).bg" class="px-3 py-1 rounded-full text-xs font-bold border" x-text="getStatusBadge(consultaResult.manifestacao.status).label"></span>
+<span class="px-3 py-1 rounded-full text-xs font-semibold bg-surface-100 text-neutral-700 border border-surface-200" x-text="getTipoLabel(consultaResult.manifestacao.tipo)"></span>
+</div>
+</div>
+<!-- Metadados da Manifestação -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-surface-50 p-4 rounded-2xl border border-surface-200 text-xs">
+<div>
+<span class="text-neutral-400 block font-light">Data de Abertura:</span>
+<strong class="text-neutral-800" x-text="formatDateTime(consultaResult.manifestacao.created_at)"></strong>
+</div>
+<div>
+<span class="text-neutral-400 block font-light">Prazo Limite (SLA):</span>
+<strong class="text-neutral-800" x-text="formatDate(consultaResult.manifestacao.prazo_limite)"></strong>
+</div>
+<div>
+<span class="text-neutral-400 block font-light">Manifestante:</span>
+<strong class="text-neutral-800" x-text="consultaResult.manifestacao.sigilo ? 'Anônimo (Protegido por Sigilo)' : consultaResult.manifestacao.nome_manifestante"></strong>
+</div>
+</div>
+<!-- Assunto e Descrição -->
+<div class="space-y-2">
+<span class="text-xs text-neutral-400 uppercase tracking-widest font-semibold block">Assunto &amp; Relato</span>
+<h5 class="text-base font-bold text-neutral-900" x-text="consultaResult.manifestacao.assunto"></h5>
+<p class="text-xs sm:text-sm text-neutral-600 bg-surface-50 p-4 rounded-2xl border border-surface-100 leading-relaxed whitespace-pre-line" x-text="consultaResult.manifestacao.descricao"></p>
+</div>
+<!-- Resposta Oficial da Ouvidoria (se houver) -->
+<div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 space-y-2" x-show="consultaResult.manifestacao.resposta_oficial">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<span class="text-xs font-bold text-emerald-900 uppercase tracking-wider">Resposta Oficial da Ouvidoria</span>
+</div>
+<span class="text-[11px] text-emerald-700 font-light" x-text="'Respondido em: ' + formatDateTime(consultaResult.manifestacao.data_resposta)"></span>
+</div>
+<div class="text-xs sm:text-sm text-emerald-950 leading-relaxed font-normal whitespace-pre-line" x-text="consultaResult.manifestacao.resposta_oficial"></div>
+<div class="pt-2 text-[11px] text-emerald-700 font-semibold" x-text="'Por: ' + (consultaResult.manifestacao.respondido_por || 'Ouvidoria Geral / Diretoria')"></div>
+</div>
+<!-- Histórico de Despachos / Linha do Tempo -->
+<div class="space-y-3 pt-2">
+<span class="text-xs text-neutral-400 uppercase tracking-widest font-semibold block">Linha do Tempo / Despachos Internos</span>
+<template x-if="consultaResult.despachos &amp;&amp; consultaResult.despachos.length &gt; 0">
+<div class="relative pl-6 space-y-4 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-200">
+<template :key="desp.id" x-for="desp in consultaResult.despachos">
+<div class="relative">
+<div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-primary-500 border-2 border-white shadow-xs"></div>
+<div class="bg-surface-50 border border-surface-200 rounded-xl p-3 text-xs">
+<div class="flex items-center justify-between mb-1">
+<span class="font-bold text-neutral-800" x-text="desp.autor"></span>
+<span class="text-[10px] text-neutral-400 font-light" x-text="formatDateTime(desp.created_at)"></span>
+</div>
+<p class="text-neutral-600 leading-relaxed" x-text="desp.despacho"></p>
+</div>
+</div>
+</template>
+</div>
+</template>
+<template x-if="!consultaResult.despachos || consultaResult.despachos.length === 0">
+<p class="text-xs text-neutral-400 font-light italic">Nenhum despacho complementar registrado até o momento.</p>
+</template>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Informações de Atendimento Presencial & Telefones Oficiais -->
+<section class="bg-background-500 border-surface-200 border-t py-24">
+<div class="container flex flex-col flex-wrap gap-12 items-stretch justify-center mx-auto px-4 relative z-10 md:px-8 lg:flex-row lg:gap-6 xl:px-16">
+<div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+<span class="text-xs uppercase tracking-widest text-primary-500 font-bold">Canais Alternativos &amp; Acolhimento Físico</span>
+<h3 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight">Atendimento Presencial na Sede</h3>
+<p class="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
+                        Em consonância com as exigências dos editais de fomento público, o Instituto AMA mantém estrutura física para recepção presencial de manifestações e denúncias.
+                    </p>
+</div><div class="gap-6 grid grid-cols-1 md:grid-cols-2">
+<!-- Sede Físico -->
+<div class="bg-white p-6 rounded-3xl border border-surface-200 shadow-xs space-y-3">
+<div class="w-12 h-12 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h4 class="font-extrabold text-base text-neutral-900">Sede Comunitária AMA</h4>
+<p class="text-xs text-neutral-600 leading-relaxed font-light">
+<strong>Endereço:</strong> Travessa Principal, S/N, Vila Mauro Fecury I, São Luís – MA.<br/>
+<strong>Horário de Acolhimento:</strong> Segunda a Sexta, das 08h às 17h.
+                        </p>
+<span class="inline-block text-[11px] text-primary-600 font-semibold bg-primary-50 px-2.5 py-1 rounded-full">
+                            Recepção com Sigilo Garantido
+                        </span>
+</div>
+<!-- E-mail de Governança -->
+<div class="bg-white p-6 rounded-3xl border border-surface-200 shadow-xs space-y-3">
+<div class="w-12 h-12 rounded-2xl bg-accent-50 text-accent-700 flex items-center justify-center">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h4 class="font-extrabold text-base text-neutral-900">E-mail Institucional</h4>
+<p class="text-xs text-neutral-600 leading-relaxed font-light">
+                            Caso prefira enviar documentos complementares, fotos ou relatos por correio eletrônico, utilize nosso canal direto:
+                        </p>
+<a class="text-xs font-bold text-accent-700 hover:underline block break-all" href="mailto:institutoama10@gmail.com">
+                            institutoama10@gmail.com
+                        </a>
+<span class="inline-block text-[11px] text-neutral-500 font-light">
+                            Assunto sugerido: [Ouvidoria] Manifestação
+                        </span>
+</div>
+<!-- Rede de Proteção Social Nacional -->
+<div class="bg-white p-6 rounded-3xl border border-surface-200 shadow-xs space-y-3">
+<div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h4 class="font-extrabold text-base text-neutral-900">Rede de Proteção &amp; Direitos</h4>
+<p class="text-xs text-neutral-600 leading-relaxed font-light">
+                            Para urgências fora do escopo administrativo do Instituto AMA, acione diretamente os órgãos competentes:
+                        </p>
+<ul class="font-medium space-y-4 text-neutral-700 text-xs">
+<li>📞 <strong>Disque 100:</strong> Violação de Direitos Humanos</li>
+<li>📞 <strong>Disque 180:</strong> Central da Mulher</li>
+<li>🛡️ <strong>Conselho Tutelar:</strong> Região Itaqui-Bacanga</li>
+</ul>
+</div>
+</div>
+
+</div>
+</section>
+</main>
+<footer class="bg-primary-950 pb-8 pt-20 text-primary-50" data-pgc="site-footer">
+<div class="container mx-auto px-4 lg:px-8">
+<div class="gap-10 lg:gap-8 grid grid-cols-1 pb-16 md:grid-cols-2 lg:grid-cols-4">
+<!-- Coluna 1: Identidade & Contatos -->
+<div class="space-y-6">
+<a class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90" href="index.html" title="Instituto AMA - Início">
+<img alt="Logo Instituto AMA" class="brightness-0 invert object-contain w-40 group-hover:opacity-100" src="assets/logo/logoB2B.svg"/>
+</a>
+<p class="text-sm text-primary-200 leading-relaxed" data-pgc-edit="about">Transformando vidas através do acolhimento, mentoria social e qualificação comunitária.</p>
+<div class="space-y-2.5 text-xs text-primary-200" data-pgc-edit="contact-details">
+<a class="flex items-start gap-2 hover:text-white transition-colors group" href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" rel="noopener noreferrer" target="_blank" title="Ver no Google Maps">
+<svg class="h-4 w-4 shrink-0 text-coral-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>São Luís / MA • Vila Mauro Fecury I</span>
+</a>
+<a class="flex items-center gap-2 hover:text-white transition-colors group" href="mailto:institutoama10@gmail.com" title="Enviar e-mail">
+<svg class="h-4 w-4 shrink-0 text-primary-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="break-all">institutoama10@gmail.com</span>
+</a>
+</div>
+<div class="pt-1">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-primary-300 block mb-2.5">Canais Oficiais</span>
+<div class="flex items-center gap-2">
+<a aria-label="Instagram @_institutoama" class="w-8 h-8 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-400" href="https://www.instagram.com/_institutoama/" rel="noopener noreferrer" target="_blank" title="Instagram: @_institutoama">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a aria-label="WhatsApp +55 98 8594-7240" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-400" href="https://wa.me/559885947240" rel="noopener noreferrer" target="_blank" title="WhatsApp: +55 98 8594-7240">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.502-5.69-1.451l-6.307 1.66zm6.232-4.105c1.477.876 3.184 1.341 4.926 1.342 5.333 0 9.673-4.34 9.675-9.675.001-2.586-1.008-5.015-2.842-6.849-1.834-1.834-4.26-2.844-6.846-2.845-5.332 0-9.672 4.34-9.674 9.675-.001 1.868.538 3.694 1.554 5.269l-.999 3.648 3.73-.978zm11.238-7.398c-.287-.144-1.698-.838-1.961-.933-.263-.095-.454-.144-.645.144-.191.287-.741.933-.908 1.123-.167.191-.335.215-.621.072-.287-.144-1.21-.447-2.305-1.423-.852-.759-1.428-1.697-1.595-1.984-.167-.287-.018-.442.126-.584.13-.127.287-.335.43-.502.144-.167.191-.287.287-.478.095-.191.048-.358-.024-.502-.072-.144-.645-1.553-.884-2.127-.233-.56-.47-.482-.645-.491-.167-.008-.358-.01-.55-.01s-.502.072-.765.358c-.263.287-1.004.98-1.004 2.39s1.028 2.772 1.171 2.964c.144.191 2.023 3.089 4.899 4.327.684.294 1.218.469 1.634.602.687.218 1.312.187 1.806.114.551-.081 1.698-.693 1.937-1.362.24-.669.24-1.243.167-1.362-.072-.119-.263-.191-.55-.335z"></path></svg>
+</a>
+<a aria-label="E-mail institutoama10@gmail.com" class="w-8 h-8 rounded-full bg-white/10 hover:bg-primary-600 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-400" href="mailto:institutoama10@gmail.com" title="E-mail: institutoama10@gmail.com">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a aria-label="Google Maps" class="w-8 h-8 rounded-full bg-white/10 hover:bg-coral-500 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-coral-400" href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" rel="noopener noreferrer" target="_blank" title="Google Maps">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<!-- Coluna 2: Institucional -->
+<div>
+<h4 class="font-bold mb-6 tracking-widest uppercase text-white text-xs" data-pgc-edit="col-1-title">Institucional</h4>
+<ul class="space-y-3.5 text-sm text-primary-200" data-pgc-edit="col-1-links">
+<li>
+<a class="hover:text-white transition-colors" href="instituto.html">O Instituto AMA</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="instituto.html#diretoria">Nossa Diretoria</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="noticias.html">Notícias &amp; Ações</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="apoio.html">Apoie o Instituto</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors flex items-center gap-1.5" href="https://app.institutoamabr.org">
+<span>Área do Colaborador</span>
+<span class="text-[10px] bg-primary-800 text-primary-200 px-1.5 py-0.5 rounded">Portal</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Coluna 3: Projetos Sociais -->
+<div>
+<h4 class="font-bold mb-6 tracking-widest uppercase text-white text-xs" data-pgc-edit="col-2-title">Projetos Sociais</h4>
+<ul class="space-y-3.5 text-sm text-primary-200" data-pgc-edit="col-2-links">
+<li>
+<a class="hover:text-white transition-colors" href="projetos.html">Todos os Projetos</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="projeto-acolher.html">Projeto Acolher</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="mulheres-empreendedoras.html">Mulheres Empreendedoras</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="projeto-capacitar.html">Projeto Capacitar</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="acao-ama.html">Ação AMA</a>
+</li>
+</ul>
+</div>
+<!-- Coluna 4: Governança & Transparência -->
+<div>
+<h4 class="font-bold mb-6 tracking-widest uppercase text-white text-xs" data-pgc-edit="col-3-title">Governança &amp; Ética</h4>
+<ul class="space-y-3.5 text-sm text-primary-200" data-pgc-edit="col-3-links">
+<li>
+<a class="hover:text-white transition-colors" href="editais.html">Editais &amp; Chamadas Públicas</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors flex items-center gap-1.5" href="ouvidoria.html">
+<span>Ouvidoria &amp; Canal Ético</span>
+<span class="text-[9px] bg-rose-900/60 text-rose-300 border border-rose-700/50 px-1.5 py-0.5 rounded font-mono">MROSC</span>
+</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="relacoes-institucionais.html#transparencia">Portal da Transparência</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="relacoes-institucionais.html">Relações Institucionais &amp; ESG</a>
+</li>
+<li>
+<a class="hover:text-white transition-colors" href="relacoes-institucionais.html#documentos">Relatórios e Certidões</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Linha Inferior: Direitos, PIX e LGPD -->
+<div class="border-t border-white/10 pt-8 flex flex-wrap gap-6 justify-between items-center text-primary-300 text-xs">
+<p data-pgc-edit="copyright">© <span>2026</span> <span>Instituto AMA</span> • Acolhimento, Mentoria &amp; Assistência. Todos os direitos reservados.</p>
+<div class="flex flex-wrap gap-4 items-center">
+<span class="font-mono bg-black/20 px-2.5 py-1 rounded-md border border-white/10 text-primary-200" data-pgc-edit="pix">PIX (CNPJ): 48.722.909/0001-80</span>
+<a class="hover:text-white transition-colors" data-pgc-edit="privacy-link[href]" href="relacoes-institucionais.html#privacidade">Política de Privacidade &amp; LGPD</a>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

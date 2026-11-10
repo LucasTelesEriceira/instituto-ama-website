@@ -2,6 +2,11 @@
    Instituto AMA - Estilos e Regras Adicionais do Tailwind / Pinegrow
    ========================================================================== */
 
+/* Previne FOUC (Flash of Unstyled Content) para elementos do Alpine.js antes da inicialização */
+[x-cloak] {
+  display: none !important;
+}
+
 /* Regras de Pseudo-elemento e Animação de Hover para Links do Menu Principal */
 .nav-item-link {
   position: relative;

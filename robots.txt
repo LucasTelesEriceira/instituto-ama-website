@@ -6,11 +6,10 @@ Allow: /tailwind_theme/
 Allow: /js/
 
 # Páginas e diretórios privados/utilitários que não devem ser indexados
-Disallow: /colaborador.html
 Disallow: /components.html
 Disallow: /404.html
 Disallow: /_pgbackup/
 Disallow: /_pginfo/
 
 # Localização do Sitemap oficial
-Sitemap: https://institutoama.org.br/sitemap.xml
+Sitemap: https://institutoamabr.org/sitemap.xml
