@@ -1311,6 +1311,9 @@ select{
 .flex-grow{
   flex-grow: 1;
 }
+.basis-full{
+  flex-basis: 100%;
+}
 .-translate-x-1\/2{
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -4450,6 +4453,12 @@ body.block-editor-page .anim,
   }
 
 
+  .lg\:border-primary-200{
+    --tw-border-opacity: 1;
+    border-color: rgb(177 164 160 / var(--tw-border-opacity));
+  }
+
+
   .lg\:border-primary-300{
     --tw-border-opacity: 1;
     border-color: rgb(148 130 125 / var(--tw-border-opacity));
@@ -4613,6 +4622,296 @@ body.block-editor-page .anim,
 
   .xl\:max-w-2xl{
     max-width: 42rem;
+  }
+
+
+  .xl\:basis-0{
+    flex-basis: 0px;
+  }
+
+
+  .xl\:basis-1{
+    flex-basis: 0.25rem;
+  }
+
+
+  .xl\:basis-1\/12{
+    flex-basis: 8.333333%;
+  }
+
+
+  .xl\:basis-1\/2{
+    flex-basis: 50%;
+  }
+
+
+  .xl\:basis-1\/3{
+    flex-basis: 33.333333%;
+  }
+
+
+  .xl\:basis-1\/4{
+    flex-basis: 25%;
+  }
+
+
+  .xl\:basis-1\/5{
+    flex-basis: 20%;
+  }
+
+
+  .xl\:basis-1\/6{
+    flex-basis: 16.666667%;
+  }
+
+
+  .xl\:basis-10{
+    flex-basis: 2.5rem;
+  }
+
+
+  .xl\:basis-10\/12{
+    flex-basis: 83.333333%;
+  }
+
+
+  .xl\:basis-11{
+    flex-basis: 2.75rem;
+  }
+
+
+  .xl\:basis-11\/12{
+    flex-basis: 91.666667%;
+  }
+
+
+  .xl\:basis-12{
+    flex-basis: 3rem;
+  }
+
+
+  .xl\:basis-14{
+    flex-basis: 3.5rem;
+  }
+
+
+  .xl\:basis-16{
+    flex-basis: 4rem;
+  }
+
+
+  .xl\:basis-2{
+    flex-basis: 0.5rem;
+  }
+
+
+  .xl\:basis-2\/12{
+    flex-basis: 16.666667%;
+  }
+
+
+  .xl\:basis-2\/3{
+    flex-basis: 66.666667%;
+  }
+
+
+  .xl\:basis-2\/4{
+    flex-basis: 50%;
+  }
+
+
+  .xl\:basis-2\/5{
+    flex-basis: 40%;
+  }
+
+
+  .xl\:basis-2\/6{
+    flex-basis: 33.333333%;
+  }
+
+
+  .xl\:basis-20{
+    flex-basis: 5rem;
+  }
+
+
+  .xl\:basis-24{
+    flex-basis: 6rem;
+  }
+
+
+  .xl\:basis-28{
+    flex-basis: 7rem;
+  }
+
+
+  .xl\:basis-3{
+    flex-basis: 0.75rem;
+  }
+
+
+  .xl\:basis-3\/12{
+    flex-basis: 25%;
+  }
+
+
+  .xl\:basis-3\/4{
+    flex-basis: 75%;
+  }
+
+
+  .xl\:basis-3\/5{
+    flex-basis: 60%;
+  }
+
+
+  .xl\:basis-3\/6{
+    flex-basis: 50%;
+  }
+
+
+  .xl\:basis-32{
+    flex-basis: 8rem;
+  }
+
+
+  .xl\:basis-36{
+    flex-basis: 9rem;
+  }
+
+
+  .xl\:basis-4{
+    flex-basis: 1rem;
+  }
+
+
+  .xl\:basis-4\/12{
+    flex-basis: 33.333333%;
+  }
+
+
+  .xl\:basis-4\/5{
+    flex-basis: 80%;
+  }
+
+
+  .xl\:basis-4\/6{
+    flex-basis: 66.666667%;
+  }
+
+
+  .xl\:basis-40{
+    flex-basis: 10rem;
+  }
+
+
+  .xl\:basis-44{
+    flex-basis: 11rem;
+  }
+
+
+  .xl\:basis-48{
+    flex-basis: 12rem;
+  }
+
+
+  .xl\:basis-5{
+    flex-basis: 1.25rem;
+  }
+
+
+  .xl\:basis-5\/12{
+    flex-basis: 41.666667%;
+  }
+
+
+  .xl\:basis-5\/6{
+    flex-basis: 83.333333%;
+  }
+
+
+  .xl\:basis-52{
+    flex-basis: 13rem;
+  }
+
+
+  .xl\:basis-56{
+    flex-basis: 14rem;
+  }
+
+
+  .xl\:basis-6{
+    flex-basis: 1.5rem;
+  }
+
+
+  .xl\:basis-6\/12{
+    flex-basis: 50%;
+  }
+
+
+  .xl\:basis-60{
+    flex-basis: 15rem;
+  }
+
+
+  .xl\:basis-64{
+    flex-basis: 16rem;
+  }
+
+
+  .xl\:basis-7{
+    flex-basis: 1.75rem;
+  }
+
+
+  .xl\:basis-7\/12{
+    flex-basis: 58.333333%;
+  }
+
+
+  .xl\:basis-72{
+    flex-basis: 18rem;
+  }
+
+
+  .xl\:basis-8{
+    flex-basis: 2rem;
+  }
+
+
+  .xl\:basis-8\/12{
+    flex-basis: 66.666667%;
+  }
+
+
+  .xl\:basis-80{
+    flex-basis: 20rem;
+  }
+
+
+  .xl\:basis-9{
+    flex-basis: 2.25rem;
+  }
+
+
+  .xl\:basis-9\/12{
+    flex-basis: 75%;
+  }
+
+
+  .xl\:basis-96{
+    flex-basis: 24rem;
+  }
+
+
+  .xl\:basis-auto{
+    flex-basis: auto;
+  }
+
+
+  .xl\:basis-full{
+    flex-basis: 100%;
   }
 
 
