@@ -65,258 +65,305 @@
                         return p === pages.toLowerCase().replace('.html', ''); 
                     } 
                 }">
-<div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
-<a class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" href="index.html" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" src="assets/logo/logoB2B-02.svg" width="85"/> <div class="hidden xl:flex xl:flex-col">
-<span class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight" data-pgc-edit="brand-name">Instituto AMA</span>
-<span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
-</div> </a>
-<!-- Navegação Desktop: Arquitetura Minimalista em 3 Eixos -->
-<nav @mouseleave="closeMenu(200)" aria-label="Navegação Principal" class="hidden items-center justify-between mx-auto p-2 lg:flex">
-<div class="hidden items-center text-sm uppercase lg:flex lg:space-x-2 xl:space-x-4">
-<!-- 1. Início -->
-<a :class="isActive('index.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'" @mouseenter="closeImmediately()" class="nav-item-link px-3 py-2 rounded-xl transition-colors" href="index.html">Início</a>
-<!-- 2. Eixo Institucional -->
-<div @mouseenter="openMenu('institucional')" @mouseleave="closeMenu(150)" class="relative py-2">
-<button :class="isActive(['instituto.html', 'noticias.html', 'noticia.html']) ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'" @click="openDropdown = (openDropdown === 'institucional' ? null : 'institucional')" class="inline-flex items-center gap-1.5 nav-item-link px-3 py-2 rounded-xl transition-colors focus:outline-none" type="button">
-<span>Institucional</span>
-<svg :class="openDropdown === 'institucional' ? 'rotate-180 text-primary-500' : 'text-neutral-400'" class="inline-block w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-<div @click.away="closeImmediately()" @mouseenter="openMenu('institucional')" @mouseleave="closeMenu(150)" class="absolute left-0 top-full pt-2 w-64 z-50 normal-case" x-cloak="" x-show="openDropdown === 'institucional'" x-transition:enter="transition ease-out duration-150" x-transition:enter-end="opacity-100 translate-y-0 scale-100" x-transition:enter-start="opacity-0 translate-y-1.5 scale-95">
-<div class="bg-white rounded-2xl shadow-xl border border-surface-200 p-2">
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="instituto.html">
-<div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">O Instituto AMA</span>
-<span class="block text-[11px] text-neutral-400 font-light">História, manifesto e propósito</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="instituto.html#diretoria">
-<div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Nossa Diretoria</span>
-<span class="block text-[11px] text-neutral-400 font-light">Liderança e conselho técnico</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="noticias.html">
-<div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Notícias &amp; Ações</span>
-<span class="block text-[11px] text-neutral-400 font-light">Atualizações e cobertura oficial</span>
-</div>
-</a>
-</div>
-</div>
-</div>
-<!-- 3. Eixo Projetos -->
-<div @mouseenter="openMenu('projetos')" @mouseleave="closeMenu(150)" class="relative py-2">
-<button :class="isActive(['projetos.html', 'projeto-acolher.html', 'mulheres-empreendedoras.html', 'projeto-capacitar.html', 'acao-ama.html']) ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'" @click="openDropdown = (openDropdown === 'projetos' ? null : 'projetos')" class="inline-flex items-center gap-1.5 nav-item-link px-3 py-2 rounded-xl transition-colors focus:outline-none" type="button">
-<span>Projetos</span>
-<svg :class="openDropdown === 'projetos' ? 'rotate-180 text-primary-500' : 'text-neutral-400'" class="inline-block w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-<div @click.away="closeImmediately()" @mouseenter="openMenu('projetos')" @mouseleave="closeMenu(150)" class="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-72 z-50 normal-case" x-cloak="" x-show="openDropdown === 'projetos'" x-transition:enter="transition ease-out duration-150" x-transition:enter-end="opacity-100 translate-y-0 scale-100" x-transition:enter-start="opacity-0 translate-y-1.5 scale-95">
-<div class="bg-white rounded-2xl shadow-xl border border-surface-200 p-2">
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="projetos.html">
-<div class="w-8 h-8 rounded-lg bg-surface-100 text-neutral-700 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Todos os Projetos</span>
-<span class="block text-[11px] text-neutral-400 font-light">Visão geral dos 4 pilares de impacto</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="projeto-acolher.html">
-<div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
-<span class="text-sm">🧒🏽</span>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Projeto Acolher</span>
-<span class="block text-[11px] text-neutral-400 font-light">Infância, acolhimento e Tecnologia Sophia</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="mulheres-empreendedoras.html">
-<div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
-<span class="text-sm">👩🏽‍💼</span>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Mulheres Empreendedoras</span>
-<span class="block text-[11px] text-neutral-400 font-light">Autonomia feminina e Selo AMA</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="projeto-capacitar.html">
-<div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
-<span class="text-sm">🎓</span>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Projeto Capacitar</span>
-<span class="block text-[11px] text-neutral-400 font-light">Qualificação profissional e bolsas</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="acao-ama.html">
-<div class="w-8 h-8 rounded-lg bg-accent-50 text-accent-700 flex items-center justify-center shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-<span class="text-sm">🤝</span>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Ação AMA</span>
-<span class="block text-[11px] text-neutral-400 font-light">Mobilização e mutirões de saúde</span>
-</div>
-</a>
-</div>
-</div>
-</div>
-<!-- 4. Eixo Governança -->
-<div @mouseenter="openMenu('governanca')" @mouseleave="closeMenu(150)" class="relative py-2">
-<button :class="isActive(['editais.html', 'relacoes-institucionais.html', 'ouvidoria.html']) ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'" @click="openDropdown = (openDropdown === 'governanca' ? null : 'governanca')" class="inline-flex items-center gap-1.5 nav-item-link px-3 py-2 rounded-xl transition-colors focus:outline-none" type="button">
-<span>Governança</span>
-<svg :class="openDropdown === 'governanca' ? 'rotate-180 text-primary-500' : 'text-neutral-400'" class="inline-block w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-<div @click.away="closeImmediately()" @mouseenter="openMenu('governanca')" @mouseleave="closeMenu(150)" class="absolute right-0 top-full pt-2 w-72 z-50 normal-case" x-cloak="" x-show="openDropdown === 'governanca'" x-transition:enter="transition ease-out duration-150" x-transition:enter-end="opacity-100 translate-y-0 scale-100" x-transition:enter-start="opacity-0 translate-y-1.5 scale-95">
-<div class="bg-white rounded-2xl shadow-xl border border-surface-200 p-2">
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="editais.html">
-<div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Editais &amp; Chamadas</span>
-<span class="block text-[11px] text-neutral-400 font-light">Termos de fomento e emendas ativas</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="relacoes-institucionais.html">
-<div class="w-8 h-8 rounded-lg bg-accent-50 text-accent-700 flex items-center justify-center shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Relações Institucionais</span>
-<span class="block text-[11px] text-neutral-400 font-light">Parcerias corporativas e ESG</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="ouvidoria.html">
-<div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center shrink-0 group-hover:bg-rose-500 group-hover:text-white transition-colors">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Ouvidoria &amp; Denúncias</span>
-<span class="block text-[11px] text-neutral-400 font-light">Canal ético confidencial (MROSC)</span>
-</div>
-</a>
-<a class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group" href="relacoes-institucionais.html#transparencia">
-<div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<div>
-<span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Portal da Transparência</span>
-<span class="block text-[11px] text-neutral-400 font-light">Certidões, CNPJ e relatórios auditados</span>
-</div>
-</a>
-</div>
-</div>
-</div>
-</div>
-</nav>
-<div class="space-x-2 hidden lg:flex">
-<a class="border border-primary-200 duration-400 flex gap-2 group items-center px-4 py-2 rounded-full text-primary-500 text-xs transition-all hover:bg-accent-50/50 hover:border-accent-200 hover:text-accent-600" data-pgc-edit="portal-btn[href]" href="https://app.institutoamabr.org"> <svg class="w-4 h-4 text-neutral-400 group-hover:text-accent-500" fill="none" stroke="currentColor" version="1.1" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg> <span>Portal AMA</span> </a>
-<a class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-edit="support-btn[href]" href="apoio.html">
+            <div class="container px-4 lg:flex lg:items-center lg:mx-auto lg:pl-0 lg:pr-4">
+                <a href="index.html" class="flex items-center p-4 space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-500" title="Instituto AMA - Início"> <img alt="Logo Instituto AMA" class="object-contain" width="85" height="40" src="assets/logo/logoB2B-02.svg"/> <div class="hidden xl:flex xl:flex-col">
+                        <span class="font-bold font-sans leading-none text-base text-primary-500 tracking-tight" data-pgc-edit="brand-name">Instituto AMA</span>
+                        <span class="font-light mt-0.5 text-[10px] text-neutral-500 tracking-widest uppercase">Acolhimento, mentoria &amp; Assistência</span>
+                    </div> </a>
+
+                <!-- Navegação Desktop: Arquitetura Minimalista em 3 Eixos -->
+                <nav class="hidden items-center justify-between mx-auto p-2 lg:flex" aria-label="Navegação Principal" @mouseleave="closeMenu(200)">
+                    <div class="hidden items-center text-sm uppercase lg:flex lg:space-x-2 xl:space-x-4">
+                        
+                        <!-- 1. Início -->
+                        <a href="index.html" class="nav-item-link px-3 py-2 rounded-xl transition-colors" :class="isActive('index.html') ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'" @mouseenter="closeImmediately()">Início</a>
+
+                        <!-- 2. Eixo Institucional -->
+                        <div class="relative py-2" @mouseenter="openMenu('institucional')" @mouseleave="closeMenu(150)">
+                            <button type="button" 
+                                    @click="openDropdown = (openDropdown === 'institucional' ? null : 'institucional')" 
+                                    class="inline-flex items-center gap-1.5 nav-item-link px-3 py-2 rounded-xl transition-colors focus:outline-none" 
+                                    :class="isActive(['instituto.html', 'noticias.html', 'noticia.html']) ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">
+                                <span>Institucional</span>
+                                <svg class="inline-block w-3.5 h-3.5 transition-transform duration-200" :class="openDropdown === 'institucional' ? 'rotate-180 text-primary-500' : 'text-neutral-400'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div x-show="openDropdown === 'institucional'" 
+                                 x-transition:enter="transition ease-out duration-150" 
+                                 x-transition:enter-start="opacity-0 translate-y-1.5 scale-95" 
+                                 x-transition:enter-end="opacity-100 translate-y-0 scale-100" 
+                                 @mouseenter="openMenu('institucional')" 
+                                 @mouseleave="closeMenu(150)" 
+                                 @click.away="closeImmediately()" 
+                                 class="absolute left-0 top-full pt-2 w-64 z-50 normal-case" 
+                                 x-cloak>
+                                <div class="bg-white rounded-2xl shadow-xl border border-surface-200 p-2">
+                                    <a href="instituto.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">O Instituto AMA</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">História, manifesto e propósito</span>
+                                        </div>
+                                    </a>
+                                    <a href="instituto.html#diretoria" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Nossa Diretoria</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Liderança e conselho técnico</span>
+                                        </div>
+                                    </a>
+                                    <a href="noticias.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Notícias &amp; Ações</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Atualizações e cobertura oficial</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Eixo Projetos -->
+                        <div class="relative py-2" @mouseenter="openMenu('projetos')" @mouseleave="closeMenu(150)">
+                            <button type="button" 
+                                    @click="openDropdown = (openDropdown === 'projetos' ? null : 'projetos')" 
+                                    class="inline-flex items-center gap-1.5 nav-item-link px-3 py-2 rounded-xl transition-colors focus:outline-none" 
+                                    :class="isActive(['projetos.html', 'projeto-acolher.html', 'mulheres-empreendedoras.html', 'projeto-capacitar.html', 'acao-ama.html']) ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">
+                                <span>Projetos</span>
+                                <svg class="inline-block w-3.5 h-3.5 transition-transform duration-200" :class="openDropdown === 'projetos' ? 'rotate-180 text-primary-500' : 'text-neutral-400'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div x-show="openDropdown === 'projetos'" 
+                                 x-transition:enter="transition ease-out duration-150" 
+                                 x-transition:enter-start="opacity-0 translate-y-1.5 scale-95" 
+                                 x-transition:enter-end="opacity-100 translate-y-0 scale-100" 
+                                 @mouseenter="openMenu('projetos')" 
+                                 @mouseleave="closeMenu(150)" 
+                                 @click.away="closeImmediately()" 
+                                 class="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-72 z-50 normal-case" 
+                                 x-cloak>
+                                <div class="bg-white rounded-2xl shadow-xl border border-surface-200 p-2">
+                                    <a href="projetos.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-surface-100 text-neutral-700 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Todos os Projetos</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Visão geral dos 4 pilares de impacto</span>
+                                        </div>
+                                    </a>
+                                    <a href="projeto-acolher.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+                                            <span class="text-sm">🧒🏽</span>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Projeto Acolher</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Infância, acolhimento e Tecnologia Sophia</span>
+                                        </div>
+                                    </a>
+                                    <a href="mulheres-empreendedoras.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
+                                            <span class="text-sm">👩🏽‍💼</span>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Mulheres Empreendedoras</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Autonomia feminina e Selo AMA</span>
+                                        </div>
+                                    </a>
+                                    <a href="projeto-capacitar.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                                            <span class="text-sm">🎓</span>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Projeto Capacitar</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Qualificação profissional e bolsas</span>
+                                        </div>
+                                    </a>
+                                    <a href="acao-ama.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-accent-50 text-accent-700 flex items-center justify-center shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
+                                            <span class="text-sm">🤝</span>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Ação AMA</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Mobilização e mutirões de saúde</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Eixo Governança -->
+                        <div class="relative py-2" @mouseenter="openMenu('governanca')" @mouseleave="closeMenu(150)">
+                            <button type="button" 
+                                    @click="openDropdown = (openDropdown === 'governanca' ? null : 'governanca')" 
+                                    class="inline-flex items-center gap-1.5 nav-item-link px-3 py-2 rounded-xl transition-colors focus:outline-none" 
+                                    :class="isActive(['editais.html', 'relacoes-institucionais.html', 'ouvidoria.html']) ? 'is-active font-bold text-primary-500' : 'font-medium text-neutral-600 hover:text-primary-500'">
+                                <span>Governança</span>
+                                <svg class="inline-block w-3.5 h-3.5 transition-transform duration-200" :class="openDropdown === 'governanca' ? 'rotate-180 text-primary-500' : 'text-neutral-400'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div x-show="openDropdown === 'governanca'" 
+                                 x-transition:enter="transition ease-out duration-150" 
+                                 x-transition:enter-start="opacity-0 translate-y-1.5 scale-95" 
+                                 x-transition:enter-end="opacity-100 translate-y-0 scale-100" 
+                                 @mouseenter="openMenu('governanca')" 
+                                 @mouseleave="closeMenu(150)" 
+                                 @click.away="closeImmediately()" 
+                                 class="absolute right-0 top-full pt-2 w-72 z-50 normal-case" 
+                                 x-cloak>
+                                <div class="bg-white rounded-2xl shadow-xl border border-surface-200 p-2">
+                                    <a href="editais.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Editais &amp; Chamadas</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Termos de fomento e emendas ativas</span>
+                                        </div>
+                                    </a>
+                                    <a href="relacoes-institucionais.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-accent-50 text-accent-700 flex items-center justify-center shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Relações Institucionais</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Parcerias corporativas e ESG</span>
+                                        </div>
+                                    </a>
+                                    <a href="ouvidoria.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center shrink-0 group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Ouvidoria &amp; Denúncias</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Canal ético confidencial (MROSC)</span>
+                                        </div>
+                                    </a>
+                                    <a href="relacoes-institucionais.html#transparencia" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                        <div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <span class="block text-xs font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">Portal da Transparência</span>
+                                            <span class="block text-[11px] text-neutral-600 font-normal">Certidões, CNPJ e relatórios auditados</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </nav>
+
+                <div class="space-x-2 hidden lg:flex">
+                    <a href="https://app.institutoamabr.org" class="border border-primary-200 duration-400 flex gap-2 group items-center px-4 py-2 rounded-full text-primary-500 text-xs transition-all hover:bg-accent-50/50 hover:border-accent-200 hover:text-accent-600" data-pgc-edit="portal-btn[href]"> <svg class="w-4 h-4 text-neutral-400 group-hover:text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg> <span>Portal AMA</span> </a>
+                    <a href="apoio.html" class="bg-primary-500 duration-400 font-bold px-4 py-2 rounded-full text-primary-50 text-xs transition-all hover:bg-primary-600" data-pgc-edit="support-btn[href]">
                     Apoiar Agora </a>
-</div>
-<button :aria-expanded="mobileMenuOpen" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Abrir menu" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden">
-<svg class="h-6 w-6" fill="none" stroke="currentColor" version="1.1" viewbox="0 0 24 24" x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<svg class="h-6 w-6" fill="none" stroke="currentColor" version="1.1" viewbox="0 0 24 24" x-cloak="" x-show="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg">
-<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-</button>
-<!-- Menu Mobile Responsivo: Agrupado em Acordeões Elegantes -->
-<div @click.away="mobileMenuOpen = false" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-surface-200 shadow-2xl z-50 overflow-y-auto max-h-[85vh]" x-cloak="" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-end="opacity-100 translate-y-0" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:leave="transition ease-in duration-150" x-transition:leave-end="opacity-0 -translate-y-4" x-transition:leave-start="opacity-100 translate-y-0">
-<div class="flex flex-col p-6 space-y-3" data-pgc-edit="mobile-nav-items">
-<!-- 1. Início -->
-<a :class="isActive('index.html') ? 'bg-primary-50 text-primary-600' : 'text-neutral-700 hover:bg-surface-50'" @click="mobileMenuOpen = false" class="flex items-center justify-between p-3.5 rounded-2xl transition-colors uppercase font-bold text-xs" href="index.html">
-<span>Início</span>
-<span class="w-2 h-2 rounded-full bg-primary-500" x-show="isActive('index.html')"></span>
-</a>
-<!-- 2. Acordeão Institucional -->
-<div class="border border-surface-200 rounded-2xl overflow-hidden">
-<button @click="mobileAccordion = (mobileAccordion === 'institucional' ? null : 'institucional')" class="w-full flex items-center justify-between p-3.5 bg-surface-50 text-neutral-800 font-bold uppercase text-xs" type="button">
-<span class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-primary-500"></span>
-<span>Institucional</span>
-</span>
-<svg :class="mobileAccordion === 'institucional' ? 'rotate-180 text-primary-500' : ''" class="w-4 h-4 transition-transform text-neutral-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-<div class="p-2 space-y-1 bg-white border-t border-surface-200 text-xs" x-show="mobileAccordion === 'institucional'" x-transition="">
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="instituto.html">O Instituto AMA</a>
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="instituto.html#diretoria">Nossa Diretoria</a>
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="noticias.html">Notícias &amp; Ações</a>
-</div>
-</div>
-<!-- 3. Acordeão Projetos -->
-<div class="border border-surface-200 rounded-2xl overflow-hidden">
-<button @click="mobileAccordion = (mobileAccordion === 'projetos' ? null : 'projetos')" class="w-full flex items-center justify-between p-3.5 bg-surface-50 text-neutral-800 font-bold uppercase text-xs" type="button">
-<span class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-secondary-500"></span>
-<span>Projetos Sociais</span>
-</span>
-<svg :class="mobileAccordion === 'projetos' ? 'rotate-180 text-secondary-500' : ''" class="w-4 h-4 transition-transform text-neutral-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-<div class="p-2 space-y-1 bg-white border-t border-surface-200 text-xs" x-show="mobileAccordion === 'projetos'" x-transition="">
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="projetos.html">Todos os Projetos</a>
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="projeto-acolher.html">Projeto Acolher (Infância)</a>
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="mulheres-empreendedoras.html">Mulheres Empreendedoras</a>
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="projeto-capacitar.html">Projeto Capacitar (Jovens)</a>
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="acao-ama.html">Ação AMA (Comunidade)</a>
-</div>
-</div>
-<!-- 4. Acordeão Governança -->
-<div class="border border-surface-200 rounded-2xl overflow-hidden">
-<button @click="mobileAccordion = (mobileAccordion === 'governanca' ? null : 'governanca')" class="w-full flex items-center justify-between p-3.5 bg-surface-50 text-neutral-800 font-bold uppercase text-xs" type="button">
-<span class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-accent-500"></span>
-<span>Governança &amp; Transparência</span>
-</span>
-<svg :class="mobileAccordion === 'governanca' ? 'rotate-180 text-accent-500' : ''" class="w-4 h-4 transition-transform text-neutral-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</button>
-<div class="p-2 space-y-1 bg-white border-t border-surface-200 text-xs" x-show="mobileAccordion === 'governanca'" x-transition="">
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="editais.html">Editais &amp; Chamadas Públicas</a>
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="relacoes-institucionais.html">Relações Institucionais &amp; Parcerias</a>
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="ouvidoria.html">Ouvidoria &amp; Canal de Denúncias</a>
-<a @click="mobileMenuOpen = false" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" href="relacoes-institucionais.html#transparencia">Portal da Transparência &amp; Certidões</a>
-</div>
-</div>
-<!-- Portal AMA -->
-<a @click="mobileMenuOpen = false" class="flex items-center justify-between p-3.5 rounded-2xl transition-colors text-neutral-700 font-semibold uppercase text-xs hover:bg-surface-50" href="https://app.institutoamabr.org">
-<span class="flex items-center gap-2">
-<svg class="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>Portal AMA</span>
-</span>
-</a>
-<div class="pt-3">
-<a @click="mobileMenuOpen = false" class="w-full flex items-center justify-center p-3.5 bg-primary-500 text-white rounded-2xl font-bold uppercase text-xs shadow-lg shadow-primary-100" href="apoio.html">
+                </div>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="absolute bg-surface-100 p-2.5 right-2 rounded-xl text-neutral-700 top-2 transition-colors z-60 focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-surface-200 lg:hidden" :aria-expanded="mobileMenuOpen" aria-label="Abrir menu">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                    <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" version="1.1">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+
+                <!-- Menu Mobile Responsivo: Agrupado em Acordeões Elegantes -->
+                <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4" @click.away="mobileMenuOpen = false" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-surface-200 shadow-2xl z-50 overflow-y-auto max-h-[85vh]" x-cloak>
+                    <div class="flex flex-col p-6 space-y-3" data-pgc-edit="mobile-nav-items">
+                        
+                        <!-- 1. Início -->
+                        <a href="index.html" class="flex items-center justify-between p-3.5 rounded-2xl transition-colors uppercase font-bold text-xs" :class="isActive('index.html') ? 'bg-primary-50 text-primary-600' : 'text-neutral-700 hover:bg-surface-50'" @click="mobileMenuOpen = false">
+                            <span>Início</span>
+                            <span x-show="isActive('index.html')" class="w-2 h-2 rounded-full bg-primary-500"></span>
+                        </a>
+
+                        <!-- 2. Acordeão Institucional -->
+                        <div class="border border-surface-200 rounded-2xl overflow-hidden">
+                            <button type="button" @click="mobileAccordion = (mobileAccordion === 'institucional' ? null : 'institucional')" class="w-full flex items-center justify-between p-3.5 bg-surface-50 text-neutral-800 font-bold uppercase text-xs">
+                                <span class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-primary-500"></span>
+                                    <span>Institucional</span>
+                                </span>
+                                <svg class="w-4 h-4 transition-transform text-neutral-400" :class="mobileAccordion === 'institucional' ? 'rotate-180 text-primary-500' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div x-show="mobileAccordion === 'institucional'" x-transition class="p-2 space-y-1 bg-white border-t border-surface-200 text-xs">
+                                <a href="instituto.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">O Instituto AMA</a>
+                                <a href="instituto.html#diretoria" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Nossa Diretoria</a>
+                                <a href="noticias.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Notícias &amp; Ações</a>
+                            </div>
+                        </div>
+
+                        <!-- 3. Acordeão Projetos -->
+                        <div class="border border-surface-200 rounded-2xl overflow-hidden">
+                            <button type="button" @click="mobileAccordion = (mobileAccordion === 'projetos' ? null : 'projetos')" class="w-full flex items-center justify-between p-3.5 bg-surface-50 text-neutral-800 font-bold uppercase text-xs">
+                                <span class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-secondary-500"></span>
+                                    <span>Projetos Sociais</span>
+                                </span>
+                                <svg class="w-4 h-4 transition-transform text-neutral-400" :class="mobileAccordion === 'projetos' ? 'rotate-180 text-secondary-500' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div x-show="mobileAccordion === 'projetos'" x-transition class="p-2 space-y-1 bg-white border-t border-surface-200 text-xs">
+                                <a href="projetos.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Todos os Projetos</a>
+                                <a href="projeto-acolher.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Projeto Acolher (Infância)</a>
+                                <a href="mulheres-empreendedoras.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Mulheres Empreendedoras</a>
+                                <a href="projeto-capacitar.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Projeto Capacitar (Jovens)</a>
+                                <a href="acao-ama.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Ação AMA (Comunidade)</a>
+                            </div>
+                        </div>
+
+                        <!-- 4. Acordeão Governança -->
+                        <div class="border border-surface-200 rounded-2xl overflow-hidden">
+                            <button type="button" @click="mobileAccordion = (mobileAccordion === 'governanca' ? null : 'governanca')" class="w-full flex items-center justify-between p-3.5 bg-surface-50 text-neutral-800 font-bold uppercase text-xs">
+                                <span class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-accent-500"></span>
+                                    <span>Governança &amp; Transparência</span>
+                                </span>
+                                <svg class="w-4 h-4 transition-transform text-neutral-400" :class="mobileAccordion === 'governanca' ? 'rotate-180 text-accent-500' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div x-show="mobileAccordion === 'governanca'" x-transition class="p-2 space-y-1 bg-white border-t border-surface-200 text-xs">
+                                <a href="editais.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Editais &amp; Chamadas Públicas</a>
+                                <a href="relacoes-institucionais.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Relações Institucionais &amp; Parcerias</a>
+                                <a href="ouvidoria.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Ouvidoria &amp; Canal de Denúncias</a>
+                                <a href="relacoes-institucionais.html#transparencia" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Portal da Transparência &amp; Certidões</a>
+                            </div>
+                        </div>
+
+                        <!-- Portal AMA -->
+                        <a href="https://app.institutoamabr.org" class="flex items-center justify-between p-3.5 rounded-2xl transition-colors text-neutral-700 font-semibold uppercase text-xs hover:bg-surface-50" @click="mobileMenuOpen = false">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                <span>Portal AMA</span>
+                            </span>
+                        </a>
+
+                        <div class="pt-3">
+                            <a href="apoio.html" class="w-full flex items-center justify-center p-3.5 bg-primary-500 text-white rounded-2xl font-bold uppercase text-xs shadow-lg shadow-primary-100" @click="mobileMenuOpen = false">
                                 Apoiar Agora
                             </a>
-</div>
-</div>
-</div>
-</div>
-</header>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 <main>
 <!-- Hero Section Temática (Turquesa / Capacitação) -->
 <section class="bg-background-500 overflow-hidden py-16 relative lg:py-24">
@@ -530,7 +577,7 @@
 </div>
 <h4 class="font-extrabold mb-2 text-lg text-stone-700 transition-colors group-hover:text-coral-500">Saúde Mental &amp; Infância</h4>
 <p class="text-xs text-neutral-500 leading-relaxed mb-4">Suporte psicossocial e a Tecnologia Sophia.</p>
-<a class="font-bold text-coral-500 text-xs group-hover:underline" href="projeto-acolher.html">Saiba mais →</a>
+<a class="font-bold text-coral-500 text-xs group-hover:underline" href="projeto-acolher.html" aria-label="Saiba mais sobre o Projeto Acolher">Saiba mais →</a>
 </div>
 <!-- Card Mulheres Empreendedoras -->
 <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-secondary-200">
@@ -540,7 +587,7 @@
 </div>
 <h4 class="font-extrabold text-stone-700 text-lg mb-2 group-hover:text-secondary-500 transition-colors">Autonomia &amp; Renda</h4>
 <p class="text-xs text-neutral-500 leading-relaxed mb-4">Capacitação para negócios femininos e o Selo AMA de Origem.</p>
-<a class="text-xs font-bold text-secondary-500 group-hover:underline" href="mulheres-empreendedoras.html">Saiba mais →</a>
+<a class="text-xs font-bold text-secondary-500 group-hover:underline" href="mulheres-empreendedoras.html" aria-label="Saiba mais sobre o Projeto Mulheres Empreendedoras">Saiba mais →</a>
 </div>
 <!-- Card Ação AMA -->
 <div class="border border-background-600 duration-500 group p-6 rounded-3xl transition-all hover:border-verde-200">
@@ -550,7 +597,7 @@
 </div>
 <h4 class="font-extrabold text-stone-700 text-lg mb-2 group-hover:text-verde-500 transition-colors">Resposta Emergencial</h4>
 <p class="text-xs text-neutral-500 leading-relaxed mb-4">Mobilização comunitária e segurança alimentar.</p>
-<a class="text-xs font-bold text-verde-500 group-hover:underline" href="acao-ama.html">Saiba mais →</a>
+<a class="text-xs font-bold text-verde-500 group-hover:underline" href="acao-ama.html" aria-label="Saiba mais sobre a Ação AMA">Saiba mais →</a>
 </div>
 </div>
 </div>
@@ -558,120 +605,126 @@
 </main>
 <!-- Footer Institucional (Pinegrow Component) -->
 <footer class="bg-primary-950 pb-8 pt-20 text-primary-50" data-pgc="site-footer">
-<div class="container mx-auto px-4 lg:px-8">
-<div class="gap-10 lg:gap-8 grid grid-cols-1 pb-16 md:grid-cols-2 lg:grid-cols-4">
-<!-- Coluna 1: Identidade & Contatos -->
-<div class="space-y-6">
-<a class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90" href="index.html" title="Instituto AMA - Início">
-<img alt="Logo Instituto AMA" class="brightness-0 invert object-contain w-40 group-hover:opacity-100" src="assets/logo/logoB2B.svg"/>
-</a>
-<p class="text-sm text-primary-200 leading-relaxed" data-pgc-edit="about">Transformando vidas através do acolhimento, mentoria social e qualificação comunitária.</p>
-<div class="space-y-2.5 text-xs text-primary-200" data-pgc-edit="contact-details">
-<a class="flex items-start gap-2 hover:text-white transition-colors group" href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" rel="noopener noreferrer" target="_blank" title="Ver no Google Maps">
-<svg class="h-4 w-4 shrink-0 text-coral-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>São Luís / MA • Vila Mauro Fecury I</span>
-</a>
-<a class="flex items-center gap-2 hover:text-white transition-colors group" href="mailto:institutoama10@gmail.com" title="Enviar e-mail">
-<svg class="h-4 w-4 shrink-0 text-primary-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span class="break-all">institutoama10@gmail.com</span>
-</a>
-</div>
-<div class="pt-1">
-<span class="text-[11px] font-semibold uppercase tracking-wider text-primary-300 block mb-2.5">Canais Oficiais</span>
-<div class="flex items-center gap-2">
-<a aria-label="Instagram @_institutoama" class="w-8 h-8 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-400" href="https://www.instagram.com/_institutoama/" rel="noopener noreferrer" target="_blank" title="Instagram: @_institutoama">
-<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
-</a>
-<a aria-label="WhatsApp +55 98 8594-7240" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-400" href="https://wa.me/559885947240" rel="noopener noreferrer" target="_blank" title="WhatsApp: +55 98 8594-7240">
-<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.502-5.69-1.451l-6.307 1.66zm6.232-4.105c1.477.876 3.184 1.341 4.926 1.342 5.333 0 9.673-4.34 9.675-9.675.001-2.586-1.008-5.015-2.842-6.849-1.834-1.834-4.26-2.844-6.846-2.845-5.332 0-9.672 4.34-9.674 9.675-.001 1.868.538 3.694 1.554 5.269l-.999 3.648 3.73-.978zm11.238-7.398c-.287-.144-1.698-.838-1.961-.933-.263-.095-.454-.144-.645.144-.191.287-.741.933-.908 1.123-.167.191-.335.215-.621.072-.287-.144-1.21-.447-2.305-1.423-.852-.759-1.428-1.697-1.595-1.984-.167-.287-.018-.442.126-.584.13-.127.287-.335.43-.502.144-.167.191-.287.287-.478.095-.191.048-.358-.024-.502-.072-.144-.645-1.553-.884-2.127-.233-.56-.47-.482-.645-.491-.167-.008-.358-.01-.55-.01s-.502.072-.765.358c-.263.287-1.004.98-1.004 2.39s1.028 2.772 1.171 2.964c.144.191 2.023 3.089 4.899 4.327.684.294 1.218.469 1.634.602.687.218 1.312.187 1.806.114.551-.081 1.698-.693 1.937-1.362.24-.669.24-1.243.167-1.362-.072-.119-.263-.191-.55-.335z"></path></svg>
-</a>
-<a aria-label="E-mail institutoama10@gmail.com" class="w-8 h-8 rounded-full bg-white/10 hover:bg-primary-600 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-400" href="mailto:institutoama10@gmail.com" title="E-mail: institutoama10@gmail.com">
-<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</a>
-<a aria-label="Google Maps" class="w-8 h-8 rounded-full bg-white/10 hover:bg-coral-500 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-coral-400" href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" rel="noopener noreferrer" target="_blank" title="Google Maps">
-<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</a>
-</div>
-</div>
-</div>
-<!-- Coluna 2: Institucional -->
-<div>
-<h4 class="font-bold mb-6 tracking-widest uppercase text-white text-xs" data-pgc-edit="col-1-title">Institucional</h4>
-<ul class="space-y-3.5 text-sm text-primary-200" data-pgc-edit="col-1-links">
-<li>
-<a class="hover:text-white transition-colors" href="instituto.html">O Instituto AMA</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="instituto.html#diretoria">Nossa Diretoria</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="noticias.html">Notícias &amp; Ações</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="apoio.html">Apoie o Instituto</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors flex items-center gap-1.5" href="https://app.institutoamabr.org">
-<span>Área do Colaborador</span>
-<span class="text-[10px] bg-primary-800 text-primary-200 px-1.5 py-0.5 rounded">Portal</span>
-</a>
-</li>
-</ul>
-</div>
-<!-- Coluna 3: Projetos Sociais -->
-<div>
-<h4 class="font-bold mb-6 tracking-widest uppercase text-white text-xs" data-pgc-edit="col-2-title">Projetos Sociais</h4>
-<ul class="space-y-3.5 text-sm text-primary-200" data-pgc-edit="col-2-links">
-<li>
-<a class="hover:text-white transition-colors" href="projetos.html">Todos os Projetos</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="projeto-acolher.html">Projeto Acolher</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="mulheres-empreendedoras.html">Mulheres Empreendedoras</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="projeto-capacitar.html">Projeto Capacitar</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="acao-ama.html">Ação AMA</a>
-</li>
-</ul>
-</div>
-<!-- Coluna 4: Governança & Transparência -->
-<div>
-<h4 class="font-bold mb-6 tracking-widest uppercase text-white text-xs" data-pgc-edit="col-3-title">Governança &amp; Ética</h4>
-<ul class="space-y-3.5 text-sm text-primary-200" data-pgc-edit="col-3-links">
-<li>
-<a class="hover:text-white transition-colors" href="editais.html">Editais &amp; Chamadas Públicas</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors flex items-center gap-1.5" href="ouvidoria.html">
-<span>Ouvidoria &amp; Canal Ético</span>
-<span class="text-[9px] bg-rose-900/60 text-rose-300 border border-rose-700/50 px-1.5 py-0.5 rounded font-mono">MROSC</span>
-</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="relacoes-institucionais.html#transparencia">Portal da Transparência</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="relacoes-institucionais.html">Relações Institucionais &amp; ESG</a>
-</li>
-<li>
-<a class="hover:text-white transition-colors" href="relacoes-institucionais.html#documentos">Relatórios e Certidões</a>
-</li>
-</ul>
-</div>
-</div>
-<!-- Linha Inferior: Direitos, PIX e LGPD -->
-<div class="border-t border-white/10 pt-8 flex flex-wrap gap-6 justify-between items-center text-primary-300 text-xs">
-<p data-pgc-edit="copyright">© <span>2026</span> <span>Instituto AMA</span> • Acolhimento, Mentoria &amp; Assistência. Todos os direitos reservados.</p>
-<div class="flex flex-wrap gap-4 items-center">
-<span class="font-mono bg-black/20 px-2.5 py-1 rounded-md border border-white/10 text-primary-200" data-pgc-edit="pix">PIX (CNPJ): 48.722.909/0001-80</span>
-<a class="hover:text-white transition-colors" data-pgc-edit="privacy-link[href]" href="relacoes-institucionais.html#privacidade">Política de Privacidade &amp; LGPD</a>
-</div>
-</div>
-</div></footer>
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="gap-10 lg:gap-8 grid grid-cols-1 pb-16 md:grid-cols-2 lg:grid-cols-4">
+                    <!-- Coluna 1: Identidade & Contatos -->
+                    <div class="space-y-6">
+                        <a href="index.html" class="flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl transition-all hover:opacity-90" title="Instituto AMA - Início">
+                            <img src="assets/logo/logoB2B.svg" alt="Logo Instituto AMA" width="160" height="42" class="brightness-0 invert object-contain w-40 group-hover:opacity-100"/>
+                        </a>
+                        <p class="text-sm text-primary-200 leading-relaxed" data-pgc-edit="about">Transformando vidas através do acolhimento, mentoria social e qualificação comunitária.</p>
+                        
+                        <div class="space-y-2.5 text-xs text-primary-200" data-pgc-edit="contact-details">
+                            <a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2 hover:text-white transition-colors group" title="Ver no Google Maps">
+                                <svg class="h-4 w-4 shrink-0 text-coral-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span>São Luís / MA &bull; Vila Mauro Fecury I</span>
+                            </a>
+                            <a href="mailto:institutoama10@gmail.com" class="flex items-center gap-2 hover:text-white transition-colors group" title="Enviar e-mail">
+                                <svg class="h-4 w-4 shrink-0 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span class="break-all">institutoama10@gmail.com</span>
+                            </a>
+                        </div>
+
+                        <div class="pt-1">
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-primary-300 block mb-2.5">Canais Oficiais</span>
+                            <div class="flex items-center gap-2">
+                                <a href="https://www.instagram.com/_institutoama/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-400" title="Instagram: @_institutoama" aria-label="Instagram @_institutoama">
+                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                                <a href="https://wa.me/559885947240" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-400" title="WhatsApp: +55 98 8594-7240" aria-label="WhatsApp +55 98 8594-7240">
+                                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.502-5.69-1.451l-6.307 1.66zm6.232-4.105c1.477.876 3.184 1.341 4.926 1.342 5.333 0 9.673-4.34 9.675-9.675.001-2.586-1.008-5.015-2.842-6.849-1.834-1.834-4.26-2.844-6.846-2.845-5.332 0-9.672 4.34-9.674 9.675-.001 1.868.538 3.694 1.554 5.269l-.999 3.648 3.73-.978zm11.238-7.398c-.287-.144-1.698-.838-1.961-.933-.263-.095-.454-.144-.645.144-.191.287-.741.933-.908 1.123-.167.191-.335.215-.621.072-.287-.144-1.21-.447-2.305-1.423-.852-.759-1.428-1.697-1.595-1.984-.167-.287-.018-.442.126-.584.13-.127.287-.335.43-.502.144-.167.191-.287.287-.478.095-.191.048-.358-.024-.502-.072-.144-.645-1.553-.884-2.127-.233-.56-.47-.482-.645-.491-.167-.008-.358-.01-.55-.01s-.502.072-.765.358c-.263.287-1.004.98-1.004 2.39s1.028 2.772 1.171 2.964c.144.191 2.023 3.089 4.899 4.327.684.294 1.218.469 1.634.602.687.218 1.312.187 1.806.114.551-.081 1.698-.693 1.937-1.362.24-.669.24-1.243.167-1.362-.072-.119-.263-.191-.55-.335z"/></svg>
+                                </a>
+                                <a href="mailto:institutoama10@gmail.com" class="w-8 h-8 rounded-full bg-white/10 hover:bg-primary-600 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-400" title="E-mail: institutoama10@gmail.com" aria-label="E-mail institutoama10@gmail.com">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                </a>
+                                <a href="https://maps.app.goo.gl/oHh3GGuShCKDDrcN6" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 hover:bg-coral-500 text-white flex items-center justify-center transition-all shadow-xs hover:scale-110 focus:outline-none focus:ring-2 focus:ring-coral-400" title="Google Maps" aria-label="Google Maps">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna 2: Institucional -->
+                    <div>
+                        <h3 class="font-bold mb-6 tracking-widest uppercase text-white text-xs" data-pgc-edit="col-1-title">Institucional</h3>
+                        <ul class="space-y-3.5 text-sm text-primary-200" data-pgc-edit="col-1-links">
+                            <li>
+                                <a href="instituto.html" class="hover:text-white transition-colors">O Instituto AMA</a>
+                            </li>
+                            <li>
+                                <a href="instituto.html#diretoria" class="hover:text-white transition-colors">Nossa Diretoria</a>
+                            </li>
+                            <li>
+                                <a href="noticias.html" class="hover:text-white transition-colors">Notícias &amp; Ações</a>
+                            </li>
+                            <li>
+                                <a href="apoio.html" class="hover:text-white transition-colors">Apoie o Instituto</a>
+                            </li>
+                            <li>
+                                <a href="https://app.institutoamabr.org" class="hover:text-white transition-colors flex items-center gap-1.5">
+                                    <span>Área do Colaborador</span>
+                                    <span class="text-[10px] bg-primary-800 text-primary-200 px-1.5 py-0.5 rounded">Portal</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Coluna 3: Projetos Sociais -->
+                    <div>
+                        <h3 class="font-bold mb-6 tracking-widest uppercase text-white text-xs" data-pgc-edit="col-2-title">Projetos Sociais</h3>
+                        <ul class="space-y-3.5 text-sm text-primary-200" data-pgc-edit="col-2-links">
+                            <li>
+                                <a href="projetos.html" class="hover:text-white transition-colors">Todos os Projetos</a>
+                            </li>
+                            <li>
+                                <a href="projeto-acolher.html" class="hover:text-white transition-colors">Projeto Acolher</a>
+                            </li>
+                            <li>
+                                <a href="mulheres-empreendedoras.html" class="hover:text-white transition-colors">Mulheres Empreendedoras</a>
+                            </li>
+                            <li>
+                                <a href="projeto-capacitar.html" class="hover:text-white transition-colors">Projeto Capacitar</a>
+                            </li>
+                            <li>
+                                <a href="acao-ama.html" class="hover:text-white transition-colors">Ação AMA</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Coluna 4: Governança & Transparência -->
+                    <div>
+                        <h3 class="font-bold mb-6 tracking-widest uppercase text-white text-xs" data-pgc-edit="col-3-title">Governança &amp; Ética</h3>
+                        <ul class="space-y-3.5 text-sm text-primary-200" data-pgc-edit="col-3-links">
+                            <li>
+                                <a href="editais.html" class="hover:text-white transition-colors">Editais &amp; Chamadas Públicas</a>
+                            </li>
+                            <li>
+                                <a href="ouvidoria.html" class="hover:text-white transition-colors flex items-center gap-1.5">
+                                    <span>Ouvidoria &amp; Canal Ético</span>
+                                    <span class="text-[9px] bg-rose-900/60 text-rose-300 border border-rose-700/50 px-1.5 py-0.5 rounded font-mono">MROSC</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="relacoes-institucionais.html#transparencia" class="hover:text-white transition-colors">Portal da Transparência</a>
+                            </li>
+                            <li>
+                                <a href="relacoes-institucionais.html" class="hover:text-white transition-colors">Relações Institucionais &amp; ESG</a>
+                            </li>
+                            <li>
+                                <a href="relacoes-institucionais.html#documentos" class="hover:text-white transition-colors">Relatórios e Certidões</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Linha Inferior: Direitos, PIX e LGPD -->
+                <div class="border-t border-white/10 pt-8 flex flex-wrap gap-6 justify-between items-center text-primary-300 text-xs">
+                    <p data-pgc-edit="copyright">&copy; <span>2026</span> <span>Instituto AMA</span> &bull; Acolhimento, Mentoria &amp; Assistência. Todos os direitos reservados.</p>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <span class="font-mono bg-black/20 px-2.5 py-1 rounded-md border border-white/10 text-primary-200" data-pgc-edit="pix">PIX (CNPJ): 48.722.909/0001-80</span>
+                        <a href="relacoes-institucionais.html#privacidade" class="hover:text-white transition-colors" data-pgc-edit="privacy-link[href]">Política de Privacidade &amp; LGPD</a>
+                    </div>
+                </div>
+            </div></footer>
 </body>
 </html>
