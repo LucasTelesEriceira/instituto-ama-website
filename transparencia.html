@@ -315,13 +315,18 @@
 
             // 1. Tenta carregar da API REST do sistema
             try {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 2000);
-                const res = await fetch('/wp-json/ama/v2/transparencia', {
-                    signal: controller.signal,
+                const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                const baseUrl = window.AMA_API_BASE_URL ||
+                    (isLocal
+                        ? 'http://api-instituto-ama.teste/wp-json/ama/v2'
+                        : 'https://app.institutoamabr.org/wp-json/ama/v2');
+                const controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+                const timeoutId = controller ? setTimeout(() => controller.abort(), 2500) : null;
+                const res = await fetch(`${baseUrl}/public/transparencia`, {
+                    signal: controller ? controller.signal : undefined,
                     headers: { 'Accept': 'application/json' }
                 });
-                clearTimeout(timeoutId);
+                if (timeoutId) clearTimeout(timeoutId);
 
                 if (res.ok) {
                     const data = await res.json();

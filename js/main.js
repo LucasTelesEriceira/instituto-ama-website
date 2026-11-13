@@ -232,15 +232,30 @@ document.addEventListener('alpine:init', () => {
           const data = await res.json();
           this.editais = (data && Array.isArray(data.items)) ? data.items : (Array.isArray(data) ? data : []);
         } else {
-          this.error = 'Não foi possível carregar a lista de editais no momento.';
-          this.editais = [];
+          await this.loadLocalFallback();
         }
       } catch (e) {
-        console.info('Base de editais remota offline ou em modo estático.');
-        this.error = 'Falha de comunicação com a base de dados de editais.';
-        this.editais = [];
+        console.info('Base de editais remota offline ou em modo estático. Tentando catálogo local...');
+        await this.loadLocalFallback();
       } finally {
         this.loading = false;
+      }
+    },
+
+    async loadLocalFallback() {
+      try {
+        const fallbackRes = await fetch('assets/data/editais.json');
+        if (fallbackRes.ok) {
+          const fallbackData = await fallbackRes.json();
+          this.editais = (fallbackData && Array.isArray(fallbackData.items)) ? fallbackData.items : (Array.isArray(fallbackData) ? fallbackData : []);
+          this.error = null;
+        } else {
+          this.editais = [];
+          this.error = 'Não foi possível carregar a lista de editais no momento.';
+        }
+      } catch (errFallback) {
+        this.editais = [];
+        this.error = 'Falha de comunicação com a base de dados de editais.';
       }
     },
 
