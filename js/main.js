@@ -27,7 +27,7 @@
    * Prioridade:
    * 1. window.AMA_API_BASE_URL explícito
    * 2. Ambiente local (LocalWP WordPress headless) -> http://api-instituto-ama.teste/wp-json/ama/v2
-   * 3. Produção/Staging -> https://app.institutoamabr.org/wp-json/ama/v2
+   * 3. Produção/Staging -> https://api.institutoamabr.org/wp-json/ama/v2
    */
   function getAmaApiBase() {
     if (typeof window !== 'undefined' && window.AMA_API_BASE_URL) {
@@ -38,7 +38,7 @@
       return 'http://api-instituto-ama.teste/wp-json/ama/v2';
     }
 
-    return 'https://app.institutoamabr.org/wp-json/ama/v2';
+    return 'https://api.institutoamabr.org/wp-json/ama/v2';
   }
 
   /**
@@ -217,7 +217,7 @@ document.addEventListener('alpine:init', () => {
       try {
         const editaisApiUrl = (typeof window.getAmaApiUrl === 'function') 
           ? window.getAmaApiUrl('public/editais')
-          : (window.AMA_API_BASE_URL || 'https://app.institutoamabr.org/wp-json/ama/v2/public/editais');
+          : (window.AMA_API_BASE_URL || 'https://api.institutoamabr.org/wp-json/ama/v2/public/editais');
         
         const controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
         const timeoutId = controller ? setTimeout(() => controller.abort(), 3500) : null;
@@ -352,7 +352,7 @@ document.addEventListener('alpine:init', () => {
       if (window.AMA_API_BASE_URL) {
         return window.AMA_API_BASE_URL.replace(/\/public\/editais.*$/, '').replace(/\/$/, '');
       }
-      return 'https://app.institutoamabr.org/wp-json/ama/v2';
+      return 'https://api.institutoamabr.org/wp-json/ama/v2';
     },
 
     async submitManifestacao() {

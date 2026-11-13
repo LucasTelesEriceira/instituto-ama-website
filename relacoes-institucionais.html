@@ -491,7 +491,7 @@
                 ? window.AMA_API_BASE_URL.replace(/\/public\/editais.*$/, '').replace(/\/$/, '')
                 : (['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('.teste'))
                     ? 'http://api-instituto-ama.teste/wp-json/ama/v2'
-                    : 'https://app.institutoamabr.org/wp-json/ama/v2');
+                    : 'https://api.institutoamabr.org/wp-json/ama/v2');
 
         // 2. Consulta à REST API com timeout controlado (evita travamento caso o backend esteja offline)
         try {
