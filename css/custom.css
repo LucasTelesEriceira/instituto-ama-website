@@ -102,7 +102,8 @@ body.block-editor-page .anim,
 
 /* Barra de rolagem suave alinhada ao design do Instituto AMA */
 ::-webkit-scrollbar { 
-  width: 8px; 
+  width: 6px; 
+  height: 6px;
 }
 ::-webkit-scrollbar-track { 
   background: #F9F6F1; 
@@ -113,6 +114,17 @@ body.block-editor-page .anim,
 }
 ::-webkit-scrollbar-thumb:hover { 
   background: #6B5247; 
+}
+
+/* Utilitário para ocultar barra de rolagem mantendo funcionalidade de scroll/touch */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
 }
 
 /* ==========================================================================

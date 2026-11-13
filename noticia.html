@@ -46,267 +46,105 @@
 </head>
 <body class="antialiased bg-background-50 font-sans overflow-x-hidden text-neutral-800" x-data="{
         copiedToast: false,
-        articles: [
-            {
-                id: 8,
-                title: 'Instituto AMA realiza ação de Dia das Crianças e alcança 500 pessoas em São Luís',
-                subtitle: 'Projeto Criança AMA Brincar promoveu lazer, entregou brinquedos e ofereceu apoio alimentar a crianças e famílias no Residencial Bacanga e bairros vizinhos.',
-                category: 'acolher',
-                categoryLabel: 'Projeto Acolher',
-                categoryBadgeBg: 'bg-primary-50 text-coral-600 border-coral-200',
-                date: '12 de Outubro de 2026',
-                readTime: '3 min de leitura',
-                author: 'Élida Brígida &amp; Solange Pereira',
-                authorRole: 'Coordenação do Projeto Criança AMA Brincar',
-                authorAvatar: 'assets/img/avatar/elida-brigida.webp',
-                image: 'assets/img/noticia-crianca-ama-brincar.webp',
-                imageCaption: 'Ação do Projeto Criança AMA Brincar com recreação lúdica, alimentação e acolhimento comunitário no Residencial Bacanga.',
-                pdfDoc: 'assets/docs/noticia-projeto-crianca-ama-brincar.pdf',
-                tags: ['Dia das Crianças', 'Criança AMA Brincar', 'Infância', 'Residencial Bacanga', 'Lazer', 'Alimentação'],
-                lead: 'O Instituto AMA – Acolhimento, Mentoria e Assistência realizou, em 12 de outubro de 2026, o Projeto Criança AMA Brincar, uma ação especial em celebração ao Dia das Crianças, no Residencial Bacanga, em São Luís (MA), que também alcançou famílias de bairros vizinhos.',
-                paragraphs: [
-                    'A iniciativa alcançou 500 pessoas e contabilizou a distribuição de 420 brinquedos, 380 quentinhas e 266 copos de sopa, unindo recreação, alimentação e acolhimento em uma programação voltada às crianças e suas famílias.',
-                    'A programação contou com brinquedos infláveis, cama elástica, piscina de bolinhas, música, personagens e apresentações de dança das crianças. As atividades proporcionaram momentos de diversão e integração comunitária, valorizando o brincar como parte importante do desenvolvimento infantil.',
-                    'Além das atividades recreativas, a distribuição de refeições e sopa ampliou o cuidado oferecido aos participantes durante a ação.',
-                    'Coordenado por José Chagas, com a coordenação do projeto de Élida Brígida e Solange Pereira, o evento contou com a organização da equipe do Instituto AMA e o apoio de parceiros e apoiadores. Os resultados foram consolidados a partir dos registros de distribuição da coordenação, reafirmando o compromisso da instituição com a transparência e a prestação de contas.',
-                    'O Projeto Criança AMA Brincar integra a atuação do Instituto AMA no fortalecimento dos vínculos comunitários e na promoção de iniciativas que unem cuidado, lazer e assistência social.'
-                ],
-                quote: 'O brincar é parte essencial do desenvolvimento humano e da infância. Promover um dia de acolhimento, lazer e refeição digna fortalece a esperança e os laços de cada família na comunidade.',
-                quoteAuthor: 'Élida Brígida &amp; Solange Pereira, Coordenação do Projeto Criança AMA Brincar',
-                stats: [
-                    { number: '500', label: 'Pessoas alcançadas' },
-                    { number: '420', label: 'Brinquedos entregues' },
-                    { number: '646', label: 'Refeições e sopas' }
-                ]
-            },
-            {
-                id: 7,
-                title: 'Instituto AMA realiza Ação Social com 840 atendimentos na Vila Mauro Fecury I, em São Luís',
-                subtitle: 'Mutirão realizado em setembro reuniu serviços de saúde, recreação infantil, acolhimento e assistência comunitária, com apoio de voluntários e instituições parceiras.',
-                category: 'acao-ama',
-                categoryLabel: 'Ação AMA',
-                categoryBadgeBg: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-                date: '19 de Setembro de 2026',
-                readTime: '4 min de leitura',
-                author: 'Silas Barros',
-                authorRole: 'Coordenação do Projeto Ação AMA',
-                authorAvatar: 'assets/img/avatar/silas-barros.webp',
-                image: 'assets/img/noticia-acao-social-mauro-fecury.webp',
-                imageCaption: 'Ação Social reuniu frentes multidisciplinares de saúde, cidadania e assistência comunitária na Vila Mauro Fecury I.',
-                pdfDoc: 'assets/docs/noticia-acao-social-instituto-ama.pdf',
-                tags: ['Ação Social', 'Saúde Comunitária', 'Vila Mauro Fecury I', 'Cidadania', 'SESC', 'IESVIDA', 'CRAS'],
-                lead: 'O Instituto AMA – Acolhimento, Mentoria e Assistência realizou, no dia 19 de setembro de 2026, uma Ação Social na comunidade Vila Mauro Fecury I, em São Luís (MA). A iniciativa reuniu diferentes frentes de atendimento com o objetivo de ampliar o acesso da população a serviços essenciais de saúde, bem-estar, cidadania e assistência social.',
-                paragraphs: [
-                    'De acordo com o relatório de prestação de contas da instituição, a ação registrou 840 atendimentos individuais e comunitários, mobilizando a equipe do Instituto AMA, voluntários e representantes das instituições parceiras SESC, IESVIDA e CRAS.',
-                    'A programação contemplou seis eixos de atendimento, reunindo atividades voltadas a crianças, famílias e demais moradores da comunidade: Infância e recreação somou 215 atendimentos com recreação infantil monitorada, gincanas lúdicas e jogos educativos em parceria com o SESC; Saúde bucal e prevenção alcançou 200 atendimentos com palestras preventivas, higienização bucal e distribuição de kits odontológicos; e Acolhimento e triagem prestou 125 atendimentos com recepção comunitária, escuta qualificada e encaminhamentos para serviços especializados.',
-                    'No eixo de Estética e bem-estar foram realizados 118 atendimentos com cortes de cabelo, tratamentos capilares, cuidados com sobrancelhas e massoterapia, com participação da IESVIDA. Em Saúde médica e nutrição foram 99 atendimentos incluindo consultas com clínico geral, gastroenterologista/cirurgião e pediatra, além de orientações nutricionais e biorressonâncias. No eixo de Cidadania e assistência foram 78 atendimentos, com a entrega de 45 cestas básicas, atendimentos psicológicos, encaminhamentos ao CRAS e apoio jurídico.',
-                    'A realização da Ação Social contou com a colaboração de voluntários, profissionais e instituições parceiras, demonstrando a importância da atuação conjunta para ampliar o alcance das iniciativas comunitárias. A participação do SESC, da IESVIDA e do CRAS contribuiu para reunir diferentes serviços em um mesmo espaço, aproximando atendimentos e orientações das pessoas que vivem na região.',
-                    'Para o Instituto AMA, prestar contas é parte essencial do compromisso com a comunidade, os voluntários, os parceiros e os apoiadores. Registrar as atividades realizadas e os atendimentos informados permite documentar a atuação institucional e fortalecer a transparência sobre as iniciativas desenvolvidas.'
-                ],
-                quote: 'Mais do que reunir diferentes atendimentos, a iniciativa reafirma o compromisso do Instituto AMA com o acolhimento, a dignidade e o fortalecimento dos vínculos comunitários.',
-                quoteAuthor: 'Silas Barros, Coordenação do Projeto Ação AMA',
-                stats: [
-                    { number: '840', label: 'Atendimentos registrados' },
-                    { number: '45', label: 'Cestas básicas entregues' },
-                    { number: '6', label: 'Eixos de cuidado' }
-                ]
-            },
-            {
-                id: 1,
-                title: 'Instituto AMA divulga Relatório de Impacto Social 2025 com mais de 4.200 atendimentos integrados',
-                subtitle: 'Balanço anual auditado consolida o avanço do Projeto Acolher, a ampliação da autonomia de mulheres chefes de família e a expansão pedagógica na Vila Mauro Fecury I.',
-                category: 'transparencia',
-                categoryLabel: 'Transparência &amp; ESG',
-                categoryBadgeBg: 'bg-turquesa-50 text-turquesa-700 border-turquesa-200',
-                date: '18 de Março de 2026',
-                readTime: '5 min de leitura',
-                author: 'Diretoria Executiva',
-                authorRole: 'Governança &amp; Relações Institucionais',
-                authorAvatar: 'assets/img/avatar/pr-jose-chagas.webp',
-                image: 'assets/img/projeto-ama.webp',
-                imageCaption: 'Apresentação do balanço anual de impacto e governança do Instituto AMA na comunidade.',
-                tags: ['Impacto Social', 'Transparência', 'ESG', 'Governança', 'Vila Mauro Fecury I'],
-                lead: 'O Instituto AMA encerrou o ciclo de 2025 com resultados históricos em suas três frentes de atuação: Acolhimento, Mentoria e Assistência. Ao longo de doze meses ininterruptos, mais de 4.200 atendimentos comunitários diretos foram computados em nossa sede e nas áreas de abrangência do Itaqui-Bacanga, em São Luís/MA.',
-                paragraphs: [
-                    'Fundado sobre a premissa de unir rigor de governança à sensibilidade humana comunitária, o Instituto AMA consolidou em 2025 sua maturidade operacional. Cada investimento social corporativo e doação voluntária recebida foi integralmente rastreado e auditado, transformando recursos financeiros em dignidade real e autonomia para famílias que vivem em vulnerabilidade extrema.',
-                    'Entre os principais destaques do relatório está o Projeto Acolher, que assegurou suporte psicossocial contínuo e acompanhamento pedagógico para 120 crianças. Com a implementação pioneira de Sophia: Tecnologia de Aprendizado Multissensorial, os índices de fluência leitora e cognição matemática das crianças atendidas registraram uma evolução de 78% em comparação ao início do ano letivo.',
-                    'No eixo de Mentoria e Desenvolvimento Econômico, o Projeto Mulheres Empreendedoras capacitou mais de 80 mães e jovens em corte, costura, confeitaria e biojoias. Com o lançamento do Selo AMA de Origem, os artigos manufaturados na comunidade passaram a ser comercializados em feiras corporativas e parceiros B2B, garantindo que 100% da receita gerada retorne diretamente às famílias produtoras.',
-                    'Já na dimensão de Assistência e Cidadania, os mutirões da Ação AMA levaram consultas odontológicas gratuitas, orientação com a Defensoria Pública do Maranhão, distribuição de cestas nutricionais balanceadas e atendimentos de saúde básica para mais de 350 famílias da Vila Mauro Fecury I.'
-                ],
-                quote: 'Não fazemos filantropia assistencialista pontual: aplicamos engenharia de impacto social sustentável com dados auditados, resgate da dignidade e foco inegociável no futuro de quem mais precisa.',
-                quoteAuthor: 'Pr. José Chagas, Diretor Geral do Instituto AMA',
-                stats: [
-                    { number: '4.200+', label: 'Atendimentos integrados' },
-                    { number: '120', label: 'Crianças no Projeto Acolher' },
-                    { number: '100%', label: 'Governança e dados auditados' }
-                ]
-            },
-            {
-                id: 2,
-                title: 'Tecnologia Sophia impulsiona o aprendizado e a alfabetização de 120 crianças',
-                subtitle: 'Metodologia pioneira de estimulação multissensorial fortalece a retenção cognitiva, a inteligência socioemocional e o reforço escolar.',
-                category: 'acolher',
-                categoryLabel: 'Projeto Acolher',
-                categoryBadgeBg: 'bg-primary-50 text-coral-600 border-coral-200',
-                date: '12 de Março de 2026',
-                readTime: '3 min de leitura',
-                author: 'Coordenação Pedagógica',
-                authorRole: 'Equipe de Educação &amp; Psicologia Infantil',
-                authorAvatar: 'assets/img/avatar/elida-brigida.webp',
-                image: 'assets/img/projeto-acolher.webp',
-                imageCaption: 'Crianças participando de dinâmica multissensorial com o método Sophia.',
-                tags: ['Educação', 'Sophia', 'Infância', 'Reforço Escolar', 'Acolhimento'],
-                lead: 'A educação transforma quando toca a curiosidade e o afeto da criança. Na sede do Instituto AMA, 120 crianças matriculadas no Projeto Acolher vivenciam diariamente uma nova forma de aprender através de Sophia: Tecnologia de Aprendizado Multissensorial.',
-                paragraphs: [
-                    'Desenvolvida para atender às particularidades de crianças com dificuldades de concentração e lacunas no processo de alfabetização, a tecnologia alia estímulos visuais, táteis e sonoros. O método permite que conceitos abstratos de leitura, escrita e raciocínio lógico sejam compreendidos por meio de experiências vivas e lúdicas.',
-                    'Aliado ao acompanhamento psicológico individualizado conduzido por nossa equipe técnica, o projeto tem diminuído a evasão escolar e elevado a autoestima de dezenas de estudantes da rede pública que encontram no contraturno escolar do Instituto AMA um porto seguro de desenvolvimento.',
-                    'Os educadores relatam avanços notáveis na capacidade de socialização, na resolução pacífica de conflitos e no interesse renovado pelas matérias da grade escolar regular.'
-                ],
-                quote: 'Sophia não é apenas uma ferramenta didática; é uma chave que abre portas para crianças descobrirem o prazer de ler, pensar e sonhar com um horizonte além da vulnerabilidade.',
-                quoteAuthor: 'Élida Brígida, Coordenação do Projeto Acolher',
-                stats: [
-                    { number: '120', label: 'Crianças alfabetizadas' },
-                    { number: '78%', label: 'Evolução na fluência leitora' },
-                    { number: '5x/sem', label: 'Acompanhamento especializado' }
-                ]
-            },
-            {
-                id: 3,
-                title: 'Feira de Economia Criativa lança nova linha artesanal com o Selo AMA de Origem',
-                subtitle: 'Mulheres empreendedoras da Vila Mauro Fecury I apresentam produtos manufaturados que geram autonomia financeira e renda para famílias comunitárias.',
-                category: 'empreendedoras',
-                categoryLabel: 'Mulheres Empreendedoras',
-                categoryBadgeBg: 'bg-amber-50 text-amber-700 border-amber-200',
-                date: '05 de Março de 2026',
-                readTime: '4 min de leitura',
-                author: 'Núcleo de Empreendedorismo',
-                authorRole: 'Coordenação de Geração de Renda',
-                authorAvatar: 'assets/img/avatar/pamala-ribeiro.webp',
-                image: 'assets/img/mulheres-empreendedoras.webp',
-                imageCaption: 'Artesãs comunitárias expondo biojoias e peças exclusivas no Selo AMA de Origem.',
-                tags: ['Empreendedorismo', 'Geração de Renda', 'Selo AMA', 'Mulheres Chefes de Família'],
-                lead: 'A autonomia de uma família começa pela dignidade do trabalho e pela valorização do talento local. O Instituto AMA realizou a edição especial da Feira Comunitária de Economia Criativa, consolidando o lançamento oficial do Selo AMA de Origem.',
-                paragraphs: [
-                    'As peças produzidas pelas alunas das oficinas de corte, costura criativa, biojoias e saboaria artesanal receberam a certificação de sustentabilidade do Instituto. Cada produto carrega em sua embalagem a assinatura da artesã e uma narrativa sobre sua trajetória comunitária.',
-                    'O evento reuniu compradores do comércio local, representantes de empresas parceiras ESG e moradores do bairro, gerando pedidos que garantem renda sustentável para os próximos meses.',
-                    'O programa também oferece mentoria contínua em gestão financeira básica, precificação justa de produtos, abertura de MEI e técnicas de atendimento comercial.'
-                ],
-                quote: 'Quando capacitamos uma mulher e damos a ela as ferramentas para comercializar seu próprio trabalho, transformamos a realidade de toda a sua família.',
-                quoteAuthor: 'Pamala Ribeiro, Diretoria Financeira e Empreendedorismo',
-                stats: [
-                    { number: '80+', label: 'Mulheres capacitadas' },
-                    { number: '100%', label: 'Renda revertida às produtoras' },
-                    { number: '35+', label: 'Produtos com Selo de Origem' }
-                ]
-            },
-            {
-                id: 4,
-                title: 'Projeto Capacitar certifica mais 30 jovens com bolsas de qualificação técnica',
-                subtitle: 'Formatura celebrada com parceiros corporativos fortalece o ingresso de jovens no mercado de trabalho e capacitação profissional em São Luís/MA.',
-                category: 'capacitar',
-                categoryLabel: 'Projeto Capacitar',
-                categoryBadgeBg: 'bg-turquesa-50 text-turquesa-700 border-turquesa-200',
-                date: '25 de Fevereiro de 2026',
-                readTime: '4 min de leitura',
-                author: 'Gestão de Projetos',
-                authorRole: 'Inovação e Qualificação Juvenil',
-                authorAvatar: 'assets/img/avatar/silas-barros.webp',
-                image: 'assets/img/projeto-capacitar.webp',
-                imageCaption: 'Jovens formandos exibindo seus certificados técnicos profissionais.',
-                tags: ['Juventude', 'Qualificação Técnica', 'Primeiro Emprego', 'Bolsas de Estudo'],
-                lead: 'O mercado de trabalho exige qualificação e oportunidades reais. O Projeto Capacitar concluiu com sucesso a formação de sua mais nova turma técnica em São Luís, entregando 30 novos profissionais aptos para o mercado.',
-                paragraphs: [
-                    'Com uma grade curricular voltada para áreas de alta demanda — como suporte em tecnologia da informação, rotinas administrativas e eletricidade predial básica —, o curso combina aulas práticas em bancada com formação cidadã e ética corporativa.',
-                    'Empresas investidoras com o Selo Amigo AMA participaram da banca avaliadora dos projetos de conclusão e já iniciaram processos seletivos para contratação dos formandos como jovens aprendizes e estagiários.',
-                    'Para 2026, a meta é triplicar o número de vagas e firmar novos convênios técnicos com instituições educacionais e polos industriais maranhenses.'
-                ],
-                quote: 'Acreditamos que juventude e oportunidade são uma combinação invencível contra a desigualdade. O que esses jovens precisavam era apenas de uma porta aberta.',
-                quoteAuthor: 'Silas Barros, Vice-Presidente do Instituto AMA',
-                stats: [
-                    { number: '30', label: 'Jovens formados' },
-                    { number: '12', label: 'Contratados de imediato' },
-                    { number: '240h', label: 'Carga horária técnica' }
-                ]
-            },
-            {
-                id: 5,
-                title: 'Ação AMA realiza mutirão de saúde e orientação jurídica gratuita no final de semana',
-                subtitle: 'Mais de 350 famílias receberam consultas odontológicas, assistência jurídica voluntária e apoio comunitário integrado em nossa sede.',
-                category: 'acao-ama',
-                categoryLabel: 'Ação AMA',
-                categoryBadgeBg: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-                date: '14 de Fevereiro de 2026',
-                readTime: '3 min de leitura',
-                author: 'Equipe de Assistência Social',
-                authorRole: 'Apoio Comunitário &amp; Cidadania',
-                authorAvatar: 'assets/img/avatar/solange-pereira.webp',
-                image: 'assets/img/01.webp',
-                imageCaption: 'Atendimento humanizado e orientação gratuita à comunidade no mutirão Ação AMA.',
-                tags: ['Saúde', 'Cidadania', 'Assistência Social', 'Mutirão', 'Direitos'],
-                lead: 'O acesso a direitos básicos de saúde e documentação civil é a base de qualquer política de dignidade humana. O mutirão comunitário da Ação AMA mobilizou dezenas de voluntários para um dia intenso de cidadania na Vila Mauro Fecury I.',
-                paragraphs: [
-                    'Durante toda a jornada de sábado, os moradores tiveram acesso a consultas odontológicas preventivas com aplicação de flúor em crianças, testes rápidos de glicemia e aferição de pressão arterial, além de consultoria com advogados populares.',
-                    'A parceria com o CRAS e entidades locais permitiu a regularização de cadastros de benefícios sociais e emissão de segundas vias de documentos essenciais para pessoas que não tinham condições de se deslocar até os órgãos centrais.',
-                    'Além do suporte emergencial, foram distribuídos kits de higiene pessoal e cestas de alimentos frescos fornecidos pela agricultura familiar comunitária.'
-                ],
-                quote: 'Estar presente no território é o coração do Instituto AMA. Não esperamos as pessoas virem até nós: nós estendemos a mão no lugar onde as dores acontecem.',
-                quoteAuthor: 'Solange Ribeiro, Assistente Social e Coordenadora',
-                stats: [
-                    { number: '350+', label: 'Famílias atendidas' },
-                    { number: '45', label: 'Profissionais voluntários' },
-                    { number: '100%', label: 'Gratuito e humanizado' }
-                ]
-            },
-            {
-                id: 6,
-                title: 'Instituto AMA fortalece governança B2B para expansão de parcerias corporativas ESG',
-                subtitle: 'Com dados auditados e transparência total, instituição abre novas cotas para empresas investidoras do Selo Amigo AMA.',
-                category: 'transparencia',
-                categoryLabel: 'Transparência &amp; ESG',
-                categoryBadgeBg: 'bg-turquesa-50 text-turquesa-700 border-turquesa-200',
-                date: '02 de Fevereiro de 2026',
-                readTime: '3 min de leitura',
-                author: 'Relações Institucionais',
-                authorRole: 'Diretoria de Parcerias Estratégicas',
-                authorAvatar: 'assets/img/avatar/silas-barros.webp',
-                image: 'assets/img/projeto-ama.webp',
-                imageCaption: 'Reunião de alinhamento com conselheiros e parceiros corporativos.',
-                tags: ['Governança', 'ESG', 'Parcerias B2B', 'Selo Amigo AMA', 'Transparência'],
-                lead: 'O investimento social corporativo contemporâneo exige compliance, comprovação de métricas e alinhamento com os Objetivos de Desenvolvimento Sustentável (ODS da ONU). O Instituto AMA apresentou seu novo portal de governança voltado exclusivamente a parceiros corporativos.',
-                paragraphs: [
-                    'A instituição disponibiliza em seu Portal de Relações Institucionais relatórios de auditoria, atas de diretoria e métricas em tempo real sobre a destinação dos recursos aportados.',
-                    'As empresas parceiras que aderem ao Selo Amigo AMA passam a contar com relatórios trimestrais com indicadores de impacto ESG prontos para inclusão em seus balanços de sustentabilidade corporativa.',
-                    'Novas rodadas de diálogo com indústrias e empresas do setor de logística e infraestrutura de São Luís já estão programadas para o próximo trimestre.'
-                ],
-                quote: 'Transparência não é um diferencial para nós, é a única forma ética de operar impacto social com credibilidade empresarial.',
-                quoteAuthor: 'Diretoria de Relações Institucionais do Instituto AMA',
-                stats: [
-                    { number: '100%', label: 'Contas auditadas' },
-                    { number: 'ODS', label: 'Alinhado às metas ONU' },
-                    { number: 'B2B', label: 'Compliance rigoroso' }
-                ]
+        fallbackUrl: 'assets/data/noticias.json',
+        loading: true,
+        articles: [],
+        activeId: null,
+        get apiUrl() {
+            if (typeof window.getAmaApiUrl === 'function') {
+                return window.getAmaApiUrl('public/noticias');
             }
-        ],
-        activeId: 1,
+            const base = (window.AMA_API_BASE_URL || (
+                (['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('.teste'))
+                    ? 'http://api-instituto-ama.teste/wp-json/ama/v2'
+                    : 'https://app.institutoamabr.org/wp-json/ama/v2'
+            ));
+            return `${base.replace(/\/$/, '')}/public/noticias`;
+        },
         get currentArticle() {
-            const found = this.articles.find(a =&gt; a.id === parseInt(this.activeId));
+            if (!this.articles || this.articles.length === 0) {
+                return {
+                    id: 0,
+                    title: 'Carregando...',
+                    subtitle: '',
+                    categoryLabel: 'Notícia AMA',
+                    categoryBadgeBg: 'bg-primary-50 text-coral-600 border-coral-200',
+                    date: '',
+                    readTime: '',
+                    author: 'Instituto AMA',
+                    authorRole: '',
+                    authorAvatar: 'assets/img/avatar/silas-barros.webp',
+                    image: 'assets/img/og-image.jpg',
+                    imageCaption: '',
+                    paragraphs: [],
+                    tags: [],
+                    stats: [],
+                    quote: '',
+                    quoteAuthor: '',
+                    pdfDoc: ''
+                };
+            }
+            const found = this.articles.find(a => String(a.id) === String(this.activeId) || (a.slug && a.slug === this.activeId));
             return found || this.articles[0];
         },
         get relatedArticles() {
-            return this.articles.filter(a =&gt; a.id !== this.currentArticle.id).slice(0, 3);
+            if (!this.articles || this.articles.length === 0) return [];
+            return this.articles.filter(a => a.id !== this.currentArticle?.id).slice(0, 3);
         },
-        init() {
+        async init() {
             const urlParams = new URLSearchParams(window.location.search);
-            const idParam = urlParams.get('id');
-            if (idParam &amp;&amp; this.articles.some(a =&gt; a.id === parseInt(idParam))) {
-                this.activeId = parseInt(idParam);
+            const idParam = urlParams.get('id') || urlParams.get('slug');
+            let carregou = false;
+
+            try {
+                const controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+                const timeoutId = controller ? setTimeout(() => controller.abort(), 3500) : null;
+
+                const res = await fetch(this.apiUrl, { 
+                    signal: controller ? controller.signal : undefined,
+                    headers: { 'Accept': 'application/json' } 
+                });
+                if (timeoutId) clearTimeout(timeoutId);
+
+                if (res.ok) {
+                    const data = await res.json();
+                    const items = Array.isArray(data) ? data : (data && Array.isArray(data.items) ? data.items : null);
+                    if (items && items.length > 0) {
+                        this.articles = items;
+                        carregou = true;
+                    }
+                }
+            } catch (e) {
+                console.info('[Noticia] API remota inacessível ou em desenvolvimento local. Carregando dados locais.');
             }
-            document.title = `${this.currentArticle.title} | Instituto AMA`;
+
+            if (!carregou) {
+                try {
+                    const fb = await fetch(this.fallbackUrl);
+                    if (fb.ok) {
+                        const fbData = await fb.json();
+                        this.articles = Array.isArray(fbData) ? fbData : (fbData && fbData.items ? fbData.items : []);
+                    }
+                } catch (err) {
+                    console.warn('[Noticia] Erro ao carregar fallback estático:', err);
+                }
+            }
+
+            this.loading = false;
+            if (this.articles && this.articles.length > 0) {
+                if (idParam) {
+                    const matched = this.articles.find(a => String(a.id) === String(idParam) || (a.slug && a.slug === idParam));
+                    this.activeId = matched ? matched.id : this.articles[0].id;
+                } else {
+                    this.activeId = this.articles[0].id;
+                }
+                document.title = `${this.currentArticle.title} | Instituto AMA`;
+            }
         },
         copyLink() {
             navigator.clipboard.writeText(window.location.href);
             this.copiedToast = true;
-            setTimeout(() =&gt; { this.copiedToast = false; }, 3000);
+            setTimeout(() => { this.copiedToast = false; }, 3000);
         },
         shareWhatsApp() {
             const text = encodeURIComponent(`${this.currentArticle.title} - Leia no Instituto AMA: ${window.location.href}`);
@@ -319,9 +157,9 @@
         shareTwitter() {
             const text = encodeURIComponent(this.currentArticle.title);
             const url = encodeURIComponent(window.location.href);
-            window.open(`https://twitter.com/intent/tweet?text=${text}&amp;url=${url}`, '_blank');
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
         }
-    }">
+    }}">
 <!-- Header / Navegação Oficial (Pinegrow Component) -->
 <header @scroll.window="scrolled = (window.pageYOffset &gt; 20)" class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50" data-pgc="site-header" x-data="{ 
                     scrolled: false, 
@@ -533,7 +371,7 @@
                                             <span class="block text-[11px] text-neutral-600 font-normal">Canal ético confidencial (MROSC)</span>
                                         </div>
                                     </a>
-                                    <a href="relacoes-institucionais.html#transparencia" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
+                                    <a href="transparencia.html" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-50 transition-colors group">
                                         <div class="w-8 h-8 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center shrink-0 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                                         </div>
@@ -628,7 +466,7 @@
                                 <a href="editais.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Editais &amp; Chamadas Públicas</a>
                                 <a href="relacoes-institucionais.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Relações Institucionais &amp; Parcerias</a>
                                 <a href="ouvidoria.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Ouvidoria &amp; Canal de Denúncias</a>
-                                <a href="relacoes-institucionais.html#transparencia" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Portal da Transparência &amp; Certidões</a>
+                                <a href="transparencia.html" class="block p-2.5 rounded-xl hover:bg-surface-50 text-neutral-700 font-medium" @click="mobileMenuOpen = false">Portal da Transparência &amp; Certidões</a>
                             </div>
                         </div>
 
@@ -740,7 +578,7 @@
 <!-- Imagem Principal de Destaque -->
 <figure class="space-y-3">
 <div class="relative w-full overflow-hidden rounded-3xl border border-surface-200 shadow-md max-h-[520px] bg-surface-100 flex items-center justify-center">
-<img :alt="currentArticle.title" :src="currentArticle.image" class="w-full h-full object-cover max-h-[520px] duration-500 hover:scale-[1.01] transition-transform"/>
+<img :alt="currentArticle.title" :src="currentArticle.image" class="w-full h-full object-cover object-top max-h-[520px] duration-500 hover:scale-[1.01] transition-transform"/>
 </div>
 <figcaption class="text-xs text-neutral-500 font-sans italic text-center" x-text="currentArticle.imageCaption">
                         Apresentação do balanço anual de impacto e governança do Instituto AMA na comunidade.
@@ -1064,7 +902,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="relacoes-institucionais.html#transparencia" class="hover:text-white transition-colors">Portal da Transparência</a>
+                                <a href="transparencia.html" class="hover:text-white transition-colors">Portal da Transparência</a>
                             </li>
                             <li>
                                 <a href="relacoes-institucionais.html" class="hover:text-white transition-colors">Relações Institucionais &amp; ESG</a>

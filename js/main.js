@@ -3,6 +3,60 @@
  * Componentes Alpine.js e interatividade do website.
  */
 
+// ==============================================================================
+// 1. Resolução Dinâmica de Ambiente & Endpoints da REST API V2
+// ==============================================================================
+(function() {
+  /**
+   * Identifica se a página está sendo executada em ambiente de desenvolvimento local.
+   */
+  function isLocalEnvironment() {
+    if (typeof window === 'undefined' || !window.location) return false;
+    const host = window.location.hostname || '';
+    const protocol = window.location.protocol || '';
+    return !host || 
+      host === 'localhost' || 
+      host === '127.0.0.1' || 
+      host.endsWith('.teste') || 
+      host.endsWith('.local') || 
+      protocol === 'file:';
+  }
+
+  /**
+   * Obtém a URL base da REST API do Instituto AMA de acordo com o ambiente atual.
+   * Prioridade:
+   * 1. window.AMA_API_BASE_URL explícito
+   * 2. Ambiente local (LocalWP WordPress headless) -> http://api-instituto-ama.teste/wp-json/ama/v2
+   * 3. Produção/Staging -> https://app.institutoamabr.org/wp-json/ama/v2
+   */
+  function getAmaApiBase() {
+    if (typeof window !== 'undefined' && window.AMA_API_BASE_URL) {
+      return window.AMA_API_BASE_URL.replace(/\/public\/editais.*$/, '').replace(/\/$/, '');
+    }
+
+    if (isLocalEnvironment()) {
+      return 'http://api-instituto-ama.teste/wp-json/ama/v2';
+    }
+
+    return 'https://app.institutoamabr.org/wp-json/ama/v2';
+  }
+
+  /**
+   * Constrói a URL completa para qualquer endpoint público ou privado.
+   */
+  function getAmaApiUrl(endpoint) {
+    const base = getAmaApiBase();
+    const cleanEndpoint = (endpoint || '').replace(/^\//, '');
+    return `${base}/${cleanEndpoint}`;
+  }
+
+  if (typeof window !== 'undefined') {
+    window.isLocalEnvironment = isLocalEnvironment;
+    window.getAmaApiBase = getAmaApiBase;
+    window.getAmaApiUrl = getAmaApiUrl;
+  }
+})();
+
 document.addEventListener('alpine:init', () => {
   
   // Componente de Navegação Global
@@ -161,18 +215,28 @@ document.addEventListener('alpine:init', () => {
       this.loading = true;
       this.error = null;
       try {
-        const apiUrl = window.AMA_API_BASE_URL || 'https://app.institutoamabr.org/wp-json/ama/v2/public/editais';
-        const res = await fetch(apiUrl, {
+        const editaisApiUrl = (typeof window.getAmaApiUrl === 'function') 
+          ? window.getAmaApiUrl('public/editais')
+          : (window.AMA_API_BASE_URL || 'https://app.institutoamabr.org/wp-json/ama/v2/public/editais');
+        
+        const controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+        const timeoutId = controller ? setTimeout(() => controller.abort(), 3500) : null;
+
+        const res = await fetch(editaisApiUrl, {
+          signal: controller ? controller.signal : undefined,
           headers: { 'Accept': 'application/json' }
         });
+        if (timeoutId) clearTimeout(timeoutId);
+
         if (res.ok) {
           const data = await res.json();
-          this.editais = (data && Array.isArray(data.items)) ? data.items : [];
+          this.editais = (data && Array.isArray(data.items)) ? data.items : (Array.isArray(data) ? data : []);
         } else {
           this.error = 'Não foi possível carregar a lista de editais no momento.';
           this.editais = [];
         }
       } catch (e) {
+        console.info('Base de editais remota offline ou em modo estático.');
         this.error = 'Falha de comunicação com a base de dados de editais.';
         this.editais = [];
       } finally {
@@ -267,6 +331,9 @@ document.addEventListener('alpine:init', () => {
     consultaResult: null,
 
     get apiBase() {
+      if (typeof window.getAmaApiBase === 'function') {
+        return window.getAmaApiBase();
+      }
       if (window.AMA_API_BASE_URL) {
         return window.AMA_API_BASE_URL.replace(/\/public\/editais.*$/, '').replace(/\/$/, '');
       }
