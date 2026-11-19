@@ -52,17 +52,22 @@
         fallbackUrl: 'assets/data/noticias.json',
         loading: true,
         articles: [],
-        activeId: null,
+        activeId: (typeof window !== 'undefined') ? (new URLSearchParams(window.location.search).get('id') || new URLSearchParams(window.location.search).get('slug')) : null,
+        get apiBase() {
+            if (typeof window.getAmaApiBase === 'function') {
+                return window.getAmaApiBase();
+            }
+            return (window.AMA_API_BASE_URL
+                ? window.AMA_API_BASE_URL.replace(/\/public\/editais.*$/, '').replace(/\/$/, '')
+                : (['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('.teste'))
+                    ? 'http://api-instituto-ama.teste/wp-json/ama/v2'
+                    : 'https://api.institutoamabr.org/wp-json/ama/v2');
+        },
         get apiUrl() {
             if (typeof window.getAmaApiUrl === 'function') {
                 return window.getAmaApiUrl('public/noticias');
             }
-            const base = (window.AMA_API_BASE_URL || (
-                (['localhost', '127.0.0.1'].includes(window.location.hostname) || window.location.hostname.endsWith('.teste'))
-                    ? 'http://api-instituto-ama.teste/wp-json/ama/v2'
-                    : 'https://api.institutoamabr.org/wp-json/ama/v2'
-            ));
-            return `${base.replace(/\/$/, '')}/public/noticias`;
+            return `${this.apiBase.replace(/\/$/, '')}/public/noticias`;
         },
         get currentArticle() {
             if (!this.articles || this.articles.length === 0) {
@@ -97,6 +102,7 @@
         async init() {
             const urlParams = new URLSearchParams(window.location.search);
             const idParam = urlParams.get('id') || urlParams.get('slug');
+            if (idParam) this.activeId = idParam;
             let carregou = false;
 
             try {
@@ -121,7 +127,26 @@
                 console.info('[Noticia] API remota inacessível ou em desenvolvimento local. Carregando dados locais.');
             }
 
-            if (!carregou) {
+            // Fallback para endpoint individual se o ID/slug específico não estiver nos itens principais
+            if (idParam && (!this.articles || !this.articles.find(a => String(a.id) === String(idParam) || (a.slug && a.slug === idParam)))) {
+                try {
+                    const singleRes = await fetch(`${this.apiUrl}/${encodeURIComponent(idParam)}`, {
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (singleRes.ok) {
+                        const singleData = await singleRes.json();
+                        const singleItem = singleData && (singleData.item || singleData.data || (singleData.id ? singleData : null));
+                        if (singleItem) {
+                            this.articles = [singleItem, ...(this.articles || [])];
+                            carregou = true;
+                        }
+                    }
+                } catch (err) {
+                    console.warn('[Noticia] Não foi possível consultar endpoint individual:', err);
+                }
+            }
+
+            if (!carregou && (!this.articles || this.articles.length === 0)) {
                 try {
                     const fb = await fetch(this.fallbackUrl);
                     if (fb.ok) {
@@ -162,7 +187,7 @@
             const url = encodeURIComponent(window.location.href);
             window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
         }
-    }}">
+    }">
 <!-- Header / Navegação Oficial (Pinegrow Component) -->
 <header @scroll.window="scrolled = (window.pageYOffset &gt; 20)" class="backdrop-blur-xl bg-white/90 border-b border-surface-200 duration-300 sticky top-0 transition-all w-full z-50" data-pgc="site-header" x-data="{ 
                     scrolled: false, 
