@@ -7,6 +7,11 @@
   display: none !important;
 }
 
+/* Garante suporte a .min-w-0 para truncamento correto dentro de flexbox */
+.min-w-0 {
+  min-width: 0 !important;
+}
+
 /* Regras de Pseudo-elemento e Animação de Hover para Links do Menu Principal */
 .nav-item-link {
   position: relative;
