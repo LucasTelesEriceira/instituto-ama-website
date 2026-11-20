@@ -529,7 +529,6 @@ const registerAmaAlpineComponents = () => {
     items: [],
     loading: true,
     loadedFromApi: false,
-    selectedItem: null,
 
     async init() {
       await this.fetchAgenda(limit);
@@ -648,14 +647,6 @@ const registerAmaAlpineComponents = () => {
         outro: 'rgba(175, 134, 93, 0.12)'
       };
       return map[tipo] || 'rgba(255, 124, 103, 0.12)';
-    },
-
-    openDetails(item) {
-      this.selectedItem = item;
-    },
-
-    closeDetails() {
-      this.selectedItem = null;
     },
 
     getGoogleCalendarUrl(item) {
