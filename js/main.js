@@ -57,7 +57,9 @@
   }
 })();
 
-document.addEventListener('alpine:init', () => {
+const registerAmaAlpineComponents = () => {
+  if (typeof window.Alpine === 'undefined' || window._amaAlpineRegistered) return;
+  window._amaAlpineRegistered = true;
   
   // Componente de Navegação Global
   Alpine.data('navigation', () => ({
@@ -701,7 +703,15 @@ document.addEventListener('alpine:init', () => {
     }
   }));
 
-});
+};
+
+if (typeof window !== 'undefined') {
+  if (window.Alpine) {
+    registerAmaAlpineComponents();
+  } else {
+    document.addEventListener('alpine:init', registerAmaAlpineComponents);
+  }
+}
 
 /**
  * Inicializador global de Animações de Scroll (Scroll Reveal / FadeUp)
