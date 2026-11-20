@@ -522,6 +522,157 @@ document.addEventListener('alpine:init', () => {
     }
   }));
 
+  // Componente de Agenda Pública Institucional (consome GET /ama/v2/public/agenda)
+  Alpine.data('agendaPublicaHub', (limit = 4) => ({
+    items: [],
+    loading: true,
+    loadedFromApi: false,
+    selectedItem: null,
+
+    async init() {
+      await this.fetchAgenda(limit);
+    },
+
+    async fetchAgenda(maxItems = 4) {
+      this.loading = true;
+      try {
+        const buildUrl = (query) => (typeof window.getAmaApiUrl === 'function')
+          ? window.getAmaApiUrl('public/agenda?' + query)
+          : ('https://api.institutoamabr.org/wp-json/ama/v2/public/agenda?' + query);
+
+        const fetchWithTimeout = async (url) => {
+          const controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+          const timeoutId = controller ? setTimeout(() => controller.abort(), 3000) : null;
+          try {
+            const res = await fetch(url, {
+              signal: controller ? controller.signal : undefined,
+              headers: { 'Accept': 'application/json' }
+            });
+            if (timeoutId) clearTimeout(timeoutId);
+            if (!res.ok) return null;
+            const data = await res.json();
+            return (data && Array.isArray(data.items)) ? data.items : (Array.isArray(data) ? data : []);
+          } catch (e) {
+            if (timeoutId) clearTimeout(timeoutId);
+            return null;
+          }
+        };
+
+        // 1. Tenta buscar próximas atividades públicas (a partir de hoje)
+        let list = await fetchWithTimeout(buildUrl('proximas=1&limit=' + encodeURIComponent(maxItems)));
+
+        // 2. Se não houver futuras ainda, busca as últimas atividades marcadas como públicas
+        if (Array.isArray(list) && list.length === 0) {
+          list = await fetchWithTimeout(buildUrl('limit=' + encodeURIComponent(maxItems)));
+        }
+
+        if (Array.isArray(list) && list.length > 0) {
+          this.items = list;
+          this.loadedFromApi = true;
+        } else {
+          this.items = [];
+          this.loadedFromApi = false;
+        }
+      } catch (e) {
+        this.items = [];
+        this.loadedFromApi = false;
+      } finally {
+        this.loading = false;
+      }
+    },
+
+    parseDateParts(dateStr) {
+      if (!dateStr || typeof dateStr !== 'string') return { day: '--', month: '---', weekday: 'Data a definir' };
+      const parts = dateStr.split('-');
+      if (parts.length !== 3) return { day: '--', month: '---', weekday: dateStr };
+      const y = parseInt(parts[0], 10);
+      const m = parseInt(parts[1], 10) - 1;
+      const d = parseInt(parts[2], 10);
+      const months = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+      const weekdays = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+      const dt = new Date(y, m, d);
+      return {
+        day: String(d).padStart(2, '0'),
+        month: months[m] || '---',
+        weekday: isNaN(dt.getTime()) ? '' : weekdays[dt.getDay()],
+        fullDate: String(d).padStart(2, '0') + '/' + String(m + 1).padStart(2, '0') + '/' + y
+      };
+    },
+
+    formatTimeLine(item) {
+      const info = this.parseDateParts(item.data_inicio);
+      const start = item.hora_inicio ? item.hora_inicio.substring(0, 5) + 'h' : '';
+      const end = item.hora_fim ? item.hora_fim.substring(0, 5) + 'h' : '';
+      let horario = '';
+      if (start && end) horario = start + ' às ' + end;
+      else if (start) horario = start;
+      return horario ? (info.weekday + ' • ' + horario) : info.weekday;
+    },
+
+    getTipoLabel(tipo) {
+      const map = {
+        oficina: 'Oficina / Curso',
+        evento: 'Evento Comunitário',
+        reuniao: 'Governança',
+        mutirao: 'Ação Comunitária',
+        prazo_edital: 'Edital / Fomento',
+        audiencia: 'Encontro Público',
+        outro: 'Atividade AMA'
+      };
+      return map[tipo] || 'Atividade AMA';
+    },
+
+    getAccentColor(tipo) {
+      const map = {
+        oficina: '#AF865D',
+        evento: '#FF7C67',
+        reuniao: '#4CC4B6',
+        mutirao: '#FFAE41',
+        prazo_edital: '#E53935',
+        audiencia: '#17766F',
+        outro: '#AF865D'
+      };
+      return map[tipo] || '#FF7C67';
+    },
+
+    getAccentBg(tipo) {
+      const map = {
+        oficina: 'rgba(175, 134, 93, 0.12)',
+        evento: 'rgba(255, 124, 103, 0.12)',
+        reuniao: 'rgba(76, 196, 182, 0.12)',
+        mutirao: 'rgba(255, 174, 65, 0.14)',
+        prazo_edital: 'rgba(229, 57, 53, 0.12)',
+        audiencia: 'rgba(23, 118, 111, 0.12)',
+        outro: 'rgba(175, 134, 93, 0.12)'
+      };
+      return map[tipo] || 'rgba(255, 124, 103, 0.12)';
+    },
+
+    openDetails(item) {
+      this.selectedItem = item;
+    },
+
+    closeDetails() {
+      this.selectedItem = null;
+    },
+
+    getGoogleCalendarUrl(item) {
+      if (!item || !item.data_inicio) return '#';
+      const d = item.data_inicio.replace(/-/g, '');
+      const startTime = item.hora_inicio ? item.hora_inicio.replace(/:/g, '').substring(0, 6).padEnd(6, '0') : '090000';
+      const endTime = item.hora_fim ? item.hora_fim.replace(/:/g, '').substring(0, 6).padEnd(6, '0') : '110000';
+      const dEnd = (item.data_fim || item.data_inicio).replace(/-/g, '');
+      const params = new URLSearchParams({
+        action: 'TEMPLATE',
+        text: item.titulo || 'Atividade Instituto AMA',
+        dates: d + 'T' + startTime + '/' + dEnd + 'T' + endTime,
+        details: item.descricao || 'Atividade comunitária do Instituto AMA.',
+        location: item.local || 'Sede Instituto AMA - Vila Mauro Fecury I, São Luís - MA'
+      });
+      return 'https://calendar.google.com/calendar/render?' + params.toString();
+    }
+  }));
+
   // Componente de Contadores de Impacto Animados
   Alpine.data('impactCounters', () => ({
     counters: [
