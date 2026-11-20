@@ -149,12 +149,12 @@ document.addEventListener('alpine:init', () => {
       },
       {
         id: 6,
-        title: 'Relatório Anual de Impacto e Atendimentos 2025',
+        title: 'Relatório Anual de Atividades e Ações Comunitárias',
         category: 'financeiro',
         date: '2025-12-28',
         type: 'PDF',
         size: '3.4 MB',
-        description: 'Demonstrativo completo de 4.200 atendimentos executados, balanço e indicadores.',
+        description: 'Demonstrativo consolidado de atividades, prestação e indicadores institucionais.',
         url: '#'
       },
       {
