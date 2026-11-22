@@ -1,6 +1,6 @@
 # INSTITUTO AMA — ACOLHIMENTO, MENTORIA & ASSISTÊNCIA
 **CNPJ:** 48.722.909/0001-80 • Fundado em 2021  
-**Sede:** Travessa Principal, S/N, Vila Mauro Fecury I — São Luís/MA — CEP 65082-120  
+**Sede:** Rua Daniel Márcio, nº 02, Vila Mauro Fecury I — São Luís/MA — CEP 65082-621  
 **Slogan:** *"Transformando afeto em futuro."*
 
 ---
@@ -121,7 +121,7 @@ Para exercer seus direitos de titular, sanar dúvidas sobre esta Política ou fo
 
 * **Encarregado Institucional (DPO):** Comitê de Governança, Transparência & Compliance do Instituto AMA
 * **E-mail Oficial:** `institutoama10@gmail.com`
-* **Endereço para Atendimento Presencial ou Envio de Notificações:** Travessa Principal, S/N, Polo Mauro Fecury I, São Luís/MA, CEP 65082-120
+* **Endereço para Atendimento Presencial ou Envio de Notificações:** Rua Daniel Márcio, nº 02, Vila Mauro Fecury I, São Luís/MA, CEP 65082-621
 * **Prazo Máximo de Resposta:** Até 15 (quinze) dias úteis, contados da data do requerimento formal, na forma regulamentada pela ANPD.
 
 ---

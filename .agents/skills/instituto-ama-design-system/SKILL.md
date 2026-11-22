@@ -128,9 +128,9 @@ Sempre que redigir ou validar conteúdos do site, mantenha a fidelidade aos dado
 
 - **Razão Social:** INSTITUTO AMA | Acolhimento, Mentoria e Assistência
 - **CNPJ Oficial:** `48.722.909/0001-80`
-- **Endereço da Sede:** Travessa Principal, S/N, Vila Mauro Fecury I, São Luís – MA
+- **Endereço da Sede:** Rua Daniel Márcio, nº 02, Vila Mauro Fecury I, CEP: 65082-621, São Luís – MA
 - **Métricas Oficiais:**
   - **+4.200** Atendimentos Integrados (Saúde, Odonto, Jurídico, Assistência)
-  - **120** Crianças Acolhidas (Projeto Acolher + Tecnologia Sophia)
-  - **80** Mulheres Empreendedoras (Oficinas e Selo AMA de Origem)
-  - **60 + 30** Jovens Qualificados e Bolsistas (Projeto Capacitar)
+  - **Projeto Acolher:** 40 crianças atendidas na oficina de alfabetização e 20 crianças na oficina de balé
+  - **Projeto Mulheres Empreendedoras:** 40 mulheres atendidas
+  - **Projeto Capacitar:** 30 jovens e adultos atendidos (bolsas e formação profissional)
