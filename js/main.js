@@ -660,7 +660,7 @@ const registerAmaAlpineComponents = () => {
         text: item.titulo || 'Atividade Instituto AMA',
         dates: d + 'T' + startTime + '/' + dEnd + 'T' + endTime,
         details: item.descricao || 'Atividade comunitária do Instituto AMA.',
-        location: item.local || 'Sede Instituto AMA - Vila Mauro Fecury I, São Luís - MA'
+        location: item.local || 'Sede Instituto AMA - Rua Daniel Márcio, nº 02, Vila Mauro Fecury I, CEP: 65082-621, São Luís - MA'
       });
       return 'https://calendar.google.com/calendar/render?' + params.toString();
     }
